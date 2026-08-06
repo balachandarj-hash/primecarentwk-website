@@ -15,13 +15,25 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
+    <script>
+      /* trailing-slash-fix: keep project Pages relative links working */
+      (function () {
+        var path = location.pathname;
+        if (path.indexOf('.html') === -1 && path.slice(-1) !== '/') {
+          location.replace(path + '/' + location.search + location.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div class="topbar">
       <div class="container topbar__inner">
-        <a href="tel:8884748473">888-474-8473</a>
-        <span class="topbar__sep" aria-hidden="true">|</span>
-        <a href="contact.html">Partner With Us</a>
+        <span class="topbar__note">Nationwide provider network &amp; care coordination</span>
+        <div class="topbar__links">
+          <a href="tel:8884748473">888-474-8473</a>
+          <span class="topbar__sep" aria-hidden="true">|</span>
+          <a href="./contact.html#partner">Partner With Us</a>
+        </div>
       </div>
     </div>
 
@@ -30,6 +42,7 @@
         <a class="logo logo--dark" href="index.html" aria-label="PrimeCare Network home">
           <img class="logo__img" src="assets/images/logo.png" alt="PrimeCare Network" width="220" height="48" />
         </a>
+
         <nav class="nav" aria-label="Primary">
           <a href="index.html">Home</a>
           <a href="providers-network.html">Providers Network</a>
@@ -37,22 +50,37 @@
           <a href="legal-nurse-case-manager.html" aria-current="page">Legal Nurse Case Manager</a>
           <a href="about.html">About</a>
         </nav>
-                <div class="header-actions">
+
+        <div class="header-actions">
           <a class="btn btn--header btn--sm" href="https://doctors.primecarentwk.com/" target="_blank" rel="noopener">Find Providers</a>
           <a class="btn btn--primary btn--sm" href="contact.html">Get Started</a>
-          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
-            <span></span>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+            <span class="menu-toggle__bars" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
           </button>
         </div>
       </div>
-      <nav class="mobile-nav" aria-label="Mobile">
-        <a href="index.html">Home</a>
-        <a href="providers-network.html">Providers Network</a>
-        <a href="care-coordination.html">Care Coordination</a>
-        <a href="legal-nurse-case-manager.html">Legal Nurse Case Manager</a>
-        <a href="about.html">About</a>
-        <a href="https://doctors.primecarentwk.com/" target="_blank" rel="noopener">Find Providers</a>
-        <a href="contact.html">Contact</a>
+
+      <div class="nav-backdrop" aria-hidden="true"></div>
+      <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+        <div class="mobile-nav__head">
+          <p class="mobile-nav__title">Menu</p>
+          <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
+        </div>
+        <div class="mobile-nav__links">
+          <a href="index.html">Home</a>
+          <a href="providers-network.html">Providers Network</a>
+          <a href="care-coordination.html">Care Coordination</a>
+          <a href="legal-nurse-case-manager.html" aria-current="page">Legal Nurse Case Manager</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="mobile-nav__actions">
+          <a class="btn btn--header" href="https://doctors.primecarentwk.com/" target="_blank" rel="noopener">Find Providers</a>
+          <a class="btn btn--primary" href="contact.html">Get Started</a>
+        </div>
       </nav>
     </header>
 
