@@ -154,9 +154,10 @@ p {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(0, 0, 0, 0.96);
+  background: rgba(255, 255, 255, 0.94);
   backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(26, 31, 61, 0.08);
+  box-shadow: 0 8px 24px rgba(26, 31, 61, 0.04);
 }
 
 .site-header__inner {
@@ -180,6 +181,19 @@ p {
   display: block;
 }
 
+/* Official lockup ships on black — seat it on a compact brand plate */
+.site-header .logo,
+.site-footer .logo {
+  background: #000;
+  border-radius: 0.45rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.site-header .logo__img,
+.site-footer .logo__img {
+  mix-blend-mode: normal;
+}
+
 .nav {
   display: none;
 }
@@ -193,19 +207,19 @@ p {
   font-size: 0.8125rem;
   font-weight: 650;
   letter-spacing: 0.01em;
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--ink-muted);
   border-radius: 0.4rem;
   white-space: nowrap;
   transition: color 0.2s var(--ease), background 0.2s var(--ease);
 }
 
 .nav a:hover {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.06);
+  color: var(--navy-800);
+  background: rgba(0, 210, 193, 0.08);
 }
 
 .nav a[aria-current="page"] {
-  color: var(--brand-teal);
+  color: var(--brand-violet);
   background: transparent;
 }
 
@@ -221,15 +235,15 @@ p {
 }
 
 .btn--header {
-  background: transparent;
-  color: var(--white);
-  border-color: rgba(0, 210, 193, 0.45);
+  background: var(--white);
+  color: var(--navy-800);
+  border-color: rgba(74, 87, 164, 0.28);
 }
 
 .btn--header:hover {
-  background: rgba(0, 210, 193, 0.12);
+  background: rgba(0, 210, 193, 0.1);
   border-color: var(--brand-teal);
-  color: var(--brand-teal);
+  color: var(--teal-700);
 }
 
 .header-actions {
@@ -283,16 +297,16 @@ p {
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(26, 31, 61, 0.12);
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--white);
   cursor: pointer;
-  color: var(--white);
+  color: var(--navy-800);
   transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
 
 .menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--teal-50);
   border-color: rgba(0, 210, 193, 0.45);
 }
 
@@ -344,7 +358,7 @@ p {
 .nav-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(26, 31, 61, 0.4);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s var(--ease);
@@ -363,8 +377,9 @@ p {
   z-index: 70;
   width: min(20.5rem, 88vw);
   height: 100dvh;
-  background: #050505;
-  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--white);
+  border-left: 1px solid rgba(26, 31, 61, 0.08);
+  box-shadow: -16px 0 40px rgba(26, 31, 61, 0.12);
   transform: translateX(105%);
   transition: transform 0.35s var(--ease);
   display: flex;
@@ -382,7 +397,7 @@ p {
   justify-content: space-between;
   margin-bottom: 1.25rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(26, 31, 61, 0.08);
 }
 
 .mobile-nav__title {
@@ -390,16 +405,16 @@ p {
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--brand-teal);
+  color: var(--brand-violet);
 }
 
 .mobile-nav__close {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 0.45rem;
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  background: transparent;
-  color: var(--white);
+  border: 1px solid rgba(26, 31, 61, 0.12);
+  background: var(--white);
+  color: var(--navy-800);
   font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
@@ -419,14 +434,14 @@ p {
   border-radius: 0.5rem;
   font-weight: 650;
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.86);
+  color: var(--ink);
   transition: background 0.2s var(--ease), color 0.2s var(--ease);
 }
 
 .mobile-nav__links a:hover,
 .mobile-nav__links a[aria-current="page"] {
   background: rgba(0, 210, 193, 0.1);
-  color: var(--brand-teal);
+  color: var(--brand-violet);
 }
 
 .mobile-nav__actions {
@@ -434,11 +449,15 @@ p {
   gap: 0.65rem;
   margin-top: 1.25rem;
   padding-top: 1.15rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(26, 31, 61, 0.08);
 }
 
 .mobile-nav__actions .btn {
   width: 100%;
+}
+
+.mobile-nav__actions .btn--header {
+  color: var(--navy-800);
 }
 
 body.nav-open {
@@ -1286,9 +1305,10 @@ body.nav-open {
 
 /* ——— Footer ——— */
 .site-footer {
-  background: #000000;
-  color: rgba(255, 255, 255, 0.82);
+  background: var(--white);
+  color: var(--ink-muted);
   padding: 3.5rem 0 2rem;
+  border-top: 1px solid rgba(26, 31, 61, 0.08);
 }
 
 .footer__brand .logo__img {
@@ -1300,7 +1320,7 @@ body.nav-open {
   margin-top: 1rem;
   font-size: 0.92rem;
   max-width: 28ch;
-  opacity: 0.8;
+  color: var(--ink-muted);
 }
 
 .footer__social-title {
@@ -1311,7 +1331,7 @@ body.nav-open {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brand-teal);
+  color: var(--brand-violet);
 }
 
 .footer__social {
@@ -1324,9 +1344,9 @@ body.nav-open {
   width: 2.35rem;
   height: 2.35rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--white);
+  border: 1px solid rgba(26, 31, 61, 0.12);
+  background: var(--teal-50);
+  color: var(--navy-800);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1335,9 +1355,9 @@ body.nav-open {
 }
 
 .footer__social a:hover {
-  background: rgba(0, 210, 193, 0.18);
+  background: rgba(0, 210, 193, 0.16);
   border-color: var(--brand-teal);
-  color: var(--brand-teal);
+  color: var(--teal-700);
   transform: translateY(-2px);
 }
 
@@ -1365,7 +1385,7 @@ body.nav-open {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--brand-teal);
+  color: var(--brand-violet);
   margin-bottom: 1rem;
 }
 
@@ -1374,13 +1394,13 @@ body.nav-open {
   display: block;
   font-size: 0.92rem;
   margin-bottom: 0.55rem;
-  opacity: 0.85;
-  transition: opacity 0.2s var(--ease), color 0.2s var(--ease);
+  color: var(--ink-muted);
+  opacity: 1;
+  transition: color 0.2s var(--ease);
 }
 
 .footer__col a:hover {
-  opacity: 1;
-  color: var(--teal-200);
+  color: var(--teal-700);
 }
 
 .footer__bottom {
@@ -1389,9 +1409,9 @@ body.nav-open {
   gap: 1rem;
   justify-content: space-between;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(26, 31, 61, 0.08);
   font-size: 0.82rem;
-  opacity: 0.7;
+  color: var(--ink-muted);
 }
 
 .footer__legal {
