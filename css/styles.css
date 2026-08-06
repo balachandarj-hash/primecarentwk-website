@@ -1087,6 +1087,50 @@ p {
   opacity: 0.8;
 }
 
+.footer__social-title {
+  margin-top: 1.35rem;
+  margin-bottom: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-teal);
+}
+
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.footer__social a {
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease),
+    color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.footer__social a:hover {
+  background: rgba(0, 210, 193, 0.18);
+  border-color: var(--brand-teal);
+  color: var(--brand-teal);
+  transform: translateY(-2px);
+}
+
+.footer__social svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  fill: currentColor;
+}
+
 .footer__grid {
   display: grid;
   gap: 2.5rem;
