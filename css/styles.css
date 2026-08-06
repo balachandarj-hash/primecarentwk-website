@@ -173,24 +173,38 @@ p {
   align-items: center;
   flex-shrink: 0;
   justify-self: start;
+  background: #fff;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
 }
 
 .logo__img {
   height: 2.35rem;
   width: auto;
   display: block;
+  background: #fff;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .site-header .logo,
 .site-footer .logo {
-  background: transparent;
+  background: #fff;
+  border: 0;
   border-radius: 0;
   padding: 0;
+  box-shadow: none;
 }
 
 .site-header .logo__img,
 .site-footer .logo__img {
   mix-blend-mode: normal;
+  background: #fff;
 }
 
 .nav {
