@@ -727,10 +727,6 @@ body.nav-open {
   --page-hero-image: url("../assets/images/care-coordination.jpg");
 }
 
-.page-hero--lnc {
-  --page-hero-image: url("../assets/images/legal-nurse.jpg");
-}
-
 .page-hero--about {
   --page-hero-image: url("../assets/images/about-team.jpg");
 }
@@ -1001,10 +997,6 @@ body.nav-open {
 
 .split__visual--coordination {
   --split-image: url("../assets/images/care-coordination.jpg");
-}
-
-.split__visual--lnc {
-  --split-image: url("../assets/images/legal-nurse.jpg");
 }
 
 .split__visual--about {
