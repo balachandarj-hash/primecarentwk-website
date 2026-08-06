@@ -181,12 +181,11 @@ p {
   display: block;
 }
 
-/* Official lockup ships on black — seat it on a compact brand plate */
 .site-header .logo,
 .site-footer .logo {
-  background: #000;
-  border-radius: 0.45rem;
-  padding: 0.25rem 0.5rem;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
 }
 
 .site-header .logo__img,
