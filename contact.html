@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact | PrimeCare Network</title>
+    <meta
+      name="description"
+      content="Contact PrimeCare Network to join the providers network, request care coordination, or engage a legal nurse case manager."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <a href="tel:8884748473">888-474-8473</a>
+        <span class="topbar__sep" aria-hidden="true">|</span>
+        <a href="contact.html">Partner With Us</a>
+      </div>
+    </div>
+
+    <header class="site-header">
+      <div class="container site-header__inner">
+        <a class="logo logo--dark" href="index.html" aria-label="PrimeCare Network home">
+          <img class="logo__img" src="assets/images/logo.png" alt="PrimeCare Network" width="220" height="48" />
+        </a>
+        <nav class="nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="providers-network.html">Providers Network</a>
+          <a href="care-coordination.html">Care Coordination</a>
+          <a href="legal-nurse-case-manager.html">Legal Nurse Case Manager</a>
+          <a href="about.html">About</a>
+        </nav>
+                <div class="header-actions">
+          <a class="btn btn--header btn--sm" href="https://doctors.primecarentwk.com/" target="_blank" rel="noopener">Find Providers</a>
+          <a class="btn btn--primary btn--sm" href="contact.html" aria-current="page">Get Started</a>
+          <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+          </button>
+        </div>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="index.html">Home</a>
+        <a href="providers-network.html">Providers Network</a>
+        <a href="care-coordination.html">Care Coordination</a>
+        <a href="legal-nurse-case-manager.html">Legal Nurse Case Manager</a>
+        <a href="about.html">About</a>
+        <a href="https://doctors.primecarentwk.com/" target="_blank" rel="noopener">Find Providers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero page-hero--contact">
+        <div class="container">
+          <p class="page-hero__eyebrow">Contact</p>
+          <h1>Tell us how we can support the case.</h1>
+          <p>
+            Providers, attorneys, and care teams—reach out to join the network, request coordination,
+            or engage a legal nurse case manager.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container split reveal">
+          <div>
+            <p class="section__eyebrow">Send a message</p>
+            <h2 style="font-size: clamp(1.75rem, 3vw, 2.2rem); color: var(--navy-800); margin-bottom: 1.25rem">
+              We’ll follow up promptly.
+            </h2>
+            <form class="form" action="#" method="post" onsubmit="event.preventDefault(); alert('Thanks—this redesign prototype form is ready to wire to your CRM or email.');">
+              <div class="form__row">
+                <label>
+                  First name
+                  <input type="text" name="first_name" required autocomplete="given-name" />
+                </label>
+                <label>
+                  Last name
+                  <input type="text" name="last_name" required autocomplete="family-name" />
+                </label>
+              </div>
+              <div class="form__row">
+                <label>
+                  Email
+                  <input type="email" name="email" required autocomplete="email" />
+                </label>
+                <label>
+                  Phone
+                  <input type="tel" name="phone" required autocomplete="tel" placeholder="123-456-7890" />
+                </label>
+              </div>
+              <label>
+                I am a
+                <select name="role" required>
+                  <option value="">Select one</option>
+                  <option value="provider">Medical care provider</option>
+                  <option value="attorney">Attorney</option>
+                  <option value="individual">Individual / patient</option>
+                  <option value="other">Other partner</option>
+                </select>
+              </label>
+              <label>
+                I’m most interested in
+                <select name="interest" required>
+                  <option value="">Select one</option>
+                  <option value="providers-network">Providers Network</option>
+                  <option value="care-coordination">Care Coordination</option>
+                  <option value="legal-nurse">Legal Nurse Case Manager</option>
+                  <option value="financing">Lien / financing support</option>
+                </select>
+              </label>
+              <label>
+                Message
+                <textarea name="message" placeholder="Share a short note about your practice, firm, or case needs."></textarea>
+              </label>
+              <div class="form__sms">
+                <p class="form__sms-title">SMS Opt-In</p>
+                <label class="form__sms-label">
+                  <input type="checkbox" name="sms_opt_in" value="1" />
+                  <span>
+                    By clicking this box, you agree to receive text messages from PrimeCare. SMS
+                    frequency may vary. Data rates may apply. Text HELP to
+                    <a href="tel:8327862681">(832) 786-2681</a> for assistance, or reply STOP to
+                    opt-out. Understand our
+                    <a href="https://www.primecarentwk.com/about-primecare/privacy-policy" target="_blank" rel="noopener">Privacy Policy Here</a>.
+                  </span>
+                </label>
+              </div>
+              <button class="btn btn--primary" type="submit">Submit</button>
+            </form>
+          </div>
+          <div>
+            <div class="split__visual split__visual--contact" style="min-height: 12rem; margin-bottom: 1.75rem" role="img" aria-label="Clinical care and support"></div>
+            <ul class="feature-list">
+              <li>
+                <span class="feature-list__icon" aria-hidden="true">☎</span>
+                <div>
+                  <h3>Call</h3>
+                  <p><a href="tel:8884748473">(888) 474-8473</a> · Fax (888) 402-2902</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-list__icon" aria-hidden="true">TX</span>
+                <div>
+                  <h3>Houston</h3>
+                  <p>2020 Southwest Fwy, Suite 326<br />Houston, TX 77098</p>
+                </div>
+              </li>
+              <li>
+                <span class="feature-list__icon" aria-hidden="true">WA</span>
+                <div>
+                  <h3>Bellevue</h3>
+                  <p>10900 NE 4th Street, Suite 2300<br />Bellevue, WA 98004</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer__grid">
+          <div class="footer__brand">
+            <a class="logo logo--dark" href="index.html" aria-label="PrimeCare Network home">
+              <img class="logo__img" src="assets/images/logo.png" alt="PrimeCare Network" width="220" height="48" />
+            </a>
+            <p>Nationwide providers network, care coordination, and legal nurse case management.</p>
+          </div>
+          <div class="footer__col">
+            <h4>Pillars</h4>
+            <a href="providers-network.html">Providers Network</a>
+            <a href="care-coordination.html">Care Coordination</a>
+            <a href="legal-nurse-case-manager.html">Legal Nurse Case Manager</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer__col">
+            <h4>Contact</h4>
+            <a href="tel:8884748473">(888) 474-8473</a>
+            <p>Houston, TX · Bellevue, WA</p>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <span>© 2026 PrimeCare Network</span>
+        </div>
+      </div>
+    </footer>
+    <script src="js/main.js"></script>
+  </body>
+</html>
