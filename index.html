@@ -141,8 +141,9 @@
     </header>
 
     <main>
-      <section class="hero">
-        <div class="hero__media" aria-hidden="true"></div>
+      <!-- Hero: brand + one message + CTAs -->
+      <section class="hero hero--home">
+        <div class="hero__media hero__media--nurses" aria-hidden="true"></div>
         <div class="hero__glow" aria-hidden="true"></div>
         <div class="hero__content">
           <h1 class="hero__brand">
@@ -151,19 +152,6 @@
           </h1>
           <p class="hero__headline">One Point of Contact for Personal Injury Care Coordination</p>
           <p class="hero__lede">Provider access. Coordinated care. Clearer case progress.</p>
-          <p class="hero__subline">
-            PrimeCare Network connects personal injury patients and law firms with an established
-            network of healthcare providers, facilities, and professional resources—and helps
-            coordinate the many moving parts of care from the first referral through completion of
-            treatment.
-          </p>
-          <div class="hero__support">
-            <strong
-              >Appointments. Imaging. Specialists. Procedures. Records. Cost estimates. Reductions.
-              Updates.</strong
-            >
-            <span>One coordination team helping keep it all connected.</span>
-          </div>
           <div class="hero__ctas">
             <a class="btn btn--light" href="contact.html">Coordinate a Case</a>
             <a class="btn btn--ghost" href="providers-network.html">Explore Our Provider Network</a>
@@ -171,7 +159,31 @@
         </div>
       </section>
 
-      <section class="section" id="pillars">
+      <!-- Intro story band -->
+      <section class="intro-band">
+        <div class="container intro-band__grid reveal">
+          <div class="intro-band__copy">
+            <p class="section__eyebrow">Connected care for personal injury</p>
+            <h2>From first referral through completion of treatment.</h2>
+            <p>
+              PrimeCare Network connects personal injury patients and law firms with an established
+              network of healthcare providers, facilities, and professional resources—and helps
+              coordinate the many moving parts of care from the first referral through completion of
+              treatment.
+            </p>
+          </div>
+          <div class="intro-band__aside">
+            <p class="intro-band__pulse">
+              Appointments. Imaging. Specialists. Procedures. Records. Cost estimates. Reductions.
+              Updates.
+            </p>
+            <p>One coordination team helping keep it all connected.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two pillars with imagery -->
+      <section class="section section--tight" id="pillars">
         <div class="container">
           <div class="section__head section__head--wide reveal">
             <p class="section__eyebrow">Two core pillars</p>
@@ -180,104 +192,144 @@
               Personal injury treatment rarely happens in one place. A patient may need an initial
               evaluation, diagnostic imaging, specialty care, therapy, procedures, follow-up
               treatment, medical records, cost estimates, and ongoing communication between multiple
-              offices.
-            </p>
-            <p>
-              PrimeCare helps connect those pieces through two core pillars:
-              <strong>Provider Network</strong> and <strong>Care Coordination</strong>.
+              offices. PrimeCare helps connect those pieces through two core pillars.
             </p>
           </div>
 
-          <div class="pillars">
-            <article class="pillar reveal" id="provider-network">
-              <span class="pillar__index">01 | Provider Network</span>
-              <h3>Connect patients with the care and resources they need.</h3>
-              <p>
-                PrimeCare provides access to an established network of healthcare providers,
-                facilities, and professional resources experienced in personal injury cases. Our team
-                helps identify appropriate network options based on the patient’s needs, injury,
-                location, and requested services.
-              </p>
-              <p class="disclaimer">
-                PrimeCare coordinates access to independent providers and professionals. PrimeCare
-                does not itself render the medical, clinical, diagnostic, rehabilitation, or
-                professional services listed below.
-              </p>
-              <a class="pillar__link" href="providers-network.html">Explore the Provider Network</a>
+          <div class="pillar-panels">
+            <article class="pillar-panel reveal" id="provider-network">
+              <div
+                class="pillar-panel__media"
+                style="background-image: url('assets/images/providers-network.jpg')"
+                role="img"
+                aria-label="Healthcare providers network"
+              ></div>
+              <div class="pillar-panel__body">
+                <span class="pillar-panel__index">01 · Provider Network</span>
+                <h3>Connect patients with the care and resources they need.</h3>
+                <p>
+                  PrimeCare provides access to an established network of healthcare providers,
+                  facilities, and professional resources experienced in personal injury cases. Our
+                  team helps identify appropriate network options based on the patient’s needs,
+                  injury, location, and requested services.
+                </p>
+                <p class="disclaimer">
+                  PrimeCare coordinates access to independent providers and professionals. PrimeCare
+                  does not itself render the medical, clinical, diagnostic, rehabilitation, or
+                  professional services listed on this site.
+                </p>
+                <a class="pillar__link" href="providers-network.html">Explore the Provider Network</a>
+              </div>
             </article>
 
-            <article class="pillar reveal" id="care-coordination-pillar">
-              <span class="pillar__index">02 | Care Coordination</span>
-              <h3>One point of contact across the treatment journey.</h3>
-              <p>
-                Finding the right provider is only the beginning. PrimeCare helps manage the
-                administrative coordination that takes place between patients, healthcare providers,
-                and law firms throughout the course of treatment.
-              </p>
-              <a class="pillar__link" href="care-coordination.html">See Care Coordination</a>
+            <article class="pillar-panel reveal" id="care-coordination-pillar">
+              <div
+                class="pillar-panel__media"
+                style="background-image: url('assets/images/care-coordination.jpg')"
+                role="img"
+                aria-label="Care coordination team"
+              ></div>
+              <div class="pillar-panel__body">
+                <span class="pillar-panel__index">02 · Care Coordination</span>
+                <h3>One point of contact across the treatment journey.</h3>
+                <p>
+                  Finding the right provider is only the beginning. PrimeCare helps manage the
+                  administrative coordination that takes place between patients, healthcare
+                  providers, and law firms throughout the course of treatment.
+                </p>
+                <a class="pillar__link" href="care-coordination.html">See Care Coordination</a>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section section--muted">
-        <div class="container">
-          <div class="section__head reveal">
-            <p class="section__eyebrow">01 | Provider Network</p>
+      <!-- Network specialties -->
+      <section class="section section--muted" id="network-access">
+        <div class="container network-block reveal">
+          <div class="network-block__visual">
+            <img
+              src="assets/images/specialist-care.jpg"
+              alt="Specialist care within the PrimeCare Network"
+              width="720"
+              height="900"
+              loading="lazy"
+            />
+          </div>
+          <div class="network-block__copy">
+            <p class="section__eyebrow">01 · Provider Network</p>
             <h2>Network access may include</h2>
             <p>
               Need access to a provider, facility, or professional resource for a personal injury
               case?
             </p>
-          </div>
-          <div class="specialty-grid reveal">
-            <span>Primary and injury-focused medical care</span>
-            <span>Internal Medicine</span>
-            <span>Orthopedic specialists</span>
-            <span>Neurology</span>
-            <span>Neurosurgery</span>
-            <span>Neuro-Ophthalmology</span>
-            <span>ENT / Otolaryngology</span>
-            <span>Neuropsychology</span>
-            <span>Psychiatry</span>
-            <span>Pain Management</span>
-            <span>Neuro Rehabilitation</span>
-            <span>Physical Therapy</span>
-            <span>Speech Therapy</span>
-            <span>Wound Care</span>
-            <span>Behavioral Health</span>
-            <span>Emergency Rooms</span>
-            <span>Hospitals</span>
-            <span>Surgical Centers</span>
-            <span>Diagnostic Imaging</span>
-            <span>Advanced Diagnostic Services</span>
-            <span>EMG / NCV Testing</span>
-            <span>Advanced Trauma and TBI Imaging</span>
-            <span>Traumatic Brain Injury Resources</span>
-            <span>Functional Capacity Evaluations</span>
-            <span>Telemedicine</span>
-            <span>Legal Nurse Consultants</span>
-            <span>Life Care Planners</span>
-            <span>Expert Witnesses</span>
-            <span>Other specialty providers and professional resources</span>
-          </div>
-          <div class="cta-row reveal">
-            <a
-              class="btn btn--primary"
-              href="https://doctors.primecarentwk.com/"
-              target="_blank"
-              rel="noopener"
-              >Find a Provider</a
-            >
-            <a class="btn btn--outline" href="contact.html">Send Us a Referral</a>
+
+            <div class="chip-groups">
+              <div class="chip-group">
+                <h3>Clinical care</h3>
+                <div class="specialty-grid">
+                  <span>Primary and injury-focused medical care</span>
+                  <span>Internal Medicine</span>
+                  <span>Orthopedic specialists</span>
+                  <span>Neurology</span>
+                  <span>Neurosurgery</span>
+                  <span>Neuro-Ophthalmology</span>
+                  <span>ENT / Otolaryngology</span>
+                  <span>Neuropsychology</span>
+                  <span>Psychiatry</span>
+                  <span>Pain Management</span>
+                  <span>Neuro Rehabilitation</span>
+                  <span>Physical Therapy</span>
+                  <span>Speech Therapy</span>
+                  <span>Wound Care</span>
+                  <span>Behavioral Health</span>
+                  <span>Telemedicine</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <h3>Facilities &amp; diagnostics</h3>
+                <div class="specialty-grid">
+                  <span>Emergency Rooms</span>
+                  <span>Hospitals</span>
+                  <span>Surgical Centers</span>
+                  <span>Diagnostic Imaging</span>
+                  <span>Advanced Diagnostic Services</span>
+                  <span>EMG / NCV Testing</span>
+                  <span>Advanced Trauma and TBI Imaging</span>
+                  <span>Traumatic Brain Injury Resources</span>
+                  <span>Functional Capacity Evaluations</span>
+                </div>
+              </div>
+              <div class="chip-group">
+                <h3>Professional resources</h3>
+                <div class="specialty-grid">
+                  <span>Legal Nurse Consultants</span>
+                  <span>Life Care Planners</span>
+                  <span>Expert Witnesses</span>
+                  <span>Other specialty providers and professional resources</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="cta-row">
+              <a
+                class="btn btn--primary"
+                href="https://doctors.primecarentwk.com/"
+                target="_blank"
+                rel="noopener"
+                >Find a Provider</a
+              >
+              <a class="btn btn--outline" href="contact.html">Send Us a Referral</a>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- Care coordination detail -->
       <section class="section" id="care-coordination">
         <div class="container split reveal">
           <div class="split__copy">
-            <p class="section__eyebrow">02 | Care Coordination</p>
+            <p class="section__eyebrow">02 · Care Coordination</p>
             <h2>One point of contact across the treatment journey.</h2>
             <p>
               Instead of your team calling multiple provider offices to determine what happened, what
@@ -285,7 +337,7 @@
               pieces into one coordinated process.
             </p>
             <p>Our care coordination team can assist with:</p>
-            <ul class="check-list">
+            <ul class="check-list check-list--cols">
               <li>Initial appointment scheduling</li>
               <li>Specialist appointments</li>
               <li>Diagnostic imaging</li>
@@ -316,47 +368,52 @@
         </div>
       </section>
 
-      <section class="section section--teal">
+      <!-- Visibility band -->
+      <section class="section section--teal visibility-band">
         <div class="container">
-          <div class="section__head section__head--wide reveal">
-            <p class="section__eyebrow">Built for personal injury</p>
-            <h2>Less chasing. Fewer missed handoffs. Better visibility.</h2>
-            <p>
-              Personal injury cases can become complicated quickly. A patient may see several
-              providers across different locations while the law firm is simultaneously trying to
-              determine:
-            </p>
-          </div>
-          <ul class="check-list reveal">
-            <li>Was the appointment scheduled?</li>
-            <li>Did the patient attend?</li>
-            <li>What is the next appointment?</li>
-            <li>Has imaging been completed?</li>
-            <li>Was the specialist visit completed?</li>
-            <li>Are additional procedures being recommended?</li>
-            <li>Have the medical records been received?</li>
-            <li>Has the cost estimate been obtained?</li>
-            <li>Is a reduction still outstanding?</li>
-            <li>Is anything delaying the next step in care?</li>
-          </ul>
-          <p class="reveal" style="margin-top: 1.25rem; max-width: 52ch; opacity: 0.92">
-            PrimeCare helps organize those touchpoints and keeps the appropriate parties informed as
-            the patient’s care progresses.
-          </p>
-          <div class="cta-row reveal">
-            <a class="btn btn--light" href="contact.html">Coordinate a Case</a>
+          <div class="visibility-band__grid reveal">
+            <div class="visibility-band__intro">
+              <p class="section__eyebrow">Built for personal injury</p>
+              <h2>Less chasing. Fewer missed handoffs. Better visibility.</h2>
+              <p>
+                Personal injury cases can become complicated quickly. A patient may see several
+                providers across different locations while the law firm is simultaneously trying to
+                determine the status of care.
+              </p>
+              <p>
+                PrimeCare helps organize those touchpoints and keeps the appropriate parties informed
+                as the patient’s care progresses.
+              </p>
+              <div class="cta-row">
+                <a class="btn btn--light" href="contact.html">Coordinate a Case</a>
+              </div>
+            </div>
+            <ul class="question-grid">
+              <li>Was the appointment scheduled?</li>
+              <li>Did the patient attend?</li>
+              <li>What is the next appointment?</li>
+              <li>Has imaging been completed?</li>
+              <li>Was the specialist visit completed?</li>
+              <li>Are additional procedures being recommended?</li>
+              <li>Have the medical records been received?</li>
+              <li>Has the cost estimate been obtained?</li>
+              <li>Is a reduction still outstanding?</li>
+              <li>Is anything delaying the next step in care?</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="section" id="for-law-firms">
-        <div class="container split reveal">
+      <!-- Audience: law firms -->
+      <section class="section audience-section" id="for-law-firms">
+        <div class="container audience-layout reveal">
           <div
-            class="split__visual split__visual--providers"
+            class="audience-layout__media"
+            style="background-image: url('assets/images/about-team.jpg')"
             role="img"
             aria-label="Law firm care coordination support"
           ></div>
-          <div class="split__copy">
+          <div class="audience-layout__copy">
             <p class="section__eyebrow">For law firms</p>
             <h2>Spend less time tracking care. Gain better visibility into what is happening.</h2>
             <p>
@@ -368,7 +425,7 @@
               PrimeCare provides a centralized coordination resource for your client’s treatment
               journey. We help your team:
             </p>
-            <ul class="check-list">
+            <ul class="check-list check-list--cols">
               <li>Locate appropriate providers and facilities</li>
               <li>Coordinate appointments and track appointment status</li>
               <li>Receive updates when appointments are completed</li>
@@ -380,7 +437,9 @@
               <li>Identify delays or gaps in the treatment process</li>
               <li>Maintain clearer visibility into the progression of care</li>
             </ul>
-            <p>Your team handles the legal case. PrimeCare helps coordinate the care pathway.</p>
+            <p class="audience-layout__closer">
+              Your team handles the legal case. PrimeCare helps coordinate the care pathway.
+            </p>
             <div class="cta-row">
               <a class="btn btn--primary" href="contact.html">Refer a Case</a>
               <a class="btn btn--outline" href="care-coordination.html">Speak With Care Coordination</a>
@@ -389,9 +448,10 @@
         </div>
       </section>
 
-      <section class="section section--muted" id="for-patients">
-        <div class="container split split--reverse reveal">
-          <div class="split__copy">
+      <!-- Audience: patients -->
+      <section class="section section--muted audience-section" id="for-patients">
+        <div class="container audience-layout audience-layout--flip reveal">
+          <div class="audience-layout__copy">
             <p class="section__eyebrow">For patients</p>
             <h2>Help navigating what comes next.</h2>
             <p>
@@ -400,7 +460,7 @@
               connected to the treatment process.
             </p>
             <p>Patients can receive:</p>
-            <ul class="check-list">
+            <ul class="check-list check-list--cols">
               <li>Appointment scheduling assistance</li>
               <li>Appointment confirmations</li>
               <li>Automatic reminders for upcoming appointments</li>
@@ -410,7 +470,7 @@
               <li>Assistance with follow-up appointments</li>
               <li>A central point of contact for coordination questions</li>
             </ul>
-            <p>
+            <p class="audience-layout__closer">
               The goal is simple: make the treatment process easier to follow so patients can focus
               more of their attention on recovery.
             </p>
@@ -419,16 +479,24 @@
             </div>
           </div>
           <div
-            class="split__visual split__visual--patient"
+            class="audience-layout__media"
+            style="background-image: url('assets/images/patient-support.jpg')"
             role="img"
             aria-label="Patient receiving care coordination support"
           ></div>
         </div>
       </section>
 
-      <section class="section" id="for-providers">
-        <div class="container split reveal">
-          <div class="split__copy">
+      <!-- Audience: providers -->
+      <section class="section audience-section" id="for-providers">
+        <div class="container audience-layout reveal">
+          <div
+            class="audience-layout__media"
+            style="background-image: url('assets/images/specialist-care.jpg')"
+            role="img"
+            aria-label="Healthcare provider network"
+          ></div>
+          <div class="audience-layout__copy">
             <p class="section__eyebrow">For providers</p>
             <h2>A more connected referral and coordination process.</h2>
             <p>
@@ -437,7 +505,7 @@
               law firm.
             </p>
             <p>Our team can assist with:</p>
-            <ul class="check-list">
+            <ul class="check-list check-list--cols">
               <li>Referral coordination</li>
               <li>Patient scheduling</li>
               <li>Appointment confirmations</li>
@@ -447,7 +515,7 @@
               <li>Law firm communication</li>
               <li>Reduction coordination when applicable</li>
             </ul>
-            <p>
+            <p class="audience-layout__closer">
               This helps reduce unnecessary administrative back-and-forth while keeping the treatment
               process moving.
             </p>
@@ -456,23 +524,19 @@
               <a class="btn btn--outline" href="contact.html">Contact Provider Relations</a>
             </div>
           </div>
-          <div
-            class="split__visual split__visual--specialist"
-            role="img"
-            aria-label="Healthcare provider network"
-          ></div>
         </div>
       </section>
 
+      <!-- How it works timeline -->
       <section class="section section--muted" id="how-it-works">
         <div class="container">
           <div class="section__head reveal">
             <p class="section__eyebrow">How a case moves through PrimeCare</p>
             <h2>From referral to completion of care.</h2>
           </div>
-          <div class="steps">
-            <div class="step reveal">
-              <div class="step__num">01</div>
+          <ol class="timeline">
+            <li class="timeline__item reveal">
+              <span class="timeline__num">01</span>
               <h3>Connect</h3>
               <p>
                 An attorney, patient, or participating provider contacts PrimeCare with the patient’s
@@ -480,9 +544,9 @@
                 resources and the right coordination pathway.
               </p>
               <a class="pillar__link" href="contact.html">Send Us a Case</a>
-            </div>
-            <div class="step reveal">
-              <div class="step__num">02</div>
+            </li>
+            <li class="timeline__item reveal">
+              <span class="timeline__num">02</span>
               <h3>Coordinate</h3>
               <p>
                 PrimeCare assists with provider access, appointments, imaging, specialists,
@@ -491,29 +555,27 @@
                 care.
               </p>
               <a class="pillar__link" href="contact.html">Start Coordination</a>
-            </div>
-            <div class="step reveal">
-              <div class="step__num">03</div>
+            </li>
+            <li class="timeline__item reveal">
+              <span class="timeline__num">03</span>
               <h3>Track</h3>
               <p>
                 Our team helps monitor the administrative progression of care—appointment status,
                 upcoming appointments, provider communications, medical record requests, cost
                 estimates, and other coordination items—through one centralized process.
               </p>
-            </div>
-          </div>
-          <div class="steps" style="margin-top: 2rem">
-            <div class="step reveal">
-              <div class="step__num">04</div>
+            </li>
+            <li class="timeline__item reveal">
+              <span class="timeline__num">04</span>
               <h3>Follow through</h3>
               <p>
                 When something stalls, our coordination team helps identify the issue and works with
                 the appropriate party to move the process forward—rescheduling, pending referrals,
                 imaging, records, cost estimates, and status updates.
               </p>
-            </div>
-            <div class="step reveal">
-              <div class="step__num">05</div>
+            </li>
+            <li class="timeline__item reveal">
+              <span class="timeline__num">05</span>
               <h3>Close the loop</h3>
               <p>
                 As treatment progresses or concludes, PrimeCare helps coordinate remaining
@@ -521,11 +583,12 @@
                 information, and reduction coordination.
               </p>
               <a class="pillar__link" href="contact.html">Coordinate a Case Today</a>
-            </div>
-          </div>
+            </li>
+          </ol>
         </div>
       </section>
 
+      <!-- Moving parts -->
       <section class="section">
         <div class="container">
           <div class="section__head section__head--wide reveal">
@@ -536,54 +599,62 @@
               PrimeCare helps bring those activities together through one coordinated process.
             </p>
           </div>
-          <div class="service-grid service-grid--4 reveal">
-            <div class="service-card">
+          <div class="feature-strip reveal">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">01</span>
               <h3>Appointments</h3>
               <p>
                 Coordinate initial visits, imaging, specialists, procedures, therapy, and follow-up
                 care.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">02</span>
               <h3>Automatic Patient Notifications</h3>
               <p>
                 Patients can receive appointment confirmations and automated reminders for upcoming
                 appointments.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">03</span>
               <h3>Appointment Status</h3>
               <p>
                 Help track whether an appointment is scheduled, pending, completed, missed,
                 cancelled, or needs to be rescheduled.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">04</span>
               <h3>Future Appointments</h3>
               <p>
                 Maintain visibility into what is coming next and help patients stay informed about
                 upcoming care.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">05</span>
               <h3>Medical Records</h3>
               <p>Request and coordinate medical records from participating providers and facilities.</p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">06</span>
               <h3>Cost Estimates</h3>
               <p>
                 Request and track treatment cost estimates when needed by the law firm or another
                 authorized party.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">07</span>
               <h3>Reductions</h3>
               <p>
                 Coordinate reduction requests and related communications between the appropriate
                 parties.
               </p>
             </div>
-            <div class="service-card">
+            <div class="feature-strip__item">
+              <span class="feature-strip__mark">08</span>
               <h3>Case Updates</h3>
               <p>
                 Provide law firms with better visibility into significant coordination activity and
@@ -591,7 +662,7 @@
               </p>
             </div>
           </div>
-          <p class="reveal" style="margin-top: 1.75rem; color: var(--ink-muted)">
+          <p class="feature-strip__tagline reveal">
             One network. One coordination team. One place to help keep the case moving.
           </p>
           <div class="cta-row reveal">
@@ -600,57 +671,74 @@
         </div>
       </section>
 
+      <!-- Injury focus with photo -->
       <section class="section section--muted">
-        <div class="container">
-          <div class="section__head reveal">
+        <div class="container injury-block reveal">
+          <div class="injury-block__copy">
             <p class="section__eyebrow">Personal injury focus</p>
             <h2>Built around the treatment needs of injured patients.</h2>
             <p>PrimeCare supports care coordination for patients involved in:</p>
+            <div class="specialty-grid">
+              <span>Motor vehicle collisions</span>
+              <span>Commercial vehicle and 18-wheeler collisions</span>
+              <span>Pedestrian injuries</span>
+              <span>Passenger injuries</span>
+              <span>Premises liability incidents</span>
+              <span>Construction accidents</span>
+              <span>Industrial and refinery incidents</span>
+              <span>Traumatic brain injuries</span>
+              <span>Orthopedic injuries</span>
+              <span>Complex trauma</span>
+              <span>Wrongful death matters</span>
+              <span>Workers’ compensation matters</span>
+              <span>Other negligence-related injuries</span>
+            </div>
           </div>
-          <div class="specialty-grid reveal">
-            <span>Motor vehicle collisions</span>
-            <span>Commercial vehicle and 18-wheeler collisions</span>
-            <span>Pedestrian injuries</span>
-            <span>Passenger injuries</span>
-            <span>Premises liability incidents</span>
-            <span>Construction accidents</span>
-            <span>Industrial and refinery incidents</span>
-            <span>Traumatic brain injuries</span>
-            <span>Orthopedic injuries</span>
-            <span>Complex trauma</span>
-            <span>Wrongful death matters</span>
-            <span>Workers’ compensation matters</span>
-            <span>Other negligence-related injuries</span>
+          <div class="injury-block__visual">
+            <img
+              src="assets/images/hero-care.jpg"
+              alt="Personal injury care and recovery support"
+              width="720"
+              height="540"
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container prose-stack reveal">
-          <p class="section__eyebrow">Why PrimeCare</p>
-          <h2 style="font-size: clamp(1.85rem, 3.5vw, 2.65rem); color: var(--navy-800)">
-            Personal injury care involves more than making an appointment.
-          </h2>
-          <p>It means knowing:</p>
-          <ul class="q-list">
-            <li>Where does the patient need to go?</li>
-            <li>Who can see them?</li>
-            <li>Was the appointment completed?</li>
-            <li>What needs to happen next?</li>
-            <li>Are the records available?</li>
-            <li>Has the cost estimate been received?</li>
-            <li>Is something delaying treatment?</li>
-            <li>Who is following up?</li>
-          </ul>
-          <p>PrimeCare helps answer those questions.</p>
-          <p>
-            We connect the network. We coordinate the moving pieces. We help keep patients informed.
-            We give law firms better visibility. And we help keep the treatment journey moving
-            forward.
-          </p>
-          <p><strong>One point of contact. One connected process.</strong></p>
-          <div class="cta-row">
-            <a class="btn btn--primary" href="contact.html">Talk to PrimeCare</a>
+      <!-- Why PrimeCare -->
+      <section class="section why-section">
+        <div class="container why-layout reveal">
+          <div
+            class="why-layout__media"
+            style="background-image: url('assets/images/legal-nurse.jpg')"
+            role="img"
+            aria-label="PrimeCare care coordination professionals"
+          ></div>
+          <div class="why-layout__copy">
+            <p class="section__eyebrow">Why PrimeCare</p>
+            <h2>Personal injury care involves more than making an appointment.</h2>
+            <p>It means knowing:</p>
+            <ul class="q-list">
+              <li>Where does the patient need to go?</li>
+              <li>Who can see them?</li>
+              <li>Was the appointment completed?</li>
+              <li>What needs to happen next?</li>
+              <li>Are the records available?</li>
+              <li>Has the cost estimate been received?</li>
+              <li>Is something delaying treatment?</li>
+              <li>Who is following up?</li>
+            </ul>
+            <p>PrimeCare helps answer those questions.</p>
+            <p>
+              We connect the network. We coordinate the moving pieces. We help keep patients
+              informed. We give law firms better visibility. And we help keep the treatment journey
+              moving forward.
+            </p>
+            <p class="why-layout__close"><strong>One point of contact. One connected process.</strong></p>
+            <div class="cta-row">
+              <a class="btn btn--primary" href="contact.html">Talk to PrimeCare</a>
+            </div>
           </div>
         </div>
       </section>
