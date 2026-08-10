@@ -730,7 +730,7 @@ body.nav-open {
 }
 
 .page-hero--providers {
-  --page-hero-image: url("../assets/images/providers-network.jpg");
+  --page-hero-image: url("../assets/images/providers-hero.jpg");
 }
 
 .page-hero--coordination {
@@ -1004,6 +1004,10 @@ body.nav-open {
 
 .split__visual--providers {
   --split-image: url("../assets/images/providers-network.jpg");
+}
+
+.split__visual--providers-referral {
+  --split-image: url("../assets/images/providers-referral.jpg");
 }
 
 .split__visual--coordination {
@@ -1977,6 +1981,31 @@ body.nav-open {
 
 .process-steps__body .pillar__link {
   font-size: 0.85rem;
+}
+
+/* Compact process list (nested in split / narrow columns) */
+.process-steps--compact {
+  margin: 1.25rem 0 0.5rem;
+  border-top: 1px solid var(--line);
+}
+
+@media (min-width: 960px) {
+  .process-steps--compact {
+    grid-template-columns: 1fr;
+  }
+
+  .process-steps--compact .process-steps__item {
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.15rem 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .process-steps--compact .process-steps__item:last-child {
+    border-bottom: 0;
+    padding-right: 0;
+  }
 }
 
 /* Legacy timeline aliases (interior pages / older markup) */
