@@ -179,17 +179,20 @@ p {
   box-shadow: none;
   border-radius: 0;
   padding: 0;
+  min-width: max-content;
 }
 
 .logo__img {
-  height: 2.35rem;
+  height: 2.5rem;
   width: auto;
+  max-width: none;
   display: block;
   background: #fff;
   border: 0;
   outline: 0;
   box-shadow: none;
   border-radius: 0;
+  flex-shrink: 0;
 }
 
 .site-header .logo,
@@ -199,12 +202,16 @@ p {
   border-radius: 0;
   padding: 0;
   box-shadow: none;
+  flex-shrink: 0;
 }
 
 .site-header .logo__img,
 .site-footer .logo__img {
   mix-blend-mode: normal;
   background: #fff;
+  max-width: none;
+  height: 2.5rem;
+  width: auto;
 }
 
 .nav {
@@ -265,6 +272,7 @@ p {
   justify-content: flex-end;
   gap: 0.45rem;
   justify-self: end;
+  min-width: 0;
 }
 
 .header-actions .btn--sm {
@@ -273,8 +281,9 @@ p {
   white-space: nowrap;
 }
 
+/* Free logo room on small phones — Find Providers stays in the mobile menu */
 .header-actions .btn--header {
-  display: inline-flex;
+  display: none;
 }
 
 .btn-label-short {
@@ -293,6 +302,10 @@ p {
   .header-actions .btn--sm {
     padding: 0.55rem 0.95rem;
     font-size: 0.78rem;
+  }
+
+  .header-actions .btn--header {
+    display: inline-flex;
   }
 
   .btn-label-short {
@@ -484,8 +497,9 @@ body.nav-open {
     column-gap: 1.5rem;
   }
 
-  .logo__img {
-    height: 2.55rem;
+  .logo__img,
+  .site-header .logo__img {
+    height: 2.65rem;
   }
 
   .nav {
@@ -1373,6 +1387,8 @@ body.nav-open {
 
 .footer__brand .logo__img {
   height: 3rem;
+  width: auto;
+  max-width: none;
   margin-bottom: 0.25rem;
 }
 
