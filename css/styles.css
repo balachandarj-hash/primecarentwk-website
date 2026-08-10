@@ -734,7 +734,7 @@ body.nav-open {
 }
 
 .page-hero--coordination {
-  --page-hero-image: url("../assets/images/care-coordination.jpg");
+  --page-hero-image: url("../assets/images/coordination-hero.jpg");
 }
 
 .page-hero--about {
@@ -999,7 +999,7 @@ body.nav-open {
 }
 
 .split__visual--alt {
-  --split-image: url("../assets/images/care-coordination.jpg");
+  --split-image: url("../assets/images/coordination-split.jpg");
 }
 
 .split__visual--providers {
@@ -1007,7 +1007,7 @@ body.nav-open {
 }
 
 .split__visual--coordination {
-  --split-image: url("../assets/images/care-coordination.jpg");
+  --split-image: url("../assets/images/coordination-split.jpg");
 }
 
 .split__visual--about {
@@ -1019,7 +1019,7 @@ body.nav-open {
 }
 
 .split__visual--specialist {
-  --split-image: url("../assets/images/specialist-care.jpg");
+  --split-image: url("../assets/images/network-specialist.jpg");
 }
 
 .split__visual--contact {
