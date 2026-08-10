@@ -735,10 +735,27 @@ body.nav-open {
 
 .page-hero--coordination {
   --page-hero-image: url("../assets/images/coordination-hero.jpg");
+  padding-bottom: 4rem;
+}
+
+.page-hero__lede {
+  font-size: clamp(1.1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  max-width: 40ch;
+  margin-bottom: 0.85rem;
+  opacity: 1;
+}
+
+.page-hero p + p {
+  margin-top: 0.75rem;
 }
 
 .page-hero--about {
-  --page-hero-image: url("../assets/images/about-team.jpg");
+  --page-hero-image: url("../assets/images/about-hero.jpg");
+}
+
+.page-hero--about h1 {
+  max-width: 22ch;
 }
 
 .page-hero--contact {
@@ -1014,8 +1031,22 @@ body.nav-open {
   --split-image: url("../assets/images/coordination-split.jpg");
 }
 
+.split__visual--coord-hub {
+  --split-image: url("../assets/images/care-coord-hub.jpg");
+}
+
+.split__closer {
+  color: var(--navy-800) !important;
+  font-weight: 600;
+  margin-bottom: 0.25rem !important;
+}
+
 .split__visual--about {
-  --split-image: url("../assets/images/about-team.jpg");
+  --split-image: url("../assets/images/about-who.jpg");
+}
+
+.split__visual--about-commitment {
+  --split-image: url("../assets/images/about-commitment.jpg");
 }
 
 .split__visual--patient {
@@ -2241,4 +2272,209 @@ body.nav-open {
   background:
     linear-gradient(115deg, rgba(26, 31, 61, 0.92) 0%, rgba(59, 152, 212, 0.78) 55%, rgba(0, 210, 193, 0.55) 100%),
     url("../assets/images/patient-support.jpg") center / cover no-repeat;
+}
+
+.cta-band--coordination {
+  background:
+    linear-gradient(115deg, rgba(26, 31, 61, 0.92) 0%, rgba(59, 152, 212, 0.78) 55%, rgba(0, 210, 193, 0.55) 100%),
+    url("../assets/images/care-coord-hub.jpg") center / cover no-repeat;
+}
+
+/* ——— Care Coordination page helpers ——— */
+.chip-group__note {
+  color: var(--ink-muted);
+  font-size: 0.92rem;
+  margin: 0 0 0.75rem;
+  max-width: 52ch;
+}
+
+.chip-group__note--after {
+  margin: 0.85rem 0 0;
+}
+
+.chip-group .check-list {
+  margin-top: 0.35rem;
+}
+
+.chip-group .disclaimer {
+  margin-top: 0.35rem;
+}
+
+.mid-cta {
+  margin-top: 2.25rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem 1.25rem;
+}
+
+.mid-cta p {
+  margin: 0;
+  color: var(--navy-800);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.mid-cta--inline {
+  margin-top: 2rem;
+  border-top: 0;
+  padding-top: 0;
+}
+
+.specialty-grid--on-dark span {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.specialty-grid--on-dark span:hover {
+  border-color: rgba(0, 210, 193, 0.55);
+  color: var(--white);
+}
+
+.visibility-band__closer {
+  margin-top: 1rem !important;
+  font-weight: 600;
+  opacity: 1 !important;
+}
+
+.pathway {
+  margin-top: 0.5rem;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.pathway__label {
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-violet);
+  margin-bottom: 1rem;
+}
+
+.pathway__steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-items: center;
+}
+
+.pathway__steps li {
+  position: relative;
+  padding: 0.55rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  font-size: 0.85rem;
+  font-weight: 650;
+  color: var(--navy-800);
+  margin-right: 1.35rem;
+}
+
+.pathway__steps li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--brand-teal);
+  font-weight: 700;
+}
+
+.pathway__note {
+  margin-top: 1.25rem;
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+}
+
+.disclaimer-block {
+  max-width: 48rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.disclaimer-block h2 {
+  font-size: clamp(1.45rem, 2.6vw, 1.95rem);
+  color: var(--navy-800);
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+
+.disclaimer-block p {
+  color: var(--ink-muted);
+  margin-bottom: 0.75rem;
+  max-width: 54ch;
+}
+
+.disclaimer-block__closer {
+  color: var(--navy-800) !important;
+  font-weight: 600;
+  margin-bottom: 0 !important;
+}
+
+.coord-detail-groups .chip-group {
+  padding-bottom: 0.35rem;
+}
+
+@media (max-width: 720px) {
+  .pathway__steps li {
+    margin-right: 0;
+    width: 100%;
+  }
+
+  .pathway__steps li:not(:last-child)::after {
+    content: "↓";
+    right: auto;
+    left: 0.85rem;
+    top: auto;
+    bottom: -0.95rem;
+    transform: none;
+  }
+
+  .pathway__steps {
+    gap: 1.15rem 0;
+  }
+}
+
+.cta-band--about {
+  background:
+    linear-gradient(115deg, rgba(26, 31, 61, 0.92) 0%, rgba(59, 152, 212, 0.78) 55%, rgba(0, 210, 193, 0.55) 100%),
+    url("../assets/images/about-commitment.jpg") center / cover no-repeat;
+}
+
+/* ——— About page (namespaced) ——— */
+.about-page__close {
+  margin-top: 1.25rem !important;
+  color: var(--navy-800) !important;
+  font-weight: 600;
+}
+
+.about-page__together {
+  margin-top: 1.75rem;
+  color: var(--navy-800);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.about-page__disclaimer {
+  max-width: 48rem;
+}
+
+.about-page__disclaimer h2 {
+  font-size: clamp(1.55rem, 2.8vw, 2.15rem);
+  color: var(--navy-800);
+  margin-bottom: 0.85rem;
+  font-weight: 600;
+}
+
+.about-page__disclaimer > p:last-child {
+  color: var(--ink-muted);
+  max-width: 58ch;
+  line-height: 1.65;
 }
