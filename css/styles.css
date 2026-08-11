@@ -3349,6 +3349,9 @@ body.modal-open {
   position: relative;
   z-index: 1;
   width: min(100%, 28rem);
+  max-height: min(92vh, 40rem);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: var(--white);
   border-radius: 1rem;
   padding: 1.5rem 1.4rem 1.35rem;
@@ -3409,6 +3412,76 @@ body.modal-open {
   color: var(--brand-gray);
   font-size: 0.85rem;
   font-weight: 500;
+}
+
+.appt-form .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .appt-modal {
+    padding: 0.65rem;
+    align-items: end;
+  }
+
+  .appt-modal__dialog {
+    width: 100%;
+    max-width: 22rem;
+    max-height: min(78vh, 32rem);
+    margin: 0 auto;
+    border-radius: 0.85rem;
+    padding: 1rem 0.95rem 0.95rem;
+  }
+
+  .appt-modal__dialog h2 {
+    margin: 0 1.75rem 0.25rem 0;
+    font-size: 1.1rem;
+    line-height: 1.25;
+  }
+
+  .appt-modal__lede {
+    margin: 0 0 0.75rem;
+    font-size: 0.82rem;
+    line-height: 1.35;
+  }
+
+  .appt-modal__close {
+    top: 0.45rem;
+    right: 0.55rem;
+    font-size: 1.35rem;
+  }
+
+  .appt-form {
+    gap: 0.55rem;
+  }
+
+  .appt-form label {
+    gap: 0.2rem;
+    font-size: 0.8rem;
+  }
+
+  .appt-form input,
+  .appt-form textarea {
+    padding: 0.55rem 0.65rem;
+    border-radius: 0.45rem;
+    font-size: 0.92rem;
+  }
+
+  .appt-form textarea {
+    min-height: 4.25rem;
+    max-height: 5.5rem;
+    resize: vertical;
+  }
+
+  .appt-form .btn {
+    padding: 0.65rem 1rem;
+    font-size: 0.92rem;
+  }
+
+  .appt-form__note {
+    font-size: 0.78rem;
+  }
 }
 
 @media (max-width: 900px) {
