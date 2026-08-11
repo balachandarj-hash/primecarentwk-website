@@ -1519,7 +1519,7 @@ body.modal-open {
 .site-footer {
   background: var(--white);
   color: var(--ink-muted);
-  padding: 3.5rem 0 2rem;
+  padding: 5rem 0 2.25rem;
   border-top: 1px solid rgba(26, 31, 61, 0.08);
 }
 
