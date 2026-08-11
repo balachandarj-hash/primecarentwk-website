@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "1324 N Shepherd Dr, Houston, TX 77008"
+featured: true
+featuredRank: 9
 draft: false
 ---

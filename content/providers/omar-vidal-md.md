@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "6921 Brisbane Ct. #100, Sugar Land, TX, 77479"
+featured: true
+featuredRank: 6
 draft: false
 ---

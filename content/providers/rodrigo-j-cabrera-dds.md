@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "10065 Almeda Genoa Rd, Suite J, Houston, TX, 77073"
+featured: true
+featuredRank: 5
 draft: false
 ---

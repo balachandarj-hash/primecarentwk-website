@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "4126 SW Frwy, Suite 1700, Houston, TX, 77027"
+featured: true
+featuredRank: 7
 draft: false
 ---

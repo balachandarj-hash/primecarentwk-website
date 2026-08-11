@@ -16,5 +16,7 @@ states:
 addresses:
   - "804 W. Montgomery, Willis, TX, 77378"
   - "18059 Hwy 105, Ste. 105, Spring, TX, 77356"
+featured: true
+featuredRank: 1
 draft: false
 ---

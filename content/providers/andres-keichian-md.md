@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "3003 South Loop West, Suite 505, Houston, TX, 77054"
+featured: true
+featuredRank: 2
 draft: false
 ---

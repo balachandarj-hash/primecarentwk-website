@@ -13,5 +13,7 @@ states:
   - "TX"
 addresses:
   - "2621 S. Shepherd, Ste. 220, Houston, TX, 77098"
+featured: true
+featuredRank: 4
 draft: false
 ---
