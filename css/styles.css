@@ -2763,6 +2763,27 @@ body.nav-open {
   text-underline-offset: 2px;
 }
 
+.blog-post__content a.btn {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.blog-post__content a.btn--primary {
+  color: var(--white);
+}
+
+.blog-post__content a.btn--primary:hover {
+  color: var(--white);
+}
+
+.blog-post__content a.btn--outline {
+  color: var(--navy-800);
+}
+
+.blog-post__content a.btn--outline:hover {
+  color: var(--brand-violet);
+}
+
 .blog-post__content .cta-row {
   margin-top: 2.25rem;
 }

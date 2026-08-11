@@ -2,11 +2,11 @@
 layout: layouts/base.njk
 title: News & Updates
 description: News and updates on personal injury care coordination, provider networks, and treatment visibility from PrimeCare Network.
-permalink: /blog/
 pagination:
   data: collections.blog
-  size: 12
+  size: 100
   alias: posts
+permalink: /blog/
 eleventyComputed:
   activeNav: blog
 ---
@@ -59,17 +59,6 @@ eleventyComputed:
           </article>
         {% endfor %}
       </div>
-
-      {% if pagination.href.previous or pagination.href.next %}
-        <nav class="blog-pagination" aria-label="News pages">
-          {% if pagination.href.previous %}
-            <a class="btn btn--outline btn--sm" href="{{ pagination.href.previous | url }}">Previous</a>
-          {% endif %}
-          {% if pagination.href.next %}
-            <a class="btn btn--outline btn--sm" href="{{ pagination.href.next | url }}">Next</a>
-          {% endif %}
-        </nav>
-      {% endif %}
     {% endif %}
   </div>
 </section>
