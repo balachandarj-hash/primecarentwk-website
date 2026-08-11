@@ -104,7 +104,7 @@
       if (w < 520) return 1;
       if (w < 780) return 2;
       if (w < 1040) return 3;
-      return 5;
+      return 4;
     }
 
     function pageCount() {
@@ -248,8 +248,13 @@
     });
 
     function start(providers) {
+      var list = (providers || [])
+        .filter(function (item) {
+          return item && (item.imageType === "photo" || /\.(jpe?g|png|webp)$/i.test(String(item.image || "")));
+        })
+        .slice(0, 5);
       roots.forEach(function (root) {
-        initSlider(root, providers || []);
+        initSlider(root, list);
       });
     }
 

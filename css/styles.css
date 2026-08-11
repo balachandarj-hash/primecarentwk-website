@@ -3120,6 +3120,12 @@ body.modal-open {
   }
 }
 
+@media (min-width: 1040px) {
+  .top-provider {
+    width: calc((100cqi - 3rem) / 4);
+  }
+}
+
 /* ========== Doctors directory ========== */
 .doctors-hero {
   padding: 3.5rem 0 2.25rem;
