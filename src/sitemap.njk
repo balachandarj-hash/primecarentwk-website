@@ -28,10 +28,20 @@ eleventyExcludeFromCollections: true
     <loc>{{ site.url }}/blog/</loc>
     <lastmod>2026-08-11</lastmod>
   </url>
+  <url>
+    <loc>{{ site.url }}/doctors/</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
 {%- for post in collections.blog %}
   <url>
     <loc>{{ site.url }}{{ post.url }}</loc>
     <lastmod>{{ post.date | isoDate }}</lastmod>
+  </url>
+{%- endfor %}
+{%- for provider in collections.providers %}
+  <url>
+    <loc>{{ site.url }}{{ provider.url }}</loc>
+    <lastmod>{{ provider.date | isoDate }}</lastmod>
   </url>
 {%- endfor %}
 </urlset>

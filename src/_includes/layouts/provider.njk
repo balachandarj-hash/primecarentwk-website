@@ -1,0 +1,84 @@
+---
+layout: layouts/base.njk
+activeNav: doctors
+---
+
+<article class="provider-detail">
+  <div class="container provider-detail__inner">
+    <p class="provider-detail__crumb">
+      <a href="{{ '/doctors/' | url }}">Providers Directory</a>
+      <span aria-hidden="true">/</span>
+      <span>{{ title }}</span>
+    </p>
+
+    <div class="provider-detail__card">
+      <h1>{{ title }}</h1>
+
+      {% if rating %}
+      <p class="provider-rating" aria-label="Rating {{ rating }} out of 5">
+        <span class="provider-rating__stars" aria-hidden="true">
+          {% for i in [1,2,3,4,5] %}★{% endfor %}
+        </span>
+        <span class="provider-rating__value">{{ rating }}/5</span>
+      </p>
+      {% endif %}
+
+      {% if specialties and specialties.length %}
+      <p class="provider-meta">
+        <span class="provider-meta__label">Specialty:</span>
+        {{ specialties | join(", ") }}
+      </p>
+      {% endif %}
+
+      {% if clinic %}
+      <p class="provider-clinic">{{ clinic }}</p>
+      {% endif %}
+
+      {% if addresses and addresses.length %}
+      <div class="provider-address">
+        <p class="provider-meta__label">Address:</p>
+        {% for line in addresses %}
+        <p>{{ line }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if cities and cities.length %}
+      <p class="provider-meta">
+        <span class="provider-meta__label">City:</span>
+        {{ cities | join(", ") }}
+      </p>
+      {% endif %}
+
+      {% if states and states.length %}
+      <p class="provider-meta">
+        <span class="provider-meta__label">State:</span>
+        {{ states | join(", ") }}
+      </p>
+      {% endif %}
+
+      {% if content %}
+      <div class="provider-bio">
+        {{ content | safe }}
+      </div>
+      {% endif %}
+
+      <div class="provider-detail__actions">
+        <button
+          class="btn btn--primary"
+          type="button"
+          data-book-appointment
+          data-provider="{{ title }}"
+        >
+          Book Appointment
+        </button>
+        <a class="btn btn--outline" href="tel:{{ phone or site.phoneTel }}">
+          {{ phoneDisplay or site.phone }}
+        </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<script src="{{ '/js/doctors-directory.js' | url }}" defer></script>
+{% include "partials/appointment-modal.njk" %}

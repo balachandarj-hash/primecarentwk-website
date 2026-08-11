@@ -69,6 +69,14 @@ Decap’s GitHub backend needs a small OAuth proxy (GitHub does not allow the CM
 
 Until OAuth is configured, use **local_backend** + `decap-server` for editorial work.
 
+## Providers directory
+
+The doctors app lives at `/doctors/` (Find Providers). Provider records are Markdown in [`content/providers/`](content/providers/) and can be edited in Decap under **Providers**.
+
+- Directory: `/doctors/` — filter by specialty, city, state
+- Profiles: `/doctors/provider/<slug>/`
+- Appointment requests open a mailto form to the care team
+
 ## Content model
 
 Blog posts live in [`content/blog/`](content/blog/) as Markdown with front matter:
@@ -76,6 +84,10 @@ Blog posts live in [`content/blog/`](content/blog/) as Markdown with front matte
 - `title`, `date`, `author`, `summary`, `image`, `imageAlt`, `draft`, body
 
 Featured images upload to [`assets/images/blog/`](assets/images/blog/).
+
+Provider profiles live in [`content/providers/`](content/providers/):
+
+- `title`, `rating`, `clinic`, `phone`, `phoneDisplay`, `specialties`, `cities`, `states`, `addresses`, `draft`, body
 
 ## Project structure
 

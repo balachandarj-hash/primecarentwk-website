@@ -1,0 +1,74 @@
+---
+layout: layouts/base.njk
+permalink: /doctors/
+pageTitle: Providers Directory | PrimeCare Network
+description: Search PrimeCare Network providers by specialty, city, and state. Book an appointment with a patient coordinator.
+activeNav: doctors
+---
+
+<section class="doctors-hero">
+  <div class="container doctors-hero__inner">
+    <p class="eyebrow">Providers Directory</p>
+    <h1>Find a PrimeCare Network provider</h1>
+    <p class="lede">
+      Search our multi-specialty network by specialty, city, and state—then request an appointment with a patient coordinator.
+    </p>
+  </div>
+</section>
+
+<section class="doctors-search" aria-label="Search for providers">
+  <div class="container">
+    <div class="doctors-search__panel">
+      <div class="doctors-search__title">Search for Providers</div>
+      <form class="doctors-search__form" id="doctors-filter-form">
+        <label class="doctors-field">
+          <span class="doctors-field__label">Specialty</span>
+          <select id="filter-specialty" name="specialty">
+            <option value="">Select specialties</option>
+            {% for item in providersDirectory.specialties %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="doctors-field">
+          <span class="doctors-field__label">City</span>
+          <select id="filter-city" name="city">
+            <option value="">Select cities</option>
+            {% for item in providersDirectory.cities %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="doctors-field">
+          <span class="doctors-field__label">State</span>
+          <select id="filter-state" name="state">
+            <option value="">Select states</option>
+            {% for item in providersDirectory.states %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <button class="btn btn--primary doctors-search__submit" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="doctors-results" aria-live="polite">
+  <div class="container">
+    <div class="doctors-results__meta">
+      <p id="doctors-results-count"></p>
+      <button class="text-link" type="button" id="doctors-clear-filters" hidden>Clear filters</button>
+    </div>
+    <div id="doctors-results-list" class="doctors-list"></div>
+    <nav class="doctors-pagination" id="doctors-pagination" aria-label="Provider results pages"></nav>
+  </div>
+</section>
+
+<script type="application/json" id="doctors-data">{{ providersDirectory.providers | dump | safe }}</script>
+<script>
+  window.PRIMCARE_BASE = "{{ '/' | url }}";
+</script>
+<script src="{{ '/js/doctors-directory.js' | url }}" defer></script>
+
+{% include "partials/appointment-modal.njk" %}

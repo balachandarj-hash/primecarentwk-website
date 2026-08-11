@@ -32,3 +32,26 @@ collections:
       - { label: Image Alt Text, name: imageAlt, widget: string, required: false }
       - { label: Draft, name: draft, widget: boolean, default: false }
       - { label: Body, name: body, widget: markdown }
+
+  - name: providers
+    label: Providers
+    label_singular: Provider
+    folder: content/providers
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    summary: "{{title}} — {{clinic}}"
+    fields:
+      - { label: Name, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, required: false }
+      - { label: Rating, name: rating, widget: number, default: 5, value_type: float, min: 0, max: 5, step: 0.5 }
+      - { label: Clinic / Practice, name: clinic, widget: string, required: false }
+      - { label: Phone (digits), name: phone, widget: string, default: "8884748473" }
+      - { label: Phone Display, name: phoneDisplay, widget: string, default: "(888) 474-8473" }
+      - { label: Specialties, name: specialties, widget: list, allow_add: true, required: false }
+      - { label: Cities, name: cities, widget: list, allow_add: true, required: false }
+      - { label: States, name: states, widget: list, allow_add: true, required: false }
+      - { label: Addresses, name: addresses, widget: list, allow_add: true, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Bio, name: body, widget: markdown, required: false }

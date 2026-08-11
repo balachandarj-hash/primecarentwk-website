@@ -34,6 +34,20 @@ module.exports = function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  eleventyConfig.addCollection("providers", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob("./content/providers/*.md")
+      .filter((item) => item.data.draft !== true)
+      .sort((a, b) =>
+        String(a.data.title || "").localeCompare(String(b.data.title || ""), undefined, {
+          sensitivity: "base",
+        })
+      );
+  });
+
+  eleventyConfig.addWatchTarget("./content/providers/");
+  eleventyConfig.addWatchTarget("./js/");
+
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     if (!dateObj) return "";
     return new Intl.DateTimeFormat("en-US", {

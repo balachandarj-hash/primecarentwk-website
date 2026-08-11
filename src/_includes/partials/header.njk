@@ -21,9 +21,7 @@
     <div class="header-actions">
       <a
         class="btn btn--header btn--sm"
-        href="https://doctors.primecarentwk.com/"
-        target="_blank"
-        rel="noopener"
+        href="{{ '/doctors/' | url }}"
         aria-label="Find Providers"
         ><span class="btn-label-short">Providers</span
         ><span class="btn-label-full">Find Providers</span></a
@@ -57,6 +55,7 @@
     <div class="mobile-nav__links">
       <a href="{{ '/' | url }}" {% if activeNav == "home" %}aria-current="page"{% endif %}>Home</a>
       <a href="{{ '/providers-network.html' | url }}">Providers Network</a>
+      <a href="{{ '/doctors/' | url }}" {% if activeNav == "doctors" %}aria-current="page"{% endif %}>Find Providers</a>
       <a href="{{ '/care-coordination.html' | url }}">Care Coordination</a>
       <a href="{{ '/blog/' | url }}" {% if activeNav == "blog" %}aria-current="page"{% endif %}>News &amp; Updates</a>
       <a href="{{ '/about.html' | url }}">About</a>
@@ -65,9 +64,7 @@
     <div class="mobile-nav__actions">
       <a
         class="btn btn--header"
-        href="https://doctors.primecarentwk.com/"
-        target="_blank"
-        rel="noopener"
+        href="{{ '/doctors/' | url }}"
         >Find Providers</a
       >
       <a class="btn btn--primary" href="{{ '/contact.html' | url }}">Coordinate a Case</a>

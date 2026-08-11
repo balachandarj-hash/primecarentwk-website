@@ -1,0 +1,36 @@
+<div class="appt-modal" id="appt-modal" hidden>
+  <div class="appt-modal__backdrop" data-appt-close></div>
+  <div
+    class="appt-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="appt-modal-title"
+  >
+    <button class="appt-modal__close" type="button" data-appt-close aria-label="Close">&times;</button>
+    <h2 id="appt-modal-title">Schedule your Appointment</h2>
+    <p class="appt-modal__lede">
+      Send your details so our Patient Coordinator can get back to you.
+    </p>
+    <form class="appt-form" id="appt-form">
+      <input type="hidden" name="provider" id="appt-provider" value="" />
+      <label>
+        <span>Name</span>
+        <input type="text" name="name" required autocomplete="name" />
+      </label>
+      <label>
+        <span>Phone Number</span>
+        <input type="tel" name="phone" required autocomplete="tel" />
+      </label>
+      <label>
+        <span>Email</span>
+        <input type="email" name="email" required autocomplete="email" />
+      </label>
+      <label>
+        <span>Message</span>
+        <textarea name="message" rows="4" placeholder="Preferred times, injury type, or questions"></textarea>
+      </label>
+      <button class="btn btn--primary" type="submit">Send</button>
+      <p class="appt-form__note" id="appt-form-status" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</div>
