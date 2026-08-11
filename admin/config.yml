@@ -47,6 +47,8 @@ collections:
       - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false, required: false }
       - { label: Rating, name: rating, widget: number, default: 5, value_type: float, min: 0, max: 5, step: 0.5 }
       - { label: Clinic / Practice, name: clinic, widget: string, required: false }
+      - { label: Photo, name: image, widget: image, required: false }
+      - { label: Photo Alt Text, name: imageAlt, widget: string, required: false }
       - { label: Phone (digits), name: phone, widget: string, default: "8884748473" }
       - { label: Phone Display, name: phoneDisplay, widget: string, default: "(888) 474-8473" }
       - { label: Specialties, name: specialties, widget: list, allow_add: true, required: false }

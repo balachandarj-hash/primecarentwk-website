@@ -24,8 +24,22 @@
   function renderCard(p) {
     var specialties = (p.specialties || []).join(", ");
     var address = (p.addresses || []).join(" · ");
+    var photo = "";
+    if (p.image) {
+      var src = String(p.image);
+      if (src.indexOf("http") !== 0 && src.charAt(0) === "/") {
+        src = base.replace(/\/$/, "") + src;
+      }
+      photo =
+        '<div class="doctors-card__photo"><img src="' +
+        escapeHtml(src) +
+        '" alt="' +
+        escapeAttr(p.imageAlt || p.title || "") +
+        '" width="88" height="88" loading="lazy" /></div>';
+    }
     return (
       '<article class="doctors-card">' +
+      photo +
       '<div class="doctors-card__main">' +
       '<h2 class="doctors-card__title"><a href="' +
       providerUrl(p.slug) +

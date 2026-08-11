@@ -12,6 +12,17 @@ activeNav: doctors
     </p>
 
     <div class="provider-detail__card">
+      {% if image %}
+      <div class="provider-detail__photo">
+        <img
+          src="{{ image | url }}"
+          alt="{{ imageAlt or title }}"
+          width="240"
+          height="240"
+          loading="eager"
+        />
+      </div>
+      {% endif %}
       <h1>{{ title }}</h1>
 
       {% if rating %}

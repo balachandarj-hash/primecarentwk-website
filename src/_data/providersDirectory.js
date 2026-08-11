@@ -29,6 +29,8 @@ module.exports = function () {
         clinic: data.clinic || "",
         phone: data.phone || "",
         phoneDisplay: data.phoneDisplay || "",
+        image: data.image || "",
+        imageAlt: data.imageAlt || data.title || "",
         specialties: Array.isArray(data.specialties) ? data.specialties : [],
         cities: Array.isArray(data.cities) ? data.cities : [],
         states: Array.isArray(data.states) ? data.states : [],

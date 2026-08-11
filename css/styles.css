@@ -3263,6 +3263,24 @@ body.modal-open {
   border-bottom: 1px solid rgba(26, 31, 61, 0.1);
 }
 
+.doctors-card__photo {
+  flex: 0 0 auto;
+}
+
+.doctors-card__photo img {
+  display: block;
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 0.85rem;
+  background: rgba(0, 210, 193, 0.08);
+}
+
+.doctors-card__main {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
 .doctors-card__title {
   margin: 0 0 0.35rem;
   font-size: 1.15rem;
@@ -3383,6 +3401,19 @@ body.modal-open {
   padding: clamp(1.4rem, 3vw, 2.25rem);
   box-shadow: 0 20px 50px rgba(26, 31, 61, 0.06);
   max-width: 46rem;
+}
+
+.provider-detail__photo {
+  margin: 0 0 1.15rem;
+}
+
+.provider-detail__photo img {
+  display: block;
+  width: 7.5rem;
+  height: 7.5rem;
+  object-fit: cover;
+  border-radius: 1rem;
+  background: rgba(0, 210, 193, 0.08);
 }
 
 .provider-detail__card h1 {

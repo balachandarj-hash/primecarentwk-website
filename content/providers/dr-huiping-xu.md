@@ -2,9 +2,11 @@
 title: "Dr. Huiping Xu"
 date: "2023-10-26"
 rating: 5.0
-clinic: ""
+clinic: "Wholehealth PLLC"
 phone: "8884748473"
 phoneDisplay: "(888) 474-8473"
+image: /assets/images/providers/dr-huiping-xu.jpg
+imageAlt: "Dr. Huiping Xu"
 specialties:
   - "Psychiatry"
   - "Psychology"
