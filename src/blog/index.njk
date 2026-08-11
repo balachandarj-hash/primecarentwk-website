@@ -5,7 +5,7 @@ description: News and updates on personal injury care coordination, provider net
 permalink: /blog/
 pagination:
   data: collections.blog
-  size: 10
+  size: 12
   alias: posts
 eleventyComputed:
   activeNav: blog
@@ -19,7 +19,7 @@ eleventyComputed:
   </div>
 </section>
 
-<section class="section">
+<section class="section section--muted">
   <div class="container">
     {% if posts.length === 0 %}
       <div class="section__head">
@@ -27,31 +27,41 @@ eleventyComputed:
         <p>New articles will appear here as they are published from the CMS.</p>
       </div>
     {% else %}
-      <div class="blog-list">
+      <div class="blog-tiles">
         {% for post in posts %}
-          <article class="blog-card reveal">
-            {% if post.data.image %}
-              <a class="blog-card__media" href="{{ post.url | url }}">
-                <img src="{{ post.data.image | url }}" alt="" loading="lazy" width="640" height="400" />
-              </a>
-            {% endif %}
-            <div class="blog-card__body">
-              <p class="blog-card__meta">
-                <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
-                {% if post.data.author %}<span aria-hidden="true">·</span> {{ post.data.author }}{% endif %}
-              </p>
-              <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
-              {% if post.data.summary %}
-                <p>{{ post.data.summary }}</p>
-              {% endif %}
-              <a class="pillar__link" href="{{ post.url | url }}">Read article</a>
-            </div>
+          <article class="blog-tile reveal">
+            <a class="blog-tile__link" href="{{ post.url | url }}">
+              <div class="blog-tile__media">
+                {% if post.data.image %}
+                  <img
+                    src="{{ post.data.image | url }}"
+                    alt="{{ post.data.imageAlt or post.data.title }}"
+                    loading="lazy"
+                    width="640"
+                    height="400"
+                  />
+                {% else %}
+                  <div class="blog-tile__placeholder" aria-hidden="true"></div>
+                {% endif %}
+              </div>
+              <div class="blog-tile__body">
+                <p class="blog-tile__meta">
+                  <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+                  {% if post.data.author %}<span aria-hidden="true">·</span> {{ post.data.author }}{% endif %}
+                </p>
+                <h2 class="blog-tile__title">{{ post.data.title }}</h2>
+                {% if post.data.summary %}
+                  <p class="blog-tile__summary">{{ post.data.summary }}</p>
+                {% endif %}
+                <span class="blog-tile__cta">Read article</span>
+              </div>
+            </a>
           </article>
         {% endfor %}
       </div>
 
       {% if pagination.href.previous or pagination.href.next %}
-        <nav class="blog-pagination" aria-label="Blog pages">
+        <nav class="blog-pagination" aria-label="News pages">
           {% if pagination.href.previous %}
             <a class="btn btn--outline btn--sm" href="{{ pagination.href.previous | url }}">Previous</a>
           {% endif %}
