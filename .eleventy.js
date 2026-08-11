@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
     "care-coordination.html",
     "contact.html",
     "providers-network.html",
+    "privacy-policy.html",
     "legal-nurse-case-manager.html",
   ];
 

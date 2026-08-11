@@ -1633,6 +1633,48 @@ body.modal-open {
   gap: 1.25rem;
 }
 
+/* ——— Legal document pages ——— */
+.legal-doc {
+  max-width: 46rem;
+}
+
+.legal-doc__updated {
+  font-size: var(--text-sm);
+  color: var(--ink-muted);
+  margin-bottom: 1.25rem;
+}
+
+.legal-doc h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.45rem);
+  color: var(--navy-800);
+  margin: 2rem 0 0.75rem;
+}
+
+.legal-doc p,
+.legal-doc li {
+  color: var(--ink-muted);
+  line-height: 1.65;
+  font-size: var(--text-base);
+}
+
+.legal-doc ul {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.legal-doc a {
+  color: var(--teal-700);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.legal-doc__cta {
+  margin-top: 2.5rem;
+}
+
 /* ——— Reveal on scroll ——— */
 .reveal {
   opacity: 0;
