@@ -8,11 +8,10 @@
   var prevBtn = root.querySelector("[data-tp-prev]");
   var nextBtn = root.querySelector("[data-tp-next]");
   var dotsWrap = root.querySelector("[data-tp-dots]");
-  if (!track || !viewport || !cards.length) return;
+  if (!viewport || !track || !cards.length) return;
 
-  var page = 0;
   var timer = null;
-  var GAP = 16;
+  var page = 0;
 
   function perView() {
     var w = viewport.getBoundingClientRect().width || window.innerWidth;
@@ -27,14 +26,30 @@
   }
 
   function syncVar() {
-    root.style.setProperty("--tp-per-view", String(perView()));
+    var pv = perView();
+    root.style.setProperty("--tp-per-view", String(pv));
+    var gap = 16;
+    var width = (viewport.clientWidth - gap * (pv - 1)) / pv;
+    cards.forEach(function (card) {
+      card.style.flex = "0 0 auto";
+      card.style.width = width + "px";
+      card.style.minWidth = width + "px";
+      card.style.maxWidth = width + "px";
+    });
+  }
+
+  function currentPage() {
+    var pv = perView();
+    var step = viewport.clientWidth;
+    if (step <= 0) return 0;
+    return Math.round(viewport.scrollLeft / step);
   }
 
   function renderDots() {
     if (!dotsWrap) return;
-    var count = pageCount();
+    page = Math.max(0, Math.min(pageCount() - 1, currentPage()));
     var html = "";
-    for (var i = 0; i < count; i++) {
+    for (var i = 0; i < pageCount(); i++) {
       html +=
         '<button type="button" class="top-providers__dot' +
         (i === page ? " is-active" : "") +
@@ -45,22 +60,17 @@
         '"></button>';
     }
     dotsWrap.innerHTML = html;
+    if (prevBtn) prevBtn.disabled = page <= 0;
+    if (nextBtn) nextBtn.disabled = page >= pageCount() - 1;
   }
 
-  function go(next) {
+  function go(nextPage, smooth) {
     syncVar();
     var max = pageCount() - 1;
-    page = Math.max(0, Math.min(max, next));
-    var pv = perView();
-    var cardWidth = cards[0].getBoundingClientRect().width;
-    var shift = page * pv * (cardWidth + GAP);
-    // don't overscroll past end
-    var maxShift = Math.max(0, track.scrollWidth - viewport.clientWidth);
-    if (shift > maxShift) shift = maxShift;
-    track.style.transform = "translateX(-" + shift + "px)";
+    page = Math.max(0, Math.min(max, nextPage));
+    var left = page * viewport.clientWidth;
+    viewport.scrollTo({ left: left, behavior: smooth === false ? "auto" : "smooth" });
     renderDots();
-    if (prevBtn) prevBtn.disabled = page === 0;
-    if (nextBtn) nextBtn.disabled = page >= max;
   }
 
   function next() {
@@ -107,18 +117,28 @@
     });
   }
 
+  viewport.addEventListener(
+    "scroll",
+    function () {
+      window.clearTimeout(viewport._tpScrollTimer);
+      viewport._tpScrollTimer = window.setTimeout(renderDots, 80);
+    },
+    { passive: true }
+  );
+
   root.addEventListener("mouseenter", stopAuto);
   root.addEventListener("mouseleave", startAuto);
+  viewport.addEventListener("pointerdown", stopAuto);
 
   var resizeTimer;
   window.addEventListener("resize", function () {
     window.clearTimeout(resizeTimer);
     resizeTimer = window.setTimeout(function () {
-      go(Math.min(page, pageCount() - 1));
+      go(Math.min(currentPage(), pageCount() - 1), false);
     }, 120);
   });
 
   syncVar();
-  go(0);
+  go(0, false);
   startAuto();
 })();
