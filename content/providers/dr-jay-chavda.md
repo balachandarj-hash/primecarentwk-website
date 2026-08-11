@@ -5,6 +5,8 @@ rating: 5.0
 clinic: "FYZICAL Shayona"
 phone: "8884748473"
 phoneDisplay: "(888) 474-8473"
+image: /assets/images/providers/dr-jay-chavda.jpg
+imageAlt: "Dr. Jay Chavda"
 specialties:
   - "ENT"
   - "VNG"
