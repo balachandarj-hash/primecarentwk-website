@@ -2,7 +2,7 @@
 
 Corporate static site for **PrimeCare Network** (Providers Network + Care Coordination), with a **Decap CMS** blog.
 
-Live site: https://balachandarj-hash.github.io/primecarentwk-website/
+Live site: https://primecarentwk.com/
 
 ## Local development
 
@@ -11,9 +11,9 @@ npm install
 npm start
 ```
 
-- Site: http://localhost:8080/primecarentwk-website/
-- Blog: http://localhost:8080/primecarentwk-website/blog/
-- CMS admin: http://localhost:8080/primecarentwk-website/admin/
+- Site: http://localhost:8080/
+- Blog: http://localhost:8080/blog/
+- CMS admin: http://localhost:8080/admin/
 
 ### Local CMS editing
 
@@ -35,39 +35,61 @@ Open `/admin/`, skip GitHub login when prompted for local backend, then create o
 npm run build
 ```
 
-Build output is written to `_site/` (existing HTML pages are copied through; blog pages are generated).
+Build output is written to `_site/`.
 
-## Publishing workflow (production)
+## Custom domain (GitHub Pages)
 
-1. Open https://balachandarj-hash.github.io/primecarentwk-website/admin/
-2. Log in with GitHub (repo collaborators only)
-3. Create or edit a **Blog** post → Publish
-4. Decap commits Markdown to `main`
-5. GitHub Action builds the site and deploys to GitHub Pages
+This site is configured for **https://primecarentwk.com** via GitHub Pages.
 
-## One-time GitHub Pages setup
-
-The deploy workflow uses **GitHub Actions** as the Pages source:
+### 1. GitHub (one-time)
 
 1. Repo **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
-3. Merge/push to `main` so `.github/workflows/deploy.yml` can run
+2. Under **Custom domain**, enter `primecarentwk.com` and save
+3. Wait for DNS check, then enable **Enforce HTTPS**
+
+### 2. GoDaddy DNS (one-time)
+
+In GoDaddy DNS for `primecarentwk.com`:
+
+**A records** (apex `@`):
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| A | @ | 185.199.108.153 | 600 |
+| A | @ | 185.199.109.153 | 600 |
+| A | @ | 185.199.110.153 | 600 |
+| A | @ | 185.199.111.153 | 600 |
+
+**CNAME** for www:
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| CNAME | www | balachandarj-hash.github.io | 600 |
+
+Remove old A/CNAME records that pointed the site elsewhere (or the old host will keep winning).
+
+### Important
+
+Pointing this domain to GitHub Pages will **replace** whatever currently loads at `primecarentwk.com` until you change DNS again.
+
+## Publishing workflow
+
+1. Push/merge to `main`
+2. GitHub Action builds and deploys to GitHub Pages
+3. Site updates at https://primecarentwk.com/
 
 ## Decap CMS login (OAuth)
 
-Decap’s GitHub backend needs a small OAuth proxy (GitHub does not allow the CMS to complete OAuth by itself on a static host).
+Decap’s GitHub backend needs a small OAuth proxy.
 
-1. Create a **GitHub OAuth App**  
-   - Homepage URL: `https://balachandarj-hash.github.io/primecarentwk-website/`  
+1. Create a **GitHub OAuth App**
+   - Homepage URL: `https://primecarentwk.com/`
    - Authorization callback URL: `https://YOUR-OAUTH-PROXY/callback`
-2. Deploy an OAuth proxy (examples):  
-   - https://github.com/vencax/netlify-cms-github-oauth-provider  
-   - https://github.com/Herohtar/netlify-cms-oauth  
-   Configure it with the OAuth App client ID/secret.
-3. Set `backend.base_url` in [`admin/config.yml`](admin/config.yml) to the proxy origin (no trailing slash), then commit.
-4. Invite editors as collaborators on this GitHub repository.
+2. Deploy an OAuth proxy and set `backend.base_url` in `admin/config.yml`
+3. Invite editors as repo collaborators
 
-Until OAuth is configured, use **local_backend** + `decap-server` for editorial work.
+Until OAuth is configured, use **local_backend** + `decap-server`.
+
 
 ## Providers directory
 
