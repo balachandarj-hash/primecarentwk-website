@@ -2797,6 +2797,15 @@ body.nav-open {
     linear-gradient(180deg, #f4fafc 0%, #ffffff 100%);
 }
 
+.doctors-hero .eyebrow {
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand-teal);
+}
+
 .doctors-hero h1 {
   font-family: var(--font-display);
   font-size: clamp(1.85rem, 3vw, 2.6rem);
