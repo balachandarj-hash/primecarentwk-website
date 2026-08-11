@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% if title %}{{ title }}{% if not title.includes("PrimeCare") %} | {{ site.name }}{% endif %}{% else %}{{ site.name }}{% endif %}</title>
+    <title>{% if pageTitle %}{{ pageTitle }}{% elseif title %}{{ title }}{% if not title.includes("PrimeCare") %} | {{ site.name }}{% endif %}{% else %}{{ site.name }}{% endif %}</title>
     <meta name="description" content="{{ description or site.description }}" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-    <meta property="og:title" content="{{ title or site.name }}" />
+    <meta property="og:title" content="{{ pageTitle or title or site.name }}" />
     <meta property="og:description" content="{{ description or site.description }}" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
