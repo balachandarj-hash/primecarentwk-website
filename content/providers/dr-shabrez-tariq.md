@@ -5,6 +5,8 @@ rating: 5.0
 clinic: "Houston Spine & Joint Pain Consultants"
 phone: "8884748473"
 phoneDisplay: "(888) 474-8473"
+image: /assets/images/providers/dr-shabrez-tariq.jpg
+imageAlt: "Dr. Shabrez Tariq"
 specialties:
   - "Pain management"
 cities:
