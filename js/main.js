@@ -3,6 +3,7 @@
   const mobileNav = document.querySelector(".mobile-nav");
   const backdrop = document.querySelector(".nav-backdrop");
   const closeBtn = document.querySelector(".mobile-nav__close");
+  let scrollY = 0;
 
   function setOpen(open) {
     if (!mobileNav || !toggle) return;
@@ -12,7 +13,16 @@
       backdrop.setAttribute("aria-hidden", open ? "false" : "true");
     }
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    document.body.classList.toggle("nav-open", open);
+
+    if (open) {
+      scrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.classList.add("nav-open");
+      document.body.style.top = "-" + scrollY + "px";
+    } else {
+      document.body.classList.remove("nav-open");
+      document.body.style.top = "";
+      window.scrollTo(0, scrollY);
+    }
   }
 
   if (toggle && mobileNav) {

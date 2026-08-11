@@ -219,12 +219,15 @@
     var form = $("#appt-form");
     var providerInput = $("#appt-provider");
     var status = $("#appt-form-status");
+    var scrollY = 0;
 
     function openModal(providerName) {
       if (providerInput) providerInput.value = providerName || "";
       if (status) status.textContent = "";
+      scrollY = window.scrollY || window.pageYOffset || 0;
       modal.hidden = false;
       document.body.classList.add("modal-open");
+      document.body.style.top = "-" + scrollY + "px";
       var first = modal.querySelector("input[name='name']");
       if (first) first.focus();
     }
@@ -232,6 +235,8 @@
     function closeModal() {
       modal.hidden = true;
       document.body.classList.remove("modal-open");
+      document.body.style.top = "";
+      window.scrollTo(0, scrollY);
     }
 
     document.addEventListener("click", function (e) {
