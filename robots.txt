@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /legal-nurse-case-manager.html
 Disallow: /admin/
-Sitemap: https://balachandarj-hash.github.io/primecarentwk-website/sitemap.xml
+Sitemap: https://www.primecarentwk.com/sitemap.xml

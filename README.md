@@ -2,7 +2,7 @@
 
 Corporate static site for **PrimeCare Network** (Providers Network + Care Coordination), with a **Decap CMS** blog.
 
-Live site: https://balachandarj-hash.github.io/primecarentwk-website/
+Live site: https://www.primecarentwk.com/
 
 ## Local development
 
@@ -11,9 +11,9 @@ npm install
 npm start
 ```
 
-- Site: http://localhost:8080/primecarentwk-website/
-- Blog: http://localhost:8080/primecarentwk-website/blog/
-- CMS admin: http://localhost:8080/primecarentwk-website/admin/
+- Site: http://localhost:8080/
+- Blog: http://localhost:8080/blog/
+- CMS admin: http://localhost:8080/admin/
 
 ### Local CMS editing
 
@@ -37,28 +37,33 @@ npm run build
 
 Build output is written to `_site/` (existing HTML pages are copied through; blog pages are generated).
 
-## Publishing workflow (production)
+## Publishing workflow (GoDaddy shared hosting)
 
-1. Open https://balachandarj-hash.github.io/primecarentwk-website/admin/
+1. Locally (or in CI): `npm ci && npm run build`
+2. Upload **everything inside `_site/`** into your GoDaddy `public_html/` (domain root) via cPanel File Manager or FTP
+3. Do **not** upload `src/`, `content/`, `node_modules/`, or the repo root — only the build output
+4. Point DNS for `www.primecarentwk.com` (and apex if desired) to GoDaddy and enable SSL
+
+### Optional: edit content with Decap
+
+1. Open https://www.primecarentwk.com/admin/ (after OAuth proxy is configured)
 2. Log in with GitHub (repo collaborators only)
-3. Create or edit a **Blog** post → Publish
+3. Create or edit a **Blog** / **Providers** entry → Publish
 4. Decap commits Markdown to `main`
-5. GitHub Action builds the site and deploys to GitHub Pages
+5. Rebuild (`npm run build`) and re-upload `_site/` to GoDaddy
 
-## One-time GitHub Pages setup
+Until OAuth is set up, use **local_backend** + `decap-server` for editorial work, then rebuild and upload.
 
-The deploy workflow uses **GitHub Actions** as the Pages source:
+## Legacy GitHub Pages notes
 
-1. Repo **Settings → Pages**
-2. Under **Build and deployment**, set **Source** to **GitHub Actions**
-3. Merge/push to `main` so `.github/workflows/deploy.yml` can run
+The previous GitHub Pages deploy used path prefix `/primecarentwk-website/`. This branch is configured for **root-domain** hosting (`pathPrefix: "/"`). Merging to `main` will break the old GitHub Pages URL until DNS/GoDaddy cutover is complete.
 
 ## Decap CMS login (OAuth)
 
 Decap’s GitHub backend needs a small OAuth proxy (GitHub does not allow the CMS to complete OAuth by itself on a static host).
 
 1. Create a **GitHub OAuth App**  
-   - Homepage URL: `https://balachandarj-hash.github.io/primecarentwk-website/`  
+   - Homepage URL: `https://www.primecarentwk.com/`  
    - Authorization callback URL: `https://YOUR-OAUTH-PROXY/callback`
 2. Deploy an OAuth proxy (examples):  
    - https://github.com/vencax/netlify-cms-github-oauth-provider  

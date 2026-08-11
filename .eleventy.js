@@ -27,6 +27,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("js");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("robots.txt");
+  eleventyConfig.addPassthroughCopy(".htaccess");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("favicon.png");
   eleventyConfig.addPassthroughCopy("apple-touch-icon.png");
@@ -71,7 +72,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addWatchTarget("./content/blog/");
 
   return {
-    pathPrefix: "/primecarentwk-website/",
+    pathPrefix: "/",
     dir: {
       input: ".",
       includes: "src/_includes",
