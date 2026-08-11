@@ -2858,10 +2858,8 @@ body.nav-open {
 }
 
 .top-provider__link {
-  display: grid;
-  grid-template-columns: 5.5rem minmax(0, 1fr);
-  align-items: stretch;
-  min-height: 8.5rem;
+  display: flex;
+  flex-direction: column;
   height: 100%;
   text-decoration: none;
   color: inherit;
@@ -2879,23 +2877,27 @@ body.nav-open {
 }
 
 .top-provider__media {
+  aspect-ratio: 1 / 1;
+  width: 100%;
   background: linear-gradient(135deg, rgba(0, 210, 193, 0.12), rgba(74, 87, 164, 0.12));
 }
 
 .top-provider__media img {
   width: 100%;
   height: 100%;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 .top-provider__body {
-  padding: 0.85rem 0.95rem;
+  padding: 0.9rem 0.95rem 1.05rem;
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
-  justify-content: center;
   min-width: 0;
+  flex: 1;
 }
 
 .top-provider__body h3 {
