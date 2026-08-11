@@ -85,13 +85,27 @@
 
   function readFilters() {
     return {
+      name: (($("#filter-name") || {}).value || "").trim(),
       specialty: ($("#filter-specialty") || {}).value || "",
       city: ($("#filter-city") || {}).value || "",
       state: ($("#filter-state") || {}).value || "",
     };
   }
 
+  function normalizeName(str) {
+    return String(str || "")
+      .toLowerCase()
+      .replace(/[.,]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
   function matches(p, filters) {
+    if (filters.name) {
+      var needle = normalizeName(filters.name);
+      var haystack = normalizeName(p.title || "");
+      if (haystack.indexOf(needle) === -1) return false;
+    }
     if (filters.specialty && (p.specialties || []).indexOf(filters.specialty) === -1) return false;
     if (filters.city && (p.cities || []).indexOf(filters.city) === -1) return false;
     if (filters.state && (p.states || []).indexOf(filters.state) === -1) return false;
@@ -131,21 +145,29 @@
 
       listEl.innerHTML = pageItems.length
         ? pageItems.map(renderCard).join("")
-        : '<p class="doctors-empty">No providers match these filters. Try another specialty or city.</p>';
+        : '<p class="doctors-empty">No providers match these filters. Try another name, specialty, or city.</p>';
 
       if (countEl) {
+        var hasFilters = !!(
+          state.filters.name ||
+          state.filters.specialty ||
+          state.filters.city ||
+          state.filters.state
+        );
         countEl.textContent =
           items.length +
           " provider" +
           (items.length === 1 ? "" : "s") +
-          (state.filters.specialty || state.filters.city || state.filters.state
-            ? " found"
-            : " in the network");
+          (hasFilters ? " found" : " in the network");
       }
 
       if (clearBtn) {
-        var has =
-          !!(state.filters.specialty || state.filters.city || state.filters.state);
+        var has = !!(
+          state.filters.name ||
+          state.filters.specialty ||
+          state.filters.city ||
+          state.filters.state
+        );
         clearBtn.hidden = !has;
       }
 
@@ -192,13 +214,26 @@
 
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
-        ["filter-specialty", "filter-city", "filter-state"].forEach(function (id) {
+        ["filter-name", "filter-specialty", "filter-city", "filter-state"].forEach(function (id) {
           var el = $("#" + id);
           if (el) el.value = "";
         });
         state.filters = readFilters();
         state.page = 1;
         render();
+      });
+    }
+
+    var nameInput = $("#filter-name");
+    if (nameInput) {
+      var nameTimer;
+      nameInput.addEventListener("input", function () {
+        window.clearTimeout(nameTimer);
+        nameTimer = window.setTimeout(function () {
+          state.filters = readFilters();
+          state.page = 1;
+          render();
+        }, 180);
       });
     }
 
@@ -216,7 +251,7 @@
     // deep-link filters via query string
     try {
       var params = new URLSearchParams(window.location.search);
-      ["specialty", "city", "state"].forEach(function (key) {
+      ["name", "specialty", "city", "state"].forEach(function (key) {
         var val = params.get(key);
         var el = $("#filter-" + key);
         if (val && el) el.value = val;

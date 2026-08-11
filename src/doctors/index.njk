@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 permalink: /doctors/
 pageTitle: Providers Directory | PrimeCare Network
-description: Search PrimeCare Network providers by specialty, city, and state. Book an appointment with a patient coordinator.
+description: Search PrimeCare Network providers by name, specialty, city, and state. Book an appointment with a patient coordinator.
 activeNav: doctors
 ---
 
@@ -12,8 +12,8 @@ activeNav: doctors
       <p class="eyebrow">Providers Directory</p>
       <h1 id="doctors-hero-title">Find a PrimeCare Network provider</h1>
       <p class="lede">
-        Browse featured providers below, or search the full multi-specialty network by specialty,
-        city, and state.
+        Browse featured providers below, or search the full multi-specialty network by name,
+        specialty, city, and state.
       </p>
     </div>
 
@@ -39,6 +39,17 @@ activeNav: doctors
     <div class="doctors-search__panel">
       <div class="doctors-search__title">Search for Providers</div>
       <form class="doctors-search__form" id="doctors-filter-form">
+        <label class="doctors-field doctors-field--name">
+          <span class="doctors-field__label">Provider name</span>
+          <input
+            id="filter-name"
+            name="name"
+            type="search"
+            placeholder="Search by provider name"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+        </label>
         <label class="doctors-field">
           <span class="doctors-field__label">Specialty</span>
           <select id="filter-specialty" name="specialty">

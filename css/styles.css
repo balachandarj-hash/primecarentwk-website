@@ -3188,7 +3188,7 @@ body.modal-open {
 
 .doctors-search__form {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 1.4fr) repeat(3, minmax(0, 1fr)) auto;
   gap: 1rem;
   padding: 1.25rem;
   align-items: end;
@@ -3208,7 +3208,9 @@ body.modal-open {
   letter-spacing: 0.02em;
 }
 
-.doctors-field select {
+.doctors-field select,
+.doctors-field input[type="search"],
+.doctors-field input[type="text"] {
   width: 100%;
   border: 1px solid rgba(26, 31, 61, 0.16);
   border-radius: 0.55rem;
@@ -3216,6 +3218,15 @@ body.modal-open {
   font: inherit;
   color: var(--navy-900);
   background: #fff;
+}
+
+.doctors-field input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.doctors-field input[type="search"]::placeholder {
+  color: var(--brand-gray);
 }
 
 .doctors-search__submit {
@@ -3631,6 +3642,10 @@ body.modal-open {
   .doctors-search__form {
     grid-template-columns: 1fr 1fr;
   }
+
+  .doctors-field--name {
+    grid-column: 1 / -1;
+  }
 }
 
 @media (max-width: 700px) {
@@ -3641,6 +3656,10 @@ body.modal-open {
 
   .doctors-search__form {
     grid-template-columns: 1fr;
+  }
+
+  .doctors-field--name {
+    grid-column: auto;
   }
 
   .provider-detail__actions,
