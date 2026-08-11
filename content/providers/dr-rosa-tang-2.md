@@ -2,9 +2,11 @@
 title: "Dr. Rosa Tang"
 date: "2023-10-26"
 rating: 5.0
-clinic: ""
+clinic: "Neuro-Ophthalmology of Texas at Eye Wellness Center"
 phone: "8884748473"
 phoneDisplay: "(888) 474-8473"
+image: /assets/images/providers/dr-rosa-tang.jpg
+imageAlt: "Dr. Rosa Tang"
 specialties:
   - "Neuro-Ophthalmology"
   - "TBI"
