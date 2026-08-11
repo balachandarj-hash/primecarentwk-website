@@ -188,10 +188,7 @@
             <div class="cta-row">
               <a
                 class="btn btn--primary"
-                href="./doctors/"
-                target="_blank"
-                rel="noopener"
-                >Find a Provider</a
+                href="./doctors/">Find a Provider</a
               >
               <a class="btn btn--outline" href="contact.html">Talk to Our Team</a>
             </div>
@@ -201,6 +198,40 @@
             role="img"
             aria-label="Specialist reviewing care information"
           ></div>
+        </div>
+      </section>
+
+
+      <!-- Top providers slider -->
+      <section class="section top-providers-section" id="top-providers" aria-labelledby="top-providers-title">
+        <div class="container">
+          <div class="section__head section__head--wide reveal top-providers__head">
+            <div>
+              <p class="section__eyebrow">Provider network</p>
+              <h2 id="top-providers-title">Top providers in our network</h2>
+              <p>
+                A sample of specialists and facilities available through PrimeCare—browse the full
+                directory to find the right fit by specialty, city, and state.
+              </p>
+            </div>
+            <a class="btn btn--outline" href="./doctors/">View all providers</a>
+          </div>
+
+          <div class="top-providers reveal" data-top-providers-slider data-tp-src="./assets/data/top-providers.json">
+            <div class="top-providers__viewport">
+              <div class="top-providers__track"></div>
+            </div>
+            <div class="top-providers__controls">
+              <button type="button" class="top-providers__btn" data-tp-prev aria-label="Previous providers">‹</button>
+              <div class="top-providers__dots" data-tp-dots aria-hidden="true"></div>
+              <button type="button" class="top-providers__btn" data-tp-next aria-label="Next providers">›</button>
+            </div>
+          </div>
+
+          <div class="cta-row reveal" style="margin-top: 1.75rem">
+            <a class="btn btn--primary" href="./doctors/">Search the providers directory</a>
+            <a class="btn btn--outline" href="contact.html">Request a referral</a>
+          </div>
         </div>
       </section>
 
@@ -273,10 +304,7 @@
             <div class="cta-row">
               <a
                 class="btn btn--primary"
-                href="./doctors/"
-                target="_blank"
-                rel="noopener"
-                >Find a Provider</a
+                href="./doctors/">Find a Provider</a
               >
               <a class="btn btn--outline" href="contact.html">Send Us a Referral</a>
             </div>
@@ -544,5 +572,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/top-providers.js"></script>
   </body>
 </html>

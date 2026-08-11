@@ -16,6 +16,10 @@ activeNav: doctors
   </div>
 </section>
 
+{% set showDirectoryCta = false %}
+{% set showBottomCtas = false %}
+{% include "partials/top-providers-slider.njk" %}
+
 <section class="doctors-search" aria-label="Search for providers">
   <div class="container">
     <div class="doctors-search__panel">
@@ -70,5 +74,6 @@ activeNav: doctors
   window.PRIMCARE_BASE = "{{ '/' | url }}";
 </script>
 <script src="{{ '/js/doctors-directory.js' | url }}" defer></script>
+<script src="{{ '/js/top-providers.js' | url }}" defer></script>
 
 {% include "partials/appointment-modal.njk" %}

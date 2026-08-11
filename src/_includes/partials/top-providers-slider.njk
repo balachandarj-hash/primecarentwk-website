@@ -1,0 +1,40 @@
+{# Shared Top Providers horizontal slider shell. Cards load from assets/data/top-providers.json #}
+<section class="section top-providers-section" id="top-providers" aria-labelledby="top-providers-title">
+  <div class="container">
+    <div class="section__head section__head--wide reveal top-providers__head">
+      <div>
+        <p class="section__eyebrow">Provider network</p>
+        <h2 id="top-providers-title">Top providers in our network</h2>
+        <p>
+          A sample of specialists and facilities available through PrimeCare—browse the full
+          directory to find the right fit by specialty, city, and state.
+        </p>
+      </div>
+      {% if showDirectoryCta != false %}
+      <a class="btn btn--outline" href="{{ '/doctors/' | url }}">View all providers</a>
+      {% endif %}
+    </div>
+
+    <div
+      class="top-providers reveal"
+      data-top-providers-slider
+      data-tp-src="{{ '/assets/data/top-providers.json' | url }}"
+    >
+      <div class="top-providers__viewport">
+        <div class="top-providers__track"></div>
+      </div>
+      <div class="top-providers__controls">
+        <button type="button" class="top-providers__btn" data-tp-prev aria-label="Previous providers">‹</button>
+        <div class="top-providers__dots" data-tp-dots aria-hidden="true"></div>
+        <button type="button" class="top-providers__btn" data-tp-next aria-label="Next providers">›</button>
+      </div>
+    </div>
+
+    {% if showBottomCtas != false %}
+    <div class="cta-row reveal" style="margin-top: 1.75rem">
+      <a class="btn btn--primary" href="{{ '/doctors/' | url }}">Search the providers directory</a>
+      <a class="btn btn--outline" href="{{ '/contact.html' | url }}">Request a referral</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
