@@ -10,7 +10,7 @@ backend:
 local_backend: true
 
 media_folder: assets/images/blog
-public_folder: /primecarentwk-website/assets/images/blog
+public_folder: /assets/images/blog
 
 publish_mode: simple
 
