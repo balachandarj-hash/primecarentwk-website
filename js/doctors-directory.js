@@ -124,11 +124,61 @@
       providers = [];
     }
 
+    var citiesByState = {};
+    var citiesByStateEl = $("#doctors-cities-by-state");
+    if (citiesByStateEl) {
+      try {
+        citiesByState = JSON.parse(citiesByStateEl.textContent || "{}") || {};
+      } catch (e) {
+        citiesByState = {};
+      }
+    }
+
     var form = $("#doctors-filter-form");
     var countEl = $("#doctors-results-count");
     var clearBtn = $("#doctors-clear-filters");
     var pager = $("#doctors-pagination");
+    var stateSelect = $("#filter-state");
+    var citySelect = $("#filter-city");
     var state = { page: 1, filters: readFilters() };
+
+    function citiesForState(stateCode) {
+      var list = (citiesByState && citiesByState[stateCode]) || [];
+      return list.slice().sort(function (a, b) {
+        return String(a).localeCompare(String(b), undefined, { sensitivity: "base" });
+      });
+    }
+
+    function syncCityOptions(preferredCity) {
+      if (!citySelect) return;
+      var selectedState = (stateSelect && stateSelect.value) || "";
+      var keepCity = preferredCity != null ? preferredCity : citySelect.value;
+      citySelect.innerHTML = "";
+
+      if (!selectedState) {
+        citySelect.disabled = true;
+        citySelect.innerHTML = '<option value="">Select a state first</option>';
+        return;
+      }
+
+      var cities = citiesForState(selectedState);
+      var html = '<option value="">Select cities</option>';
+      cities.forEach(function (city) {
+        html +=
+          '<option value="' +
+          escapeAttr(city) +
+          '"' +
+          (city === keepCity ? " selected" : "") +
+          ">" +
+          escapeHtml(city) +
+          "</option>";
+      });
+      citySelect.innerHTML = html;
+      citySelect.disabled = cities.length === 0;
+      if (keepCity && cities.indexOf(keepCity) === -1) {
+        citySelect.value = "";
+      }
+    }
 
     function filtered() {
       return providers.filter(function (p) {
@@ -212,12 +262,30 @@
       });
     }
 
+    if (stateSelect) {
+      stateSelect.addEventListener("change", function () {
+        syncCityOptions("");
+        state.filters = readFilters();
+        state.page = 1;
+        render();
+      });
+    }
+
+    if (citySelect) {
+      citySelect.addEventListener("change", function () {
+        state.filters = readFilters();
+        state.page = 1;
+        render();
+      });
+    }
+
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
         ["filter-name", "filter-specialty", "filter-city", "filter-state"].forEach(function (id) {
           var el = $("#" + id);
           if (el) el.value = "";
         });
+        syncCityOptions("");
         state.filters = readFilters();
         state.page = 1;
         render();
@@ -251,13 +319,16 @@
     // deep-link filters via query string
     try {
       var params = new URLSearchParams(window.location.search);
-      ["name", "specialty", "city", "state"].forEach(function (key) {
+      ["name", "specialty", "state", "city"].forEach(function (key) {
         var val = params.get(key);
         var el = $("#filter-" + key);
-        if (val && el) el.value = val;
+        if (val && el && key !== "city") el.value = val;
       });
+      syncCityOptions(params.get("city") || "");
       state.filters = readFilters();
-    } catch (err) {}
+    } catch (err) {
+      syncCityOptions("");
+    }
 
     render();
   }

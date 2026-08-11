@@ -47,5 +47,26 @@ module.exports = function () {
     specialties: uniqueSorted(providers.flatMap((p) => p.specialties)),
     cities: uniqueSorted(providers.flatMap((p) => p.cities)),
     states: uniqueSorted(providers.flatMap((p) => p.states)),
+    citiesByState: (() => {
+      const map = {};
+      providers.forEach((provider) => {
+        (provider.states || []).forEach((st) => {
+          if (!st) return;
+          if (!map[st]) map[st] = new Set();
+          (provider.cities || []).forEach((city) => {
+            if (city) map[st].add(city);
+          });
+        });
+      });
+      const out = {};
+      Object.keys(map)
+        .sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" }))
+        .forEach((st) => {
+          out[st] = Array.from(map[st]).sort((a, b) =>
+            a.localeCompare(b, undefined, { sensitivity: "base" })
+          );
+        });
+      return out;
+    })(),
   };
 };

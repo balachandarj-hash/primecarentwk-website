@@ -13,7 +13,7 @@ activeNav: doctors
       <h1 id="doctors-hero-title">Find a PrimeCare Network provider</h1>
       <p class="lede">
         Browse featured providers below, or search the full multi-specialty network by name,
-        specialty, city, and state.
+        specialty, state, and city.
       </p>
     </div>
 
@@ -60,21 +60,18 @@ activeNav: doctors
           </select>
         </label>
         <label class="doctors-field">
-          <span class="doctors-field__label">City</span>
-          <select id="filter-city" name="city">
-            <option value="">Select cities</option>
-            {% for item in providersDirectory.cities %}
-            <option value="{{ item }}">{{ item }}</option>
-            {% endfor %}
-          </select>
-        </label>
-        <label class="doctors-field">
           <span class="doctors-field__label">State</span>
           <select id="filter-state" name="state">
             <option value="">Select states</option>
             {% for item in providersDirectory.states %}
             <option value="{{ item }}">{{ item }}</option>
             {% endfor %}
+          </select>
+        </label>
+        <label class="doctors-field">
+          <span class="doctors-field__label">City</span>
+          <select id="filter-city" name="city" disabled>
+            <option value="">Select a state first</option>
           </select>
         </label>
         <button class="btn btn--primary doctors-search__submit" type="submit">Search</button>
@@ -95,6 +92,7 @@ activeNav: doctors
 </section>
 
 <script type="application/json" id="doctors-data">{{ providersDirectory.providers | dump | safe }}</script>
+<script type="application/json" id="doctors-cities-by-state">{{ providersDirectory.citiesByState | dump | safe }}</script>
 <script>
   window.PRIMCARE_BASE = "{{ '/' | url }}";
 </script>

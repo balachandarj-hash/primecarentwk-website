@@ -3225,8 +3225,10 @@ body.modal-open {
   appearance: none;
 }
 
-.doctors-field input[type="search"]::placeholder {
-  color: var(--brand-gray);
+.doctors-field select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background: #f4f6f8;
 }
 
 .doctors-search__submit {
