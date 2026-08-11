@@ -2942,7 +2942,8 @@ body.modal-open {
   overscroll-behavior-x: contain;
   container-type: inline-size;
   container-name: top-providers;
-  touch-action: pan-x;
+  /* Allow vertical page scroll while still permitting horizontal swipes */
+  touch-action: pan-x pan-y;
 }
 
 .top-providers__viewport::-webkit-scrollbar {
