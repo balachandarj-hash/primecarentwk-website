@@ -2998,11 +2998,6 @@ body.nav-open {
   .top-provider {
     width: 100cqi;
   }
-
-  .top-provider__link {
-    grid-template-columns: 4.75rem minmax(0, 1fr);
-    min-height: 7.5rem;
-  }
 }
 
 @media (min-width: 520px) and (max-width: 779px) {
