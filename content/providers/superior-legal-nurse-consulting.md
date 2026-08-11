@@ -1,21 +1,21 @@
 ---
-title: "Letitia \u201cTish\u201d Baggett, BS, BSN, RN, CCM, CLNC, FIG LCP-C"
+title: "Letitia Baggett, BS, BSN, RN, CLNC, LCP-C"
 date: "2026-07-09"
 rating: 5.0
-clinic: "Letitia \u201cTish\u201d Baggett"
+clinic: "Superior Legal Nurse Consulting"
 phone: "8884748473"
 phoneDisplay: "(888) 474-8473"
+image: /assets/images/providers/letitia-baggett.jpg
+imageAlt: "Letitia Baggett"
 specialties:
-  - "Certified Legal Nurse Consultant"
-  - "Certified Life Care Planner"
+  - "Personal Injury Legal Nurse"
 cities:
-  - "Dallas"
+  - "Houston"
 states:
   - "TX"
 addresses:
-  - "2020 Southwest Fwy #326,"
-  - "Houston, TX 77098"
+  - "2020 Southwest Fwy, Suite 326, Houston, TX 77098"
 draft: false
 ---
 
-Revva Network, LLC. Letitia “Tish” Baggett offers in-depth legal nurse services for cases that necessitate the analysis of medical records. Possessing the necessary skills and expertise, She meticulously review, organize, and analyze medical records, committing herself to the success of your case.
+Letitia “Tish” Baggett offers in-depth legal nurse services for personal injury and other cases that require medical record analysis. With the skills and expertise of a certified legal nurse consultant and life care planner, she reviews, organizes, and analyzes medical records to support case success.
