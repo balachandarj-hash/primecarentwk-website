@@ -2972,6 +2972,24 @@ body.nav-open {
   }
 }
 
+@media (max-width: 519px) {
+  .top-provider {
+    flex-basis: 100%;
+  }
+}
+
+@media (min-width: 520px) and (max-width: 779px) {
+  .top-provider {
+    flex-basis: calc((100% - 1rem) / 2);
+  }
+}
+
+@media (min-width: 780px) and (max-width: 1039px) {
+  .top-provider {
+    flex-basis: calc((100% - 2rem) / 3);
+  }
+}
+
 /* ========== Doctors directory ========== */
 .doctors-hero {
   padding: 3.5rem 0 2.25rem;
