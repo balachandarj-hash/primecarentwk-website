@@ -1,0 +1,37 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <lastmod>{{ "2026-08-11" }}</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/providers-network.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/care-coordination.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/about.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/contact.html</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <lastmod>2026-08-11</lastmod>
+  </url>
+{%- for post in collections.blog %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | isoDate }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>

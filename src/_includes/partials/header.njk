@@ -1,0 +1,76 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="logo logo--dark" href="{{ '/' | url }}" aria-label="PrimeCare Network home">
+      <img
+        class="logo__img"
+        src="{{ '/assets/images/logo-light.png' | url }}"
+        alt="PrimeCare Network"
+        width="220"
+        height="48"
+      />
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <a href="{{ '/' | url }}" {% if activeNav == "home" %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/providers-network.html' | url }}" {% if activeNav == "providers" %}aria-current="page"{% endif %}>Providers Network</a>
+      <a href="{{ '/care-coordination.html' | url }}" {% if activeNav == "coordination" %}aria-current="page"{% endif %}>Care Coordination</a>
+      <a href="{{ '/about.html' | url }}" {% if activeNav == "about" %}aria-current="page"{% endif %}>About</a>
+      <a href="{{ '/blog/' | url }}" {% if activeNav == "blog" %}aria-current="page"{% endif %}>Blog</a>
+    </nav>
+
+    <div class="header-actions">
+      <a
+        class="btn btn--header btn--sm"
+        href="https://doctors.primecarentwk.com/"
+        target="_blank"
+        rel="noopener"
+        aria-label="Find Providers"
+        ><span class="btn-label-short">Providers</span
+        ><span class="btn-label-full">Find Providers</span></a
+      >
+      <a class="btn btn--primary btn--sm" href="{{ '/contact.html' | url }}"
+        ><span class="btn-label-short">Coordinate</span
+        ><span class="btn-label-full">Coordinate a Case</span></a
+      >
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="menu-toggle__bars" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-backdrop" aria-hidden="true"></div>
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <div class="mobile-nav__head">
+      <p class="mobile-nav__title">Menu</p>
+      <button class="mobile-nav__close" type="button" aria-label="Close menu">&times;</button>
+    </div>
+    <div class="mobile-nav__links">
+      <a href="{{ '/' | url }}" {% if activeNav == "home" %}aria-current="page"{% endif %}>Home</a>
+      <a href="{{ '/providers-network.html' | url }}">Providers Network</a>
+      <a href="{{ '/care-coordination.html' | url }}">Care Coordination</a>
+      <a href="{{ '/blog/' | url }}" {% if activeNav == "blog" %}aria-current="page"{% endif %}>Blog</a>
+      <a href="{{ '/about.html' | url }}">About</a>
+      <a href="{{ '/contact.html' | url }}">Contact</a>
+    </div>
+    <div class="mobile-nav__actions">
+      <a
+        class="btn btn--header"
+        href="https://doctors.primecarentwk.com/"
+        target="_blank"
+        rel="noopener"
+        >Find Providers</a
+      >
+      <a class="btn btn--primary" href="{{ '/contact.html' | url }}">Coordinate a Case</a>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,20 @@
+{
+  "name": "primecarentwk-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "PrimeCare Network corporate site with Decap CMS blog",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve --port=8080",
+    "clean": "rm -rf _site"
+  },
+  "keywords": [
+    "primecare",
+    "eleventy",
+    "decap-cms"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

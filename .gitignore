@@ -1,8 +1,9 @@
 node_modules/
-package-lock.json
-package.json
+_site/
 .DS_Store
 Thumbs.db
 *.log
 .vscode/
 .idea/
+.env
+.env.*

@@ -1,0 +1,65 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: Insights on personal injury care coordination, provider networks, and treatment visibility from PrimeCare Network.
+permalink: /blog/
+pagination:
+  data: collections.blog
+  size: 10
+  alias: posts
+eleventyComputed:
+  activeNav: blog
+---
+
+<section class="page-hero page-hero--blog">
+  <div class="container">
+    <p class="page-hero__eyebrow">Insights</p>
+    <h1>PrimeCare Blog</h1>
+    <p class="page-hero__lede">Practical guidance on provider access, care coordination, and keeping personal injury treatment moving.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    {% if posts.length === 0 %}
+      <div class="section__head">
+        <h2>Posts coming soon</h2>
+        <p>New articles will appear here as they are published from the CMS.</p>
+      </div>
+    {% else %}
+      <div class="blog-list">
+        {% for post in posts %}
+          <article class="blog-card reveal">
+            {% if post.data.image %}
+              <a class="blog-card__media" href="{{ post.url | url }}">
+                <img src="{{ post.data.image | url }}" alt="" loading="lazy" width="640" height="400" />
+              </a>
+            {% endif %}
+            <div class="blog-card__body">
+              <p class="blog-card__meta">
+                <time datetime="{{ post.date | isoDate }}">{{ post.date | readableDate }}</time>
+                {% if post.data.author %}<span aria-hidden="true">·</span> {{ post.data.author }}{% endif %}
+              </p>
+              <h2><a href="{{ post.url | url }}">{{ post.data.title }}</a></h2>
+              {% if post.data.summary %}
+                <p>{{ post.data.summary }}</p>
+              {% endif %}
+              <a class="pillar__link" href="{{ post.url | url }}">Read article</a>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% if pagination.href.previous or pagination.href.next %}
+        <nav class="blog-pagination" aria-label="Blog pages">
+          {% if pagination.href.previous %}
+            <a class="btn btn--outline btn--sm" href="{{ pagination.href.previous | url }}">Previous</a>
+          {% endif %}
+          {% if pagination.href.next %}
+            <a class="btn btn--outline btn--sm" href="{{ pagination.href.next | url }}">Next</a>
+          {% endif %}
+        </nav>
+      {% endif %}
+    {% endif %}
+  </div>
+</section>

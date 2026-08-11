@@ -1,0 +1,34 @@
+backend:
+  name: github
+  repo: balachandarj-hash/primecarentwk-website
+  branch: main
+  # Required for production login: origin of your GitHub OAuth proxy (no trailing slash).
+  # See README “Decap CMS login (OAuth)” for setup. Local editing uses local_backend below.
+  base_url: https://YOUR-OAUTH-PROXY.example.com
+
+# Enable `npx decap-server` while running `npm start` for local editorial testing.
+local_backend: true
+
+media_folder: assets/images/blog
+public_folder: /primecarentwk-website/assets/images/blog
+
+publish_mode: simple
+
+collections:
+  - name: blog
+    label: Blog
+    label_singular: Blog post
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish Date, name: date, widget: datetime, date_format: YYYY-MM-DD, time_format: false }
+      - { label: Author, name: author, widget: string, default: "PrimeCare Network" }
+      - { label: Summary, name: summary, widget: text, required: false }
+      - { label: Featured Image, name: image, widget: image, required: false }
+      - { label: Image Alt Text, name: imageAlt, widget: string, required: false }
+      - { label: Draft, name: draft, widget: boolean, default: false }
+      - { label: Body, name: body, widget: markdown }

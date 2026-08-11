@@ -1,0 +1,39 @@
+---
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ title }} | PrimeCare Blog"
+  description: "{{ summary or title }}"
+  activeNav: blog
+---
+
+<article class="blog-post">
+  <header class="page-hero page-hero--blog">
+    <div class="container">
+      <p class="page-hero__eyebrow">Blog</p>
+      <h1>{{ title }}</h1>
+      <p class="blog-post__meta">
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | readableDate }}</time>
+        {% if author %}<span aria-hidden="true">·</span> {{ author }}{% endif %}
+      </p>
+      {% if summary %}
+        <p class="page-hero__lede">{{ summary }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  {% if image %}
+    <div class="container blog-post__feature">
+      <img src="{{ image | url }}" alt="{{ imageAlt or title }}" width="1200" height="675" loading="eager" />
+    </div>
+  {% endif %}
+
+  <div class="section">
+    <div class="container blog-post__content">
+      {{ content | safe }}
+      <div class="cta-row">
+        <a class="btn btn--primary" href="{{ '/contact.html' | url }}">Coordinate a Case</a>
+        <a class="btn btn--outline" href="{{ '/blog/' | url }}">Back to Blog</a>
+      </div>
+    </div>
+  </div>
+</article>
