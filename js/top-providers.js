@@ -22,13 +22,19 @@
       .replace(/"/g, "&quot;");
   }
 
+  function resolveImage(item, base) {
+    var img = item.image ? String(item.image).trim() : "";
+    if (!img) {
+      return base + "assets/images/providers/" + encodeURIComponent(item.slug || "") + ".svg";
+    }
+    if (/^https?:\/\//i.test(img)) return img;
+    return base + img.replace(/^\//, "");
+  }
+
   function cardHtml(item, base) {
     var slug = item.slug || "";
     var href = base + "doctors/provider/" + encodeURIComponent(slug) + "/";
-    var image =
-      item.image && String(item.image).indexOf("http") === 0
-        ? item.image
-        : base + "assets/images/providers/" + slug + ".svg";
+    var image = resolveImage(item, base);
     var clinic = item.clinic
       ? '<p class="top-provider__clinic">' + escapeHtml(item.clinic) + "</p>"
       : "";
@@ -50,7 +56,9 @@
       '<div class="top-provider__media">' +
       '<img src="' +
       escapeHtml(image) +
-      '" alt="" width="240" height="240" loading="lazy" />' +
+      '" alt="' +
+      escapeHtml(item.title || "") +
+      '" width="240" height="240" loading="lazy" />' +
       "</div>" +
       '<div class="top-provider__body">' +
       "<h3>" +

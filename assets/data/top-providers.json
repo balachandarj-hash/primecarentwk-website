@@ -1,5 +1,74 @@
 [
   {
+    "title": "Dr. Huiping Xu",
+    "clinic": "Wholehealth PLLC",
+    "rating": 5.0,
+    "specialties": [
+      "Psychiatry",
+      "Psychology"
+    ],
+    "cities": [
+      "Houston"
+    ],
+    "states": [
+      "TX"
+    ],
+    "slug": "dr-huiping-xu",
+    "rank": 1,
+    "initials": "HX",
+    "url": "./doctors/provider/dr-huiping-xu/",
+    "specialty": "Psychiatry, Psychology",
+    "location": "Houston, TX",
+    "image": "assets/images/providers/dr-huiping-xu.jpg",
+    "imageType": "photo"
+  },
+  {
+    "title": "Dr. Shabrez Tariq",
+    "clinic": "Houston Spine & Joint Pain Consultants",
+    "rating": 5.0,
+    "specialties": [
+      "Pain management"
+    ],
+    "cities": [
+      "Houston",
+      "Missouri City"
+    ],
+    "states": [
+      "TX"
+    ],
+    "slug": "dr-shabrez-tariq",
+    "rank": 2,
+    "initials": "ST",
+    "url": "./doctors/provider/dr-shabrez-tariq/",
+    "specialty": "Pain management",
+    "location": "Houston, TX",
+    "image": "assets/images/providers/dr-shabrez-tariq.jpg",
+    "imageType": "photo"
+  },
+  {
+    "title": "Dr. Rosa Tang",
+    "clinic": "Neuro-Ophthalmology of Texas at Eye Wellness Center",
+    "rating": 5.0,
+    "specialties": [
+      "Neuro-Ophthalmology",
+      "TBI"
+    ],
+    "cities": [
+      "Houston"
+    ],
+    "states": [
+      "TX"
+    ],
+    "slug": "dr-rosa-tang-2",
+    "rank": 3,
+    "initials": "RT",
+    "url": "./doctors/provider/dr-rosa-tang-2/",
+    "specialty": "Neuro-Ophthalmology, TBI",
+    "location": "Houston, TX",
+    "image": "assets/images/providers/dr-rosa-tang.jpg",
+    "imageType": "photo"
+  },
+  {
     "title": "Todd Custer, DC",
     "clinic": "Better Care Chiropractic & Physical Therapy",
     "rating": 5.0,
@@ -15,7 +84,7 @@
       "TX"
     ],
     "slug": "todd-custer-dc",
-    "rank": 1,
+    "rank": 4,
     "initials": "TC",
     "url": "./doctors/provider/todd-custer-dc/",
     "specialty": "Chiropractic, Physical Therapy",
@@ -37,7 +106,7 @@
       "TX"
     ],
     "slug": "andres-keichian-md",
-    "rank": 2,
+    "rank": 5,
     "initials": "AK",
     "url": "./doctors/provider/andres-keichian-md/",
     "specialty": "Neurology",
@@ -59,7 +128,7 @@
       "TX"
     ],
     "slug": "thomas-l-jones-iii-md",
-    "rank": 3,
+    "rank": 6,
     "initials": "TJ",
     "url": "./doctors/provider/thomas-l-jones-iii-md/",
     "specialty": "Orthopedic Spine",
@@ -81,7 +150,7 @@
       "TX"
     ],
     "slug": "anthony-lamarra-dpm",
-    "rank": 4,
+    "rank": 7,
     "initials": "AL",
     "url": "./doctors/provider/anthony-lamarra-dpm/",
     "specialty": "Podiatry",
@@ -103,7 +172,7 @@
       "TX"
     ],
     "slug": "rodrigo-j-cabrera-dds",
-    "rank": 5,
+    "rank": 8,
     "initials": "RC",
     "url": "./doctors/provider/rodrigo-j-cabrera-dds/",
     "specialty": "Dental",
@@ -125,7 +194,7 @@
       "TX"
     ],
     "slug": "omar-vidal-md",
-    "rank": 6,
+    "rank": 9,
     "initials": "OV",
     "url": "./doctors/provider/omar-vidal-md/",
     "specialty": "Pain management",
@@ -147,7 +216,7 @@
       "TX"
     ],
     "slug": "suzanne-manzi-md",
-    "rank": 7,
+    "rank": 10,
     "initials": "SM",
     "url": "./doctors/provider/suzanne-manzi-md/",
     "specialty": "EMG/NCS Testing",
@@ -170,7 +239,7 @@
       "TX"
     ],
     "slug": "matthias-wiederholz-md",
-    "rank": 8,
+    "rank": 11,
     "initials": "MW",
     "url": "./doctors/provider/matthias-wiederholz-md/",
     "specialty": "Pain management, Sports Medicine",
@@ -179,7 +248,7 @@
     "imageType": "monogram"
   },
   {
-    "title": "Top Care Emergency Room – The Heights",
+    "title": "Top Care Emergency Room \u2013 The Heights",
     "clinic": "Top Care Emergency Room - The Heights",
     "rating": 5.0,
     "specialties": [
@@ -192,7 +261,7 @@
       "TX"
     ],
     "slug": "top-care-emergency-room-the-heights",
-    "rank": 9,
+    "rank": 12,
     "initials": "ER",
     "url": "./doctors/provider/top-care-emergency-room-the-heights/",
     "specialty": "ER",
@@ -215,7 +284,7 @@
       "TX"
     ],
     "slug": "zachary-ratcliff-dc",
-    "rank": 10,
+    "rank": 13,
     "initials": "ZR",
     "url": "./doctors/provider/zachary-ratcliff-dc/",
     "specialty": "Orthopedic Spine, Sports Medicine",
