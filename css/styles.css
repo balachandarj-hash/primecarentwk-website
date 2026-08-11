@@ -3021,6 +3021,18 @@ body.nav-open {
     linear-gradient(180deg, #f4fafc 0%, #ffffff 100%);
 }
 
+.doctors-hero--with-slider {
+  padding-bottom: 1.5rem;
+}
+
+.doctors-hero__inner {
+  margin-bottom: 1.75rem;
+}
+
+.doctors-hero__slider {
+  margin-top: 0.25rem;
+}
+
 .doctors-hero .eyebrow {
   margin: 0;
   font-size: 0.8rem;
@@ -3035,7 +3047,7 @@ body.nav-open {
   font-size: clamp(1.85rem, 3vw, 2.6rem);
   color: var(--navy-900);
   margin: 0.35rem 0 0.75rem;
-  max-width: 18ch;
+  max-width: 22ch;
 }
 
 .doctors-hero .lede {

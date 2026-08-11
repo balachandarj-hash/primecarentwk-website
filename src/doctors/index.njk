@@ -6,19 +6,33 @@ description: Search PrimeCare Network providers by specialty, city, and state. B
 activeNav: doctors
 ---
 
-<section class="doctors-hero">
-  <div class="container doctors-hero__inner">
-    <p class="eyebrow">Providers Directory</p>
-    <h1>Find a PrimeCare Network provider</h1>
-    <p class="lede">
-      Search our multi-specialty network by specialty, city, and state—then request an appointment with a patient coordinator.
-    </p>
+<section class="doctors-hero doctors-hero--with-slider" aria-labelledby="doctors-hero-title">
+  <div class="container">
+    <div class="doctors-hero__inner reveal">
+      <p class="eyebrow">Providers Directory</p>
+      <h1 id="doctors-hero-title">Find a PrimeCare Network provider</h1>
+      <p class="lede">
+        Browse featured providers below, or search the full multi-specialty network by specialty,
+        city, and state.
+      </p>
+    </div>
+
+    <div
+      class="top-providers doctors-hero__slider reveal"
+      data-top-providers-slider
+      data-tp-src="{{ '/assets/data/top-providers.json' | url }}"
+    >
+      <div class="top-providers__viewport">
+        <div class="top-providers__track"></div>
+      </div>
+      <div class="top-providers__controls">
+        <button type="button" class="top-providers__btn" data-tp-prev aria-label="Previous providers">‹</button>
+        <div class="top-providers__dots" data-tp-dots aria-hidden="true"></div>
+        <button type="button" class="top-providers__btn" data-tp-next aria-label="Next providers">›</button>
+      </div>
+    </div>
   </div>
 </section>
-
-{% set showDirectoryCta = false %}
-{% set showBottomCtas = false %}
-{% include "partials/top-providers-slider.njk" %}
 
 <section class="doctors-search" aria-label="Search for providers">
   <div class="container">

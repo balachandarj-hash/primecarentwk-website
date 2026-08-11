@@ -1,6 +1,13 @@
-{# Shared Top Providers horizontal slider shell. Cards load from assets/data/top-providers.json #}
-<section class="section top-providers-section" id="top-providers" aria-labelledby="top-providers-title">
+{# Shared Top Providers horizontal slider.
+   Optional flags:
+   - showDirectoryCta (default true)
+   - showBottomCtas (default true)
+   - hideHead (default false) — slider controls only, no section title block
+   - sectionClass — extra classes on outer section
+#}
+<section class="section top-providers-section{% if sectionClass %} {{ sectionClass }}{% endif %}" id="top-providers" {% if hideHead %}aria-label="Top providers in our network"{% else %}aria-labelledby="top-providers-title"{% endif %}>
   <div class="container">
+    {% if not hideHead %}
     <div class="section__head section__head--wide reveal top-providers__head">
       <div>
         <p class="section__eyebrow">Provider network</p>
@@ -14,6 +21,7 @@
       <a class="btn btn--outline" href="{{ '/doctors/' | url }}">View all providers</a>
       {% endif %}
     </div>
+    {% endif %}
 
     <div
       class="top-providers reveal"
