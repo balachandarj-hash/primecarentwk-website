@@ -1651,6 +1651,13 @@ body.modal-open {
   margin: 2rem 0 0.75rem;
 }
 
+.legal-doc h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.05rem, 0.98rem + 0.3vw, 1.2rem);
+  color: var(--navy-800);
+  margin: 1.5rem 0 0.6rem;
+}
+
 .legal-doc p,
 .legal-doc li {
   color: var(--ink-muted);
