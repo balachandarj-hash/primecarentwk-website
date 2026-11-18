@@ -103,7 +103,15 @@
   function matches(p, filters) {
     if (filters.name) {
       var needle = normalizeName(filters.name);
-      var haystack = normalizeName(p.title || "");
+      var haystack = normalizeName(
+        [
+          p.title || "",
+          (p.specialties || []).join(" "),
+          (p.cities || []).join(" "),
+          (p.states || []).join(" "),
+          (p.addresses || []).join(" "),
+        ].join(" ")
+      );
       if (haystack.indexOf(needle) === -1) return false;
     }
     if (filters.specialty && (p.specialties || []).indexOf(filters.specialty) === -1) return false;
@@ -279,6 +287,15 @@
       });
     }
 
+    var specialtySelect = $("#filter-specialty");
+    if (specialtySelect) {
+      specialtySelect.addEventListener("change", function () {
+        state.filters = readFilters();
+        state.page = 1;
+        render();
+      });
+    }
+
     if (clearBtn) {
       clearBtn.addEventListener("click", function () {
         ["filter-name", "filter-specialty", "filter-city", "filter-state"].forEach(function (id) {
@@ -311,8 +328,8 @@
         if (!btn || btn.disabled) return;
         state.page = Number(btn.getAttribute("data-page")) || 1;
         render();
-        var panel = $(".doctors-results");
-        if (panel) panel.scrollIntoView({ behavior: "smooth", block: "start" });
+        var panelBody = $(".doctors-directory__panel-body") || $("#doctors-results");
+        if (panelBody) panelBody.scrollTop = 0;
       });
     }
 

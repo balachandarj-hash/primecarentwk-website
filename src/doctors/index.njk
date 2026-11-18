@@ -2,146 +2,105 @@
 layout: layouts/base.njk
 permalink: /doctors/
 pageTitle: Providers Directory | PrimeCare Network
-description: Search PrimeCare Network providers by name, specialty, city, and state. Book an appointment with a patient coordinator.
+description: Search PrimeCare Network providers by name, specialty, city, and state on an interactive map directory.
 activeNav: doctors
-bodyClass: doctors-page
+bodyClass: doctors-page doctors-map-directory
 ---
 
-<section class="doctors-hero doctors-hero--with-slider" aria-labelledby="doctors-hero-title">
-  <div class="container">
-    <div class="doctors-hero__inner reveal">
-      <p class="eyebrow">Providers Directory</p>
-      <h1 id="doctors-hero-title">Find a PrimeCare Network provider</h1>
-      <p class="lede">
-        Browse featured providers below, or search the full multi-specialty network by name,
-        specialty, state, and city.
-      </p>
+<section class="doctors-directory" id="doctors-directory" aria-label="Provider map directory">
+  <h1 class="sr-only">Find a PrimeCare Network provider</h1>
+
+  <div
+    id="doctors-map"
+    class="doctors-map doctors-directory__map"
+    role="region"
+    aria-label="Map of PrimeCare Network provider addresses"
+    data-locations-src="{{ '/assets/data/provider-locations.json' | url }}"
+  ></div>
+
+  <div class="doctors-directory__ui">
+    <div class="doctors-directory__search" aria-label="Search for providers">
+      <form class="doctors-directory__form" id="doctors-filter-form">
+        <label class="doctors-directory__query">
+          <span class="sr-only">Provider name</span>
+          <input
+            id="filter-name"
+            name="name"
+            type="search"
+            placeholder="Search providers, specialty, or city"
+            autocomplete="off"
+            enterkeyhint="search"
+          />
+        </label>
+        <button
+          class="doctors-filters-toggle"
+          type="button"
+          id="doctors-filters-toggle"
+          aria-expanded="false"
+          aria-controls="doctors-search-filters"
+        >
+          Filters
+        </button>
+        <button class="btn btn--primary doctors-directory__submit" type="submit">Search</button>
+      </form>
+
+      <div class="doctors-directory__filters" id="doctors-search-filters" hidden>
+        <label class="doctors-field">
+          <span class="doctors-field__label">Specialty</span>
+          <select id="filter-specialty" name="specialty" form="doctors-filter-form">
+            <option value="">All specialties</option>
+            {% for item in providersDirectory.specialties %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="doctors-field">
+          <span class="doctors-field__label">State</span>
+          <select id="filter-state" name="state" form="doctors-filter-form">
+            <option value="">All states</option>
+            {% for item in providersDirectory.states %}
+            <option value="{{ item }}">{{ item }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="doctors-field">
+          <span class="doctors-field__label">City</span>
+          <select id="filter-city" name="city" form="doctors-filter-form" disabled>
+            <option value="">Select a state first</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="doctors-directory__meta-bar">
+        <p id="doctors-map-count" class="doctors-directory__map-count">Loading map…</p>
+        <p id="doctors-results-count" class="doctors-directory__results-count"></p>
+        <button class="text-link" type="button" id="doctors-clear-filters" hidden>Clear</button>
+      </div>
     </div>
 
-    <div
-      class="top-providers doctors-hero__slider reveal"
-      data-top-providers-slider
-      data-tp-src="{{ '/assets/data/top-providers.json' | url }}"
-    >
-      <div class="top-providers__viewport">
-        <div class="top-providers__track"></div>
-      </div>
-      <div class="top-providers__controls">
-        <button type="button" class="top-providers__btn" data-tp-prev aria-label="Previous providers">‹</button>
-        <div class="top-providers__dots" data-tp-dots aria-hidden="true"></div>
-        <button type="button" class="top-providers__btn" data-tp-next aria-label="Next providers">›</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="doctors-explorer" id="doctors-explorer">
-  <section class="doctors-search" aria-label="Search for providers">
-    <div class="container">
-      <div class="doctors-search__panel">
-        <div class="doctors-search__title-row">
-          <div class="doctors-search__title">Search for Providers</div>
-          <div class="doctors-view-toggle" role="group" aria-label="Directory view">
-            <button type="button" class="doctors-view-toggle__btn is-active" data-doctors-view="split" aria-pressed="true">
+    <aside class="doctors-directory__panel" id="doctors-results" aria-live="polite">
+      <div class="doctors-directory__panel-head">
+        <div class="doctors-results__handle" aria-hidden="true"></div>
+        <div class="doctors-directory__panel-title-row">
+          <strong>Providers</strong>
+          <div class="doctors-view-toggle" role="group" aria-label="Panel size">
+            <button type="button" class="doctors-view-toggle__btn is-active" data-sheet-size="peek" aria-pressed="true">
               Map
             </button>
-            <button type="button" class="doctors-view-toggle__btn" data-doctors-view="list" aria-pressed="false">
+            <button type="button" class="doctors-view-toggle__btn" data-sheet-size="half" aria-pressed="false">
+              Split
+            </button>
+            <button type="button" class="doctors-view-toggle__btn" data-sheet-size="full" aria-pressed="false">
               List
             </button>
           </div>
         </div>
-        <form class="doctors-search__form" id="doctors-filter-form">
-          <label class="doctors-field doctors-field--name">
-            <span class="doctors-field__label">Provider name</span>
-            <input
-              id="filter-name"
-              name="name"
-              type="search"
-              placeholder="Search by name"
-              autocomplete="off"
-              enterkeyhint="search"
-            />
-          </label>
-          <div class="doctors-search__filters" id="doctors-search-filters">
-            <label class="doctors-field">
-              <span class="doctors-field__label">Specialty</span>
-              <select id="filter-specialty" name="specialty">
-                <option value="">All specialties</option>
-                {% for item in providersDirectory.specialties %}
-                <option value="{{ item }}">{{ item }}</option>
-                {% endfor %}
-              </select>
-            </label>
-            <label class="doctors-field">
-              <span class="doctors-field__label">State</span>
-              <select id="filter-state" name="state">
-                <option value="">All states</option>
-                {% for item in providersDirectory.states %}
-                <option value="{{ item }}">{{ item }}</option>
-                {% endfor %}
-              </select>
-            </label>
-            <label class="doctors-field">
-              <span class="doctors-field__label">City</span>
-              <select id="filter-city" name="city" disabled>
-                <option value="">Select a state first</option>
-              </select>
-            </label>
-          </div>
-          <div class="doctors-search__actions">
-            <button
-              class="doctors-filters-toggle"
-              type="button"
-              id="doctors-filters-toggle"
-              aria-expanded="false"
-              aria-controls="doctors-search-filters"
-            >
-              Filters
-            </button>
-            <button class="btn btn--primary doctors-search__submit" type="submit">Search</button>
-          </div>
-        </form>
       </div>
-    </div>
-  </section>
-
-  <section class="doctors-map-section" id="doctors-map-section" aria-labelledby="doctors-map-title">
-    <div class="container">
-      <div class="doctors-map-section__head">
-        <div>
-          <p class="section__eyebrow">Provider locations</p>
-          <h2 id="doctors-map-title">Network map</h2>
-          <p class="doctors-map-section__lede">
-            Browse every listed clinic address on the map. Search filters also update the pins.
-          </p>
-        </div>
-        <p class="doctors-map-section__count" id="doctors-map-count">Loading map…</p>
+      <div class="doctors-directory__panel-body">
+        <div id="doctors-results-list" class="doctors-list"></div>
+        <nav class="doctors-pagination" id="doctors-pagination" aria-label="Provider results pages"></nav>
       </div>
-      <div
-        id="doctors-map"
-        class="doctors-map"
-        role="region"
-        aria-label="Map of PrimeCare Network provider addresses"
-        data-locations-src="{{ '/assets/data/provider-locations.json' | url }}"
-      ></div>
-      <p class="doctors-map-section__note">
-        Tap a pin to see the address and linked providers. Map data © OpenStreetMap contributors.
-      </p>
-    </div>
-  </section>
-</div>
-
-<section class="doctors-results" id="doctors-results" aria-live="polite">
-  <div class="container">
-    <div class="doctors-results__sheet">
-      <div class="doctors-results__handle" aria-hidden="true"></div>
-      <div class="doctors-results__meta">
-        <p id="doctors-results-count"></p>
-        <button class="text-link" type="button" id="doctors-clear-filters" hidden>Clear filters</button>
-      </div>
-      <div id="doctors-results-list" class="doctors-list"></div>
-      <nav class="doctors-pagination" id="doctors-pagination" aria-label="Provider results pages"></nav>
-    </div>
+    </aside>
   </div>
 </section>
 
@@ -165,6 +124,5 @@ bodyClass: doctors-page
 <script src="{{ '/js/doctors-directory.js' | url }}" defer></script>
 <script src="{{ '/js/doctors-map.js' | url }}" defer></script>
 <script src="{{ '/js/doctors-explorer.js' | url }}" defer></script>
-<script src="{{ '/js/top-providers.js' | url }}" defer></script>
 
 {% include "partials/appointment-modal.njk" %}
