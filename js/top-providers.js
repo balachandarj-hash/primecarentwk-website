@@ -101,8 +101,7 @@
 
     function perView() {
       var w = viewport.getBoundingClientRect().width || window.innerWidth;
-      if (w < 520) return 1;
-      if (w < 780) return 2;
+      // Keep 3 cards visible on mobile and small tablets.
       if (w < 1040) return 3;
       return 4;
     }
