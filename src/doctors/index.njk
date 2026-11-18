@@ -80,6 +80,31 @@ activeNav: doctors
   </div>
 </section>
 
+<section class="doctors-map-section" aria-labelledby="doctors-map-title">
+  <div class="container">
+    <div class="doctors-map-section__head">
+      <div>
+        <p class="section__eyebrow">Provider locations</p>
+        <h2 id="doctors-map-title">Network map</h2>
+        <p class="doctors-map-section__lede">
+          Browse every listed clinic address on the map. Search filters above also update the pins.
+        </p>
+      </div>
+      <p class="doctors-map-section__count" id="doctors-map-count">Loading map…</p>
+    </div>
+    <div
+      id="doctors-map"
+      class="doctors-map"
+      role="region"
+      aria-label="Map of PrimeCare Network provider addresses"
+      data-locations-src="{{ '/assets/data/provider-locations.json' | url }}"
+    ></div>
+    <p class="doctors-map-section__note">
+      Click a pin to see the address and linked providers. Map data © OpenStreetMap contributors.
+    </p>
+  </div>
+</section>
+
 <section class="doctors-results" aria-live="polite">
   <div class="container">
     <div class="doctors-results__meta">
@@ -96,7 +121,20 @@ activeNav: doctors
 <script>
   window.PRIMCARE_BASE = "{{ '/' | url }}";
 </script>
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+  defer
+></script>
 <script src="{{ '/js/doctors-directory.js' | url }}" defer></script>
+<script src="{{ '/js/doctors-map.js' | url }}" defer></script>
 <script src="{{ '/js/top-providers.js' | url }}" defer></script>
 
 {% include "partials/appointment-modal.njk" %}

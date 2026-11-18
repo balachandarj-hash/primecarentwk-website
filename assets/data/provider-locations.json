@@ -1,0 +1,1541 @@
+{
+  "generatedAt": "2026-11-18T19:06:39Z",
+  "count": 128,
+  "missingCount": 4,
+  "missing": [
+    "34 Wells Dr, Farmington, Texas",
+    "8102 Clearwater Xing Humble, TX, 77396-3454",
+    "STAT DIAGNOSTICS",
+    "Statewide Telemed"
+  ],
+  "locations": [
+    {
+      "address": "1001 12th Ave., Suite 146, Fort Worth, Texas 76104-3926",
+      "lat": 32.734949,
+      "lng": -97.3470458,
+      "providers": [
+        {
+          "slug": "dr-megan-favia",
+          "title": "Dr. Megan Favia"
+        }
+      ]
+    },
+    {
+      "address": "10065 Almeda Genoa Rd, Suite J, Houston, TX, 77073",
+      "lat": 29.6276198,
+      "lng": -95.239683,
+      "providers": [
+        {
+          "slug": "rodrigo-j-cabrera-dds",
+          "title": "Rodrigo J. Cabrera, DDS"
+        }
+      ]
+    },
+    {
+      "address": "101 Vision Park Blvd, Shenandoah, TX 77384",
+      "lat": 30.191346,
+      "lng": -95.453928,
+      "providers": [
+        {
+          "slug": "dr-paul-kobza",
+          "title": "Dr. Paul Kobza"
+        }
+      ]
+    },
+    {
+      "address": "101 Vision Park Blvd. Shenandoah, TX 77384",
+      "lat": 30.191346,
+      "lng": -95.453928,
+      "providers": [
+        {
+          "slug": "dr-ronald-buczek",
+          "title": "Dr. Ronald Buczek"
+        }
+      ]
+    },
+    {
+      "address": "10190 Katy Fwy Suite 240, Houston \\u2013 77043",
+      "lat": 29.7856231,
+      "lng": -95.5449999,
+      "providers": [
+        {
+          "slug": "dr-shabrez-tariq",
+          "title": "Dr. Shabrez Tariq"
+        }
+      ]
+    },
+    {
+      "address": "10190 Katy Fwy., Ste 240, Houston, Tx 77043",
+      "lat": 29.7855227,
+      "lng": -95.5485374,
+      "providers": [
+        {
+          "slug": "pain-management",
+          "title": "Dr Shabrez Tariq"
+        }
+      ]
+    },
+    {
+      "address": "10611 Garland Rd # 201, Dallas, TX 75218, United States",
+      "lat": 32.9099657,
+      "lng": -96.6461021,
+      "providers": [
+        {
+          "slug": "dr-sharisse-stephenson",
+          "title": "Dr. Sharisse Stephenson"
+        }
+      ]
+    },
+    {
+      "address": "10845 Kuykendahl Rd., Suite 102, The Woodlands, TX, 77382",
+      "lat": 30.1767528,
+      "lng": -95.5370649,
+      "providers": [
+        {
+          "slug": "donald-thigpen-dc",
+          "title": "Donald Thigpen, DC"
+        },
+        {
+          "slug": "bsn-brett-baer-pt-dpt",
+          "title": "Brett Baer, PT, DPT"
+        },
+        {
+          "slug": "caitlin-timmons-dc",
+          "title": "Caitlin Timmons, DC"
+        }
+      ]
+    },
+    {
+      "address": "10907 Memorial Hermann Dr Suite 320, Pearland, TX, 77584",
+      "lat": 29.560312,
+      "lng": -95.389281,
+      "providers": [
+        {
+          "slug": "thomas-l-jones-iii-md",
+          "title": "Thomas L. Jones III, MD"
+        }
+      ]
+    },
+    {
+      "address": "1110 Kingwood Dr., Suite 201, Kingwood, TX, 77339",
+      "lat": 30.0469814,
+      "lng": -95.2120362,
+      "providers": [
+        {
+          "slug": "kyle-buchan-dc",
+          "title": "Kyle Buchan, DC"
+        },
+        {
+          "slug": "cody-mccomb-dc",
+          "title": "Cody McComb, DC"
+        }
+      ]
+    },
+    {
+      "address": "1110 Nasa Pkwy Ste 460 Houston, TX 77058",
+      "lat": 29.5538439,
+      "lng": -95.0823707,
+      "providers": [
+        {
+          "slug": "dr-cabe-owens",
+          "title": "Dr. Cabe Owens"
+        }
+      ]
+    },
+    {
+      "address": "11100 Southwest Frwy, Houston, TX, 77031",
+      "lat": 29.6576524,
+      "lng": -95.5624077,
+      "providers": [
+        {
+          "slug": "carey-fiegel-jackson-ma-lpc-s",
+          "title": "Carey Fiegel-Jackson, MA, LPC-S"
+        },
+        {
+          "slug": "jeremy-szeto-do",
+          "title": "Jeremy Szeto, DO"
+        }
+      ]
+    },
+    {
+      "address": "1124 North Velasco, Suite E, Angleton, TX, 77515",
+      "lat": 29.177332,
+      "lng": -95.432506,
+      "providers": [
+        {
+          "slug": "chris-pangan-dc",
+          "title": "Chris Pangan, DC"
+        },
+        {
+          "slug": "david-cervenka-dc",
+          "title": "David Cervenka, DC"
+        }
+      ]
+    },
+    {
+      "address": "1140 Westmont Dr., Suite 547, Houston, TX, 77015",
+      "lat": 29.7732213,
+      "lng": -95.1946222,
+      "providers": [
+        {
+          "slug": "edgar-v-mendoza-dc",
+          "title": "Edgar V. Mendoza, DC"
+        },
+        {
+          "slug": "thomas-hallisey-dc",
+          "title": "Thomas Hallisey, DC"
+        }
+      ]
+    },
+    {
+      "address": "12022 FM 1960 East, Suite B, Huffman, TX, 77336",
+      "lat": 30.000018,
+      "lng": -95.2223549,
+      "providers": [
+        {
+          "slug": "nathan-maine-dc",
+          "title": "Nathan Maine, DC"
+        }
+      ]
+    },
+    {
+      "address": "12121 Richmond Ave. Suite 324 A, Houston, TX 77082, United States",
+      "lat": 29.7291689,
+      "lng": -95.5935997,
+      "providers": [
+        {
+          "slug": "dr-gary-kraus",
+          "title": "Dr. Gary Kraus"
+        }
+      ]
+    },
+    {
+      "address": "1216 East Main Street, Suite A, League City, TX, 77573",
+      "lat": 29.51529,
+      "lng": -95.085121,
+      "providers": [
+        {
+          "slug": "brian-sansalone-dc",
+          "title": "Brian Sansalone, DC"
+        },
+        {
+          "slug": "hunter-steele-dc",
+          "title": "Hunter Steele, DC"
+        },
+        {
+          "slug": "jay-heintz-dc",
+          "title": "Jay Heintz, DC"
+        },
+        {
+          "slug": "natalie-greer-np-c",
+          "title": "Natalie Greer, NP-C"
+        },
+        {
+          "slug": "tanner-brusnighan-dc",
+          "title": "Tanner Brusnighan, DC"
+        },
+        {
+          "slug": "adrianne-campbell-fnp-bc",
+          "title": "Adrianne Campbell, FNP-BC"
+        }
+      ]
+    },
+    {
+      "address": "12413 Judson Rd., Suite 255a, Live Oak, TX 78233",
+      "lat": 29.5512151,
+      "lng": -98.348174,
+      "providers": [
+        {
+          "slug": "dr-siraj-a-sayeed",
+          "title": "Dr. Siraj A. Sayeed"
+        }
+      ]
+    },
+    {
+      "address": "12414 Alderbrook Drive, Suite 201, Austin Tx 78727",
+      "lat": 30.4154205,
+      "lng": -97.6980666,
+      "providers": [
+        {
+          "slug": "dr-andy-joshi",
+          "title": "Dr Andy Joshi"
+        }
+      ]
+    },
+    {
+      "address": "12800 Preston Road, Suite 200, Dallas, Texas 75230",
+      "lat": 32.922669,
+      "lng": -96.803455,
+      "providers": [
+        {
+          "slug": "dr-gabriel-jasso",
+          "title": "Dr. Gabriel Jasso"
+        }
+      ]
+    },
+    {
+      "address": "12941 North Frwy, Suite 216,  77060",
+      "lat": 29.9544043,
+      "lng": -95.4192248,
+      "providers": [
+        {
+          "slug": "sterling-carter-dpt",
+          "title": "Sterling Carter, DPT"
+        }
+      ]
+    },
+    {
+      "address": "12941 North Fwy, Suite 216, 77060",
+      "lat": 29.9544043,
+      "lng": -95.4192248,
+      "providers": [
+        {
+          "slug": "cameron-l-jackson-dc",
+          "title": "Cameron L. Jackson, DC"
+        },
+        {
+          "slug": "cheng-lee-dc",
+          "title": "Cheng Lee, DC"
+        },
+        {
+          "slug": "arvin-garcia-np-c",
+          "title": "Arvin Garcia, NP-C"
+        }
+      ]
+    },
+    {
+      "address": "1300 Murchison Dr. Suite 310 B El Paso, TX 79902",
+      "lat": 31.778135,
+      "lng": -106.4866309,
+      "providers": [
+        {
+          "slug": "dr-terrence-klein",
+          "title": "Dr Terrence Klein"
+        }
+      ]
+    },
+    {
+      "address": "1301 South Capital of Texas Highway, Suite A-138, West Lake Hills, TX, 78746 | Telemed",
+      "lat": 30.2798031,
+      "lng": -97.81902,
+      "providers": [
+        {
+          "slug": "dr-erin-silvertooth",
+          "title": "Dr. Erin Silvertooth"
+        }
+      ]
+    },
+    {
+      "address": "1305 W. Parkwood Ave, Suite 101, Houston, TX, 77546",
+      "lat": 29.4979497,
+      "lng": -95.2028616,
+      "providers": [
+        {
+          "slug": "joe-denke-dc",
+          "title": "Joe Denke, DC"
+        },
+        {
+          "slug": "kevin-mcdonald-fnp",
+          "title": "Kevin McDonald, FNP"
+        },
+        {
+          "slug": "josh-goodson-dc",
+          "title": "Josh Goodson, DC"
+        }
+      ]
+    },
+    {
+      "address": "1305 Wonder World Dr, Ste 306, San Marcos Tx 78666",
+      "lat": 29.85138,
+      "lng": -97.946477,
+      "providers": [
+        {
+          "slug": "dr-andy-joshi",
+          "title": "Dr Andy Joshi"
+        }
+      ]
+    },
+    {
+      "address": "13201 Northwest Fwy, Ste 668, Houston Tx 77040",
+      "lat": 29.848574,
+      "lng": -95.505814,
+      "providers": [
+        {
+          "slug": "dr-julian-osuji",
+          "title": "Dr. Julian Osuji"
+        }
+      ]
+    },
+    {
+      "address": "1324 N Shepherd Dr, Houston, TX 77008",
+      "lat": 29.7947026,
+      "lng": -95.4098713,
+      "providers": [
+        {
+          "slug": "top-care-emergency-room-the-heights",
+          "title": "Top Care Emergency Room \\u2013 The Heights"
+        }
+      ]
+    },
+    {
+      "address": "1400 George Dieter Dr Suite 10 Suite 100, El Paso, TX 79936",
+      "lat": 31.7337811,
+      "lng": -106.3009915,
+      "providers": [
+        {
+          "slug": "dr-bratislav-velimirovic",
+          "title": "Dr. Bratislav Velimirovic"
+        }
+      ]
+    },
+    {
+      "address": "1400 Preston Road, Suite 300, Plano, TX 75093",
+      "lat": 33.0182995,
+      "lng": -96.7939247,
+      "providers": [
+        {
+          "slug": "dr-julian-osuji",
+          "title": "Dr. Julian Osuji"
+        }
+      ]
+    },
+    {
+      "address": "1416 E Expressway 83, Weslaco, TX 78596",
+      "lat": 26.1704759,
+      "lng": -97.974496,
+      "providers": [
+        {
+          "slug": "dr-jorge-saenz",
+          "title": "Dr Jorge Saenz"
+        }
+      ]
+    },
+    {
+      "address": "1422 N. Loop 336 W, Suite C, Conroe, TX, 77304",
+      "lat": 30.3320653,
+      "lng": -95.4840903,
+      "providers": [
+        {
+          "slug": "jesse-schneringer-dc",
+          "title": "Jesse Schneringer, DC"
+        }
+      ]
+    },
+    {
+      "address": "1449 Hwy. 6, Suite 260, Sugar Land, TX, 77578",
+      "lat": 29.5892255,
+      "lng": -95.5967699,
+      "providers": [
+        {
+          "slug": "paul-raymond-dc",
+          "title": "Paul Raymond, DC"
+        },
+        {
+          "slug": "sterling-l-carter-dpt-ms-cscs",
+          "title": "Sterling L. Carter, DPT, MS, CSCS"
+        }
+      ]
+    },
+    {
+      "address": "1460 N. Expressway 77/83, Ste C, Brownsville, TX 78520",
+      "lat": 25.9332405,
+      "lng": -97.4966431,
+      "providers": [
+        {
+          "slug": "dr-jorge-saenz",
+          "title": "Dr Jorge Saenz"
+        }
+      ]
+    },
+    {
+      "address": "14615 San Pedro Ave, Ste. 120 San Antonio, TX 78232",
+      "lat": 29.5739802,
+      "lng": -98.4795503,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "14833 Southwest Freeway Sugarland, TX 77478",
+      "lat": 29.6227782,
+      "lng": -95.5984241,
+      "providers": [
+        {
+          "slug": "dr-anish-potty",
+          "title": "Dr. Anish\\u00a0Potty"
+        }
+      ]
+    },
+    {
+      "address": "1501 N. Amburn Road, Ste. 2, Texas City, TX, 77591",
+      "lat": 29.396207,
+      "lng": -95.0034681,
+      "providers": [
+        {
+          "slug": "tim-hughes-dc",
+          "title": "Tim Hughes, DC"
+        }
+      ]
+    },
+    {
+      "address": "15149 Wallisville Rd, Houston, TX 77049",
+      "lat": 29.8031767,
+      "lng": -95.2175128,
+      "providers": [
+        {
+          "slug": "east-houston-medical-center",
+          "title": "Medical Center \\u2013 East Houston"
+        }
+      ]
+    },
+    {
+      "address": "16750 Red Oak Dr, Houston, TX 77090",
+      "lat": 30.0143944,
+      "lng": -95.4405904,
+      "providers": [
+        {
+          "slug": "united-memorial-medical-center-north",
+          "title": "Medical Center \\u2013 North Houston"
+        }
+      ]
+    },
+    {
+      "address": "1701 Fairway Dr. #3B, Alvin, TX, 77511",
+      "lat": 29.408494,
+      "lng": -95.2343496,
+      "providers": [
+        {
+          "slug": "ross-leago-dc",
+          "title": "Ross Leago, DC"
+        },
+        {
+          "slug": "lori-hudson-dc",
+          "title": "Lori Hudson, DC"
+        }
+      ]
+    },
+    {
+      "address": "17030 Northwest Fwy, Jersey Village, TX 77040",
+      "lat": 29.8716579,
+      "lng": -95.551746,
+      "providers": [
+        {
+          "slug": "24-hour-walk-in-emergency-room",
+          "title": "Emergency Center \\u2013 Jersey Village"
+        }
+      ]
+    },
+    {
+      "address": "17101 W Grand Pkwy S, Suite 66, Sugar Land, TX 77479",
+      "lat": 29.5820447,
+      "lng": -95.6783589,
+      "providers": [
+        {
+          "slug": "dr-ashok-kota",
+          "title": "Dr. Ashok Kota"
+        }
+      ]
+    },
+    {
+      "address": "1721 Birmingham Road Ste 200 College Station, TX 77845",
+      "lat": 30.5794856,
+      "lng": -96.288777,
+      "providers": [
+        {
+          "slug": "dr-nilesh-kotecha",
+          "title": "Dr. Nilesh Kotecha"
+        }
+      ]
+    },
+    {
+      "address": "18059 Hwy 105, Ste. 105, Spring, TX, 77356",
+      "lat": 30.3318814,
+      "lng": -95.360956,
+      "providers": [
+        {
+          "slug": "dustin-cook-mspt-ocs-cscs",
+          "title": "Dustin Cook, MSPT, OCS, CSCS"
+        },
+        {
+          "slug": "todd-custer-dc",
+          "title": "Todd Custer, DC"
+        }
+      ]
+    },
+    {
+      "address": "1849 Pearland Parkway, Suite 107, Pearland, TX, 77581",
+      "lat": 29.5761484,
+      "lng": -95.2647162,
+      "providers": [
+        {
+          "slug": "shane-sigg-dc",
+          "title": "Shane Sigg, DC"
+        }
+      ]
+    },
+    {
+      "address": "1900 N. Loop West, Ste. 230, Houston, TX, 77018",
+      "lat": 29.812822,
+      "lng": -95.432803,
+      "providers": [
+        {
+          "slug": "dr-remi-nader",
+          "title": "Dr. Remi Nader"
+        },
+        {
+          "slug": "mauricio-garcia-jaques-md",
+          "title": "Mauricio Garcia-Jaques, MD"
+        }
+      ]
+    },
+    {
+      "address": "1900 North Loop W Ste 670 Houston, TX 77018",
+      "lat": 29.812822,
+      "lng": -95.432803,
+      "providers": [
+        {
+          "slug": "dr-wasyl-fedoriw",
+          "title": "Dr. Wasyl Fedoriw, MD"
+        }
+      ]
+    },
+    {
+      "address": "1901 Babcock Rd #103 , San Antonio, Tx 78229",
+      "lat": 29.4986242,
+      "lng": -98.5757418,
+      "providers": [
+        {
+          "slug": "dr-sal-sandoval",
+          "title": "Dr Sal Sandoval"
+        }
+      ]
+    },
+    {
+      "address": "1901 S 1st St, Temple, TX, 76504",
+      "lat": 31.0781751,
+      "lng": -97.3492651,
+      "providers": [
+        {
+          "slug": "dr-padma-kumar",
+          "title": "Dr. Padma Kumar"
+        }
+      ]
+    },
+    {
+      "address": "1930 Country Place Pkwy, Suite 110, Pearland, TX, 77584",
+      "lat": 29.5752976,
+      "lng": -95.3839824,
+      "providers": [
+        {
+          "slug": "darrin-richardson-dc",
+          "title": "Darrin Richardson, DC"
+        }
+      ]
+    },
+    {
+      "address": "2006 45th Street, Galveston, TX, 77550",
+      "lat": 29.2844725,
+      "lng": -94.814063,
+      "providers": [
+        {
+          "slug": "anello-dambra-dc",
+          "title": "Anello D\\u2019Ambra, DC"
+        }
+      ]
+    },
+    {
+      "address": "2020 Southwest Fwy, Suite 326, Houston, TX 77098",
+      "lat": 29.7304036,
+      "lng": -95.4103969,
+      "providers": [
+        {
+          "slug": "superior-legal-nurse-consulting",
+          "title": "Letitia Baggett, BS, BSN, RN, CLNC, LCP-C"
+        }
+      ]
+    },
+    {
+      "address": "20440 West Rd, Cypress, TX 77433",
+      "lat": 29.910416,
+      "lng": -95.7255424,
+      "providers": [
+        {
+          "slug": "total-point-emergency-center",
+          "title": "Emergency Center \\u2013 Cypress"
+        }
+      ]
+    },
+    {
+      "address": "215 Orlean Street, Ste 400A Beaumont, TX 77701",
+      "lat": 30.0850421,
+      "lng": -94.1016349,
+      "providers": [
+        {
+          "slug": "dr-nilesh-kotecha",
+          "title": "Dr. Nilesh Kotecha"
+        }
+      ]
+    },
+    {
+      "address": "2211 Norfolk St. Suite 105, Montgomery, TX, 77098",
+      "lat": 29.7322258,
+      "lng": -95.4140376,
+      "providers": [
+        {
+          "slug": "jodi-wilson-dc",
+          "title": "Jodi Wilson, DC"
+        },
+        {
+          "slug": "kennedy-tyer-dc",
+          "title": "Kennedy Tyer, DC"
+        },
+        {
+          "slug": "darin-mitchell-dc",
+          "title": "Darin Mitchell, DC"
+        }
+      ]
+    },
+    {
+      "address": "2307 West Baker Rd., Suite 180, Baytown, TX 77521",
+      "lat": 29.7695346,
+      "lng": -94.9857944,
+      "providers": [
+        {
+          "slug": "dr-okezie-n-okezie",
+          "title": "Dr. Okezie N Okezie"
+        }
+      ]
+    },
+    {
+      "address": "2315 W Ben White Blvd, Austin TX 78704",
+      "lat": 30.2316595,
+      "lng": -97.7936478,
+      "providers": [
+        {
+          "slug": "dr-andy-joshi",
+          "title": "Dr Andy Joshi"
+        }
+      ]
+    },
+    {
+      "address": "2320 S Shepherd Dr, Houston, TX 77019",
+      "lat": 29.7453097,
+      "lng": -95.4107419,
+      "providers": [
+        {
+          "slug": "river-oaks-emergency-room",
+          "title": "River Oaks Emergency Room"
+        }
+      ]
+    },
+    {
+      "address": "24044 Highway 59 N Kingwood, TX 77339",
+      "lat": 30.0647478,
+      "lng": -95.2461178,
+      "providers": [
+        {
+          "slug": "dr-jay-chavda",
+          "title": "Dr. Jay Chavda, MD"
+        }
+      ]
+    },
+    {
+      "address": "2416 W Holcombe Blvd, Houston, TX 77030",
+      "lat": 29.7062559,
+      "lng": -95.4151901,
+      "providers": [
+        {
+          "slug": "integrated-imaging",
+          "title": "Integrated Imaging"
+        }
+      ]
+    },
+    {
+      "address": "24433 Katy Fwy, Katy, TX 77494",
+      "lat": 29.7774046,
+      "lng": -95.8540323,
+      "providers": [
+        {
+          "slug": "katy-emergency-room",
+          "title": "Katy Emergency Room"
+        }
+      ]
+    },
+    {
+      "address": "2500 Rice Boulevard, Houston, TX 77005",
+      "lat": 29.7177524,
+      "lng": -95.4174057,
+      "providers": [
+        {
+          "slug": "rice-er",
+          "title": "Rice Emergency Room"
+        }
+      ]
+    },
+    {
+      "address": "2621 S. Shepherd, Ste. 220, Houston, TX, 77098",
+      "lat": 29.7410639,
+      "lng": -95.4103837,
+      "providers": [
+        {
+          "slug": "anthony-lamarra-dpm",
+          "title": "Anthony LaMarra, DPM"
+        }
+      ]
+    },
+    {
+      "address": "26710 Interstate 45 Ste B200 Spring, TX 77386",
+      "lat": 30.1051309,
+      "lng": -95.436155,
+      "providers": [
+        {
+          "slug": "dr-eric-blanson",
+          "title": "Dr Eric Blanson"
+        }
+      ]
+    },
+    {
+      "address": "3001 N. 23 St. McAllen, TX 78501",
+      "lat": 26.2261783,
+      "lng": -98.2388973,
+      "providers": [
+        {
+          "slug": "dr-mitchell-engle",
+          "title": "Dr. Mitchell Engle"
+        }
+      ]
+    },
+    {
+      "address": "3003 South Loop West, Suite 505, Houston, TX, 77054",
+      "lat": 29.6777549,
+      "lng": -95.4138315,
+      "providers": [
+        {
+          "slug": "andres-keichian-md",
+          "title": "Andres Keichian, MD"
+        }
+      ]
+    },
+    {
+      "address": "3101 College Park Drive, The Woodlands, TX 77384",
+      "lat": 30.2069088,
+      "lng": -95.4642689,
+      "providers": [
+        {
+          "slug": "dr-gary-kraus",
+          "title": "Dr. Gary Kraus"
+        }
+      ]
+    },
+    {
+      "address": "3101 Hwy 71 E, Suite 201, Bastrop Tx 78602",
+      "lat": 30.1049463,
+      "lng": -97.2910598,
+      "providers": [
+        {
+          "slug": "dr-andy-joshi",
+          "title": "Dr Andy Joshi"
+        }
+      ]
+    },
+    {
+      "address": "3111 N. Fry Rd, Suite 170, Katy, TX, 77449",
+      "lat": 29.8162032,
+      "lng": -95.7210336,
+      "providers": [
+        {
+          "slug": "raul-vargas-dc",
+          "title": "Raul Vargas, DC"
+        }
+      ]
+    },
+    {
+      "address": "3430 W Wheatland Rd, #107, Dallas, TX 75237",
+      "lat": 32.6476631,
+      "lng": -96.8767655,
+      "providers": [
+        {
+          "slug": "dr-william-hwang",
+          "title": "Dr. William Hwang"
+        }
+      ]
+    },
+    {
+      "address": "3603 Paesanos Pkwy #110, San Antonio, TX 78231, United States",
+      "lat": 29.5997849,
+      "lng": -98.5519812,
+      "providers": [
+        {
+          "slug": "paesanos-parkway-imaging",
+          "title": "MRI Imaging"
+        }
+      ]
+    },
+    {
+      "address": "3634 Glen Lakes Lane, Suite # 101, Missouri City , Texas 77459",
+      "lat": 29.5618619,
+      "lng": -95.5504116,
+      "providers": [
+        {
+          "slug": "dr-shabrez-tariq",
+          "title": "Dr. Shabrez Tariq"
+        }
+      ]
+    },
+    {
+      "address": "3840 W Davis St, Conroe, TX 77304",
+      "lat": 30.3201285,
+      "lng": -95.4836943,
+      "providers": [
+        {
+          "slug": "total-point-emergency-center-conroe",
+          "title": "Emergency Center \\u2013 Conroe"
+        }
+      ]
+    },
+    {
+      "address": "3903 Wiseman Blvd., Suite 315 San Antonio, TX 78251",
+      "lat": 29.4775622,
+      "lng": -98.6951157,
+      "providers": [
+        {
+          "slug": "dr-siraj-a-sayeed",
+          "title": "Dr. Siraj A. Sayeed"
+        }
+      ]
+    },
+    {
+      "address": "4002 Garth Rd, Suite 160, Baytown, TX 77512",
+      "lat": 29.7664549,
+      "lng": -94.977386,
+      "providers": [
+        {
+          "slug": "dr-mitchell-engle",
+          "title": "Dr. Mitchell Engle"
+        }
+      ]
+    },
+    {
+      "address": "4101 Greenbriar Dr. Ste 208, Houston, Tx 77098",
+      "lat": 29.7294106,
+      "lng": -95.4125363,
+      "providers": [
+        {
+          "slug": "pain-management",
+          "title": "Dr Shabrez Tariq"
+        }
+      ]
+    },
+    {
+      "address": "4101, Greenbriar Dr, Suite 208 Houston, Texas 77098",
+      "lat": 29.7295339,
+      "lng": -95.4123308,
+      "providers": [
+        {
+          "slug": "dr-shabrez-tariq",
+          "title": "Dr. Shabrez Tariq"
+        }
+      ]
+    },
+    {
+      "address": "4126 SW Frwy, Suite 1700, Houston, TX, 77027",
+      "lat": 29.7297834,
+      "lng": -95.4448975,
+      "providers": [
+        {
+          "slug": "suzanne-manzi-md",
+          "title": "Suzanne Manzi, MD"
+        },
+        {
+          "slug": "matthias-wiederholz-md",
+          "title": "Matthias Wiederholz, MD"
+        }
+      ]
+    },
+    {
+      "address": "4410 Medical Dr Ste 320, San Antonio, TX 78229",
+      "lat": 29.5101786,
+      "lng": -98.5716294,
+      "providers": [
+        {
+          "slug": "dr-hannah-homafar",
+          "title": "Dr Hannah Homafar"
+        }
+      ]
+    },
+    {
+      "address": "4441 West Airport Fwy, Suite 245, Irving, TX 75062",
+      "lat": 32.8385035,
+      "lng": -97.0139105,
+      "providers": [
+        {
+          "slug": "dr-terry-yeung-md",
+          "title": "Dr. Terry Yeung, MD"
+        }
+      ]
+    },
+    {
+      "address": "4710 Katy Freeway Houston, TX 77007",
+      "lat": 29.7769671,
+      "lng": -95.4079593,
+      "providers": [
+        {
+          "slug": "stat-diagnostics",
+          "title": "Stat Diagnostics"
+        }
+      ]
+    },
+    {
+      "address": "4747 Bellaire Blvd, Suite 240 Bellaire, TX 77401",
+      "lat": 29.7057164,
+      "lng": -95.4609461,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "4802 E. Sam Houston Pkwy, Ste. 110, Pasadena, TX, 77505",
+      "lat": 29.6327762,
+      "lng": -95.1705149,
+      "providers": [
+        {
+          "slug": "dr-wasyl-fedoriw",
+          "title": "Dr. Wasyl Fedoriw, MD"
+        }
+      ]
+    },
+    {
+      "address": "4861 N McColl Rd, McAllen, TX 78504",
+      "lat": 26.2447545,
+      "lng": -98.2052659,
+      "providers": [
+        {
+          "slug": "dr-jorge-saenz",
+          "title": "Dr Jorge Saenz"
+        }
+      ]
+    },
+    {
+      "address": "5012 US Highway 75, Suite 230, Denison, TX 75020",
+      "lat": 33.7648741,
+      "lng": -96.5869345,
+      "providers": [
+        {
+          "slug": "dr-terry-yeung-md",
+          "title": "Dr. Terry Yeung, MD"
+        }
+      ]
+    },
+    {
+      "address": "507 Rollingbrook Dr., Friendswood, TX, 77521",
+      "lat": 29.7586792,
+      "lng": -94.9929046,
+      "providers": [
+        {
+          "slug": "terry-moore-dc",
+          "title": "Terry Moore, DC"
+        },
+        {
+          "slug": "deanna-lopez-dpt",
+          "title": "Deanna Lopez, DPT"
+        },
+        {
+          "slug": "brian-hicks-dc",
+          "title": "Brian Hicks, DC"
+        },
+        {
+          "slug": "steve-kuykendall-dc",
+          "title": "Steve Kuykendall, DC"
+        },
+        {
+          "slug": "ciara-davis-dc",
+          "title": "Ciara Davis, DC"
+        }
+      ]
+    },
+    {
+      "address": "510 W Tidwell Rd, Houston, TX 77091",
+      "lat": 29.8479999,
+      "lng": -95.4084103,
+      "providers": [
+        {
+          "slug": "united-memorial-medical-center",
+          "title": "Medical Center \\u2013 Tidwell"
+        }
+      ]
+    },
+    {
+      "address": "5200 Harry Hines Blvd Dallas, TX 75235 | Statewide Telemed",
+      "lat": 32.8143461,
+      "lng": -96.8352697,
+      "providers": [
+        {
+          "slug": "dr-kateryna-ivanova",
+          "title": "Dr. Kateryna Ivanova"
+        }
+      ]
+    },
+    {
+      "address": "5375 Coit Rd Frisco, TX 75035",
+      "lat": 33.121832,
+      "lng": -96.7687728,
+      "providers": [
+        {
+          "slug": "dr-satish-gaddam",
+          "title": "Dr. Satish Gaddam"
+        }
+      ]
+    },
+    {
+      "address": "5510B Presidio Parkway, Suite 2401 San Antonio, TX 78249",
+      "lat": 29.5845559,
+      "lng": -98.5920913,
+      "providers": [
+        {
+          "slug": "dr-siraj-a-sayeed",
+          "title": "Dr. Siraj A. Sayeed"
+        }
+      ]
+    },
+    {
+      "address": "5637 Corsica Rd Corpus Christi, TX 78414",
+      "lat": 27.6733114,
+      "lng": -97.3879198,
+      "providers": [
+        {
+          "slug": "dr-mitchell-engle",
+          "title": "Dr. Mitchell Engle"
+        }
+      ]
+    },
+    {
+      "address": "5643 Treaschwig, Spring, TX, 77373",
+      "lat": 30.0474858,
+      "lng": -95.3432892,
+      "providers": [
+        {
+          "slug": "tim-runnels-dc",
+          "title": "Tim Runnels, DC"
+        }
+      ]
+    },
+    {
+      "address": "5655 W Spring Creek Pkwy, Suite 115, Plano, TX 75024",
+      "lat": 33.0644355,
+      "lng": -96.8139475,
+      "providers": [
+        {
+          "slug": "dr-terry-yeung-md",
+          "title": "Dr. Terry Yeung, MD"
+        }
+      ]
+    },
+    {
+      "address": "5702 Bolsa Ave., Huntington Beach, CA, 92649",
+      "lat": 33.7438626,
+      "lng": -118.0293079,
+      "providers": [
+        {
+          "slug": "marty-ontko",
+          "title": "Marty Ontko"
+        }
+      ]
+    },
+    {
+      "address": "5885 San Felipe St, Suite 550, Houston, TX 77057",
+      "lat": 29.7500674,
+      "lng": -95.4853306,
+      "providers": [
+        {
+          "slug": "dr-sairah-malik-od",
+          "title": "Dr. Sairah Malik, OD"
+        }
+      ]
+    },
+    {
+      "address": "601 Clara Barton Blvd, Garland, TX",
+      "lat": 32.9175144,
+      "lng": -96.6620283,
+      "providers": [
+        {
+          "slug": "dr-jai-kumar",
+          "title": "Dr. Jai Kumar"
+        }
+      ]
+    },
+    {
+      "address": "6021 Fairmont Pkwy, Suite 250, Pasadena, TX, 77505",
+      "lat": 29.6503705,
+      "lng": -95.1480175,
+      "providers": [
+        {
+          "slug": "robert-barton-dc",
+          "title": "Robert Barton, DC"
+        }
+      ]
+    },
+    {
+      "address": "6100 Corporate Dr, Suite 3A, Houston, TX 77036",
+      "lat": 29.7113849,
+      "lng": -95.5526056,
+      "providers": [
+        {
+          "slug": "dr-huiping-xu",
+          "title": "Dr. Huiping Xu"
+        }
+      ]
+    },
+    {
+      "address": "630 W 34th St, Suite. 303 Austin, TX 78705",
+      "lat": 30.301193,
+      "lng": -97.740865,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "6302 Gulf Freeway, Suite B, Houston, TX, 77023",
+      "lat": 29.7116903,
+      "lng": -95.3093634,
+      "providers": [
+        {
+          "slug": "quinn-bui-dc-mph-ms",
+          "title": "Quinn Bui, DC, MPH, MS"
+        }
+      ]
+    },
+    {
+      "address": "633 East Fernhurst Drive, Suite 903 Katy, Texas 77450",
+      "lat": 29.7771423,
+      "lng": -95.7755112,
+      "providers": [
+        {
+          "slug": "dr-oni-margaret",
+          "title": "Dr. Margaret B. Oni"
+        }
+      ]
+    },
+    {
+      "address": "6535 FM 2920, Suite 100, Spring, TX, 77379",
+      "lat": 30.0705749,
+      "lng": -95.4611728,
+      "providers": [
+        {
+          "slug": "mark-tag-filley-md",
+          "title": "Mark \\u201cTag\\u201d Filley, MD"
+        }
+      ]
+    },
+    {
+      "address": "6535 FM 2920, Suite 200, Baytown, TX, 77379",
+      "lat": 30.0764515,
+      "lng": -95.5581073,
+      "providers": [
+        {
+          "slug": "zachary-ratcliff-dc",
+          "title": "Zachary Ratcliff, DC"
+        },
+        {
+          "slug": "steven-smith-dc",
+          "title": "Steven Smith, DC"
+        },
+        {
+          "slug": "jacob-navarro-dc",
+          "title": "Jacob Navarro, DC"
+        }
+      ]
+    },
+    {
+      "address": "6560 Fannin St Suite 1016 Houston, TX 77030",
+      "lat": 29.7107059,
+      "lng": -95.4010799,
+      "providers": [
+        {
+          "slug": "dr-stephen-esses",
+          "title": "Dr Stephen Esses"
+        }
+      ]
+    },
+    {
+      "address": "6660 Airline Dr. Houston TX\\t77076",
+      "lat": 29.8601998,
+      "lng": -95.3843229,
+      "providers": [
+        {
+          "slug": "john-taylor-dc",
+          "title": "John Taylor, DC"
+        }
+      ]
+    },
+    {
+      "address": "6660 Airline Dr., Houston, TX, 77076",
+      "lat": 29.8601998,
+      "lng": -95.3843229,
+      "providers": [
+        {
+          "slug": "hugo-jaime-dc",
+          "title": "Hugo Jaime, DC"
+        },
+        {
+          "slug": "dipti-patel-dc",
+          "title": "Dipti Patel, DC"
+        }
+      ]
+    },
+    {
+      "address": "6921 Brisbane Ct. #100, Sugar Land, TX, 77479",
+      "lat": 29.5802876,
+      "lng": -95.6522975,
+      "providers": [
+        {
+          "slug": "omar-vidal-md",
+          "title": "Omar Vidal, MD"
+        }
+      ]
+    },
+    {
+      "address": "701 N Post Oak Rd #301",
+      "lat": 29.7789288,
+      "lng": -95.456825,
+      "providers": [
+        {
+          "slug": "concussion-assessment-centers",
+          "title": "Concussion Assessment Centers"
+        }
+      ]
+    },
+    {
+      "address": "712 N Washington Ave Ste 200 Dallas, TX 75246",
+      "lat": 32.7916279,
+      "lng": -96.7782274,
+      "providers": [
+        {
+          "slug": "dr-ami-parish",
+          "title": "Dr. Ami Parish"
+        }
+      ]
+    },
+    {
+      "address": "712 N. Washington Ave, Suite 200 Dallas, TX 75246",
+      "lat": 32.7916279,
+      "lng": -96.7782274,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "713 Grainger Street",
+      "lat": 32.7371972,
+      "lng": -97.3306983,
+      "providers": [
+        {
+          "slug": "dr-vinit-mehrotra",
+          "title": "Dr. Vinit Mehrotra"
+        }
+      ]
+    },
+    {
+      "address": "7205 Fannin, Suite 110A, Houston, TX 77030",
+      "lat": 29.698831,
+      "lng": -95.401437,
+      "providers": [
+        {
+          "slug": "dr-remi-nader",
+          "title": "Dr. Remi Nader"
+        }
+      ]
+    },
+    {
+      "address": "7210 Mcpherson Rd, Suite 117 Laredo TX, 78041",
+      "lat": 27.569237,
+      "lng": -99.4736771,
+      "providers": [
+        {
+          "slug": "dr-anish-potty",
+          "title": "Dr. Anish\\u00a0Potty"
+        }
+      ]
+    },
+    {
+      "address": "7410 Blanco, Suite 101 San Antonio, TX 78216",
+      "lat": 29.5279382,
+      "lng": -98.5045344,
+      "providers": [
+        {
+          "slug": "dr-anish-potty",
+          "title": "Dr. Anish\\u00a0Potty"
+        }
+      ]
+    },
+    {
+      "address": "7500 Beechnut St # 175, Houston, TX 77074, United States",
+      "lat": 29.6944292,
+      "lng": -95.5147559,
+      "providers": [
+        {
+          "slug": "dr-rosa-tang-2",
+          "title": "Dr. Rosa Tang"
+        }
+      ]
+    },
+    {
+      "address": "7601 W Sam Houston Pkwy S, ste 300. Houston Texas 77072",
+      "lat": 29.6866403,
+      "lng": -95.5575585,
+      "providers": [
+        {
+          "slug": "dr-li-yan-michael",
+          "title": "Dr LI, Yan Michael"
+        }
+      ]
+    },
+    {
+      "address": "7737 Southwest Fwy # 300, Houston, TX 77074",
+      "lat": 29.6947129,
+      "lng": -95.5233554,
+      "providers": [
+        {
+          "slug": "dr-jay-chavda",
+          "title": "Dr. Jay Chavda, MD"
+        }
+      ]
+    },
+    {
+      "address": "7830 West Grand Pkwy South, Suite 180, Richmond, TX, 77406",
+      "lat": 29.663201,
+      "lng": -95.7440744,
+      "providers": [
+        {
+          "slug": "kenneth-regner-dc",
+          "title": "Kenneth Regner, DC"
+        }
+      ]
+    },
+    {
+      "address": "8000 Warren Pkwy. Suite 104 Building 1 Frisco, TX 75034",
+      "lat": 33.1084857,
+      "lng": -96.8153325,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "804 W. Montgomery, Willis, TX, 77378",
+      "lat": 30.4220776,
+      "lng": -95.4878853,
+      "providers": [
+        {
+          "slug": "todd-custer-dc",
+          "title": "Todd Custer, DC"
+        }
+      ]
+    },
+    {
+      "address": "901 Travis Avenue Fort Worth, TX 76104",
+      "lat": 32.7353098,
+      "lng": -97.3321567,
+      "providers": [
+        {
+          "slug": "elevate-hc-texas-pllc",
+          "title": "Brain Injury and Mental Health Clinics"
+        }
+      ]
+    },
+    {
+      "address": "901 W Ben White Blvd, Austin, TX 78704 | Statewide Telemed",
+      "lat": 30.2256423,
+      "lng": -97.7752699,
+      "providers": [
+        {
+          "slug": "dr-ikechukwu-obih",
+          "title": "Dr. Ikechukwu Obih"
+        }
+      ]
+    },
+    {
+      "address": "950 Threadneedle, Suite 295 Houston, Texas 77079",
+      "lat": 29.7826294,
+      "lng": -95.609422,
+      "providers": [
+        {
+          "slug": "dr-nilesh-kotecha",
+          "title": "Dr. Nilesh Kotecha"
+        }
+      ]
+    },
+    {
+      "address": "9740 Barker Cypress Rd, Suite 111, Cypress, TX, 77433",
+      "lat": 29.9194332,
+      "lng": -95.6854772,
+      "providers": [
+        {
+          "slug": "kara-ferrari-dpt",
+          "title": "Kara Ferrari, DPT"
+        },
+        {
+          "slug": "larry-burleigh-dc",
+          "title": "Larry Burleigh, DC;"
+        }
+      ]
+    },
+    {
+      "address": "9802 FM 1960 W. Bypass Rd., Suite 205, Humble, TX 77338",
+      "lat": 30.0041576,
+      "lng": -95.2757461,
+      "providers": [
+        {
+          "slug": "dr-okezie-n-okezie",
+          "title": "Dr. Okezie N Okezie"
+        }
+      ]
+    },
+    {
+      "address": "9815 Bammel N. Houston Rd., Suite A, Houston, TX, 77086",
+      "lat": 29.9204066,
+      "lng": -95.4935775,
+      "providers": [
+        {
+          "slug": "quinn-bui-dc",
+          "title": "Quinn Bui, DC"
+        }
+      ]
+    },
+    {
+      "address": "Fort Worth, TX 76104",
+      "lat": 32.753177,
+      "lng": -97.3327459,
+      "providers": [
+        {
+          "slug": "dr-vinit-mehrotra",
+          "title": "Dr. Vinit Mehrotra"
+        }
+      ]
+    },
+    {
+      "address": "Houston, TX 77024",
+      "lat": 29.7589382,
+      "lng": -95.3676974,
+      "providers": [
+        {
+          "slug": "concussion-assessment-centers",
+          "title": "Concussion Assessment Centers"
+        }
+      ]
+    }
+  ]
+}
