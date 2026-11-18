@@ -7,67 +7,73 @@
     return Array.prototype.slice.call((root || document).querySelectorAll(sel));
   }
 
+  function refreshMap() {
+    window.setTimeout(function () {
+      if (window.PRIMCARE_DOCTORS_MAP && window.PRIMCARE_DOCTORS_MAP.invalidateSize) {
+        window.PRIMCARE_DOCTORS_MAP.invalidateSize();
+      }
+    }, 180);
+  }
+
   function initExplorer() {
     var page = document.body;
-    if (!page || !page.classList.contains("doctors-page")) return;
+    if (!page || !page.classList.contains("doctors-map-directory")) return;
 
     var toggle = $("#doctors-filters-toggle");
     var filters = $("#doctors-search-filters");
-    var explorer = $("#doctors-explorer");
-    var mapSection = $("#doctors-map-section");
-    var viewBtns = $all("[data-doctors-view]");
+    var sheetBtns = $all("[data-sheet-size]");
+    var panel = $("#doctors-results");
+    var handle = panel ? panel.querySelector(".doctors-results__handle") : null;
 
     function setFiltersOpen(open) {
       if (!filters || !toggle) return;
       page.classList.toggle("doctors-filters-open", open);
+      filters.hidden = !open;
       toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      toggle.textContent = open ? "Hide filters" : "Filters";
+      toggle.textContent = open ? "Hide" : "Filters";
+      refreshMap();
     }
 
     if (toggle && filters) {
       toggle.addEventListener("click", function () {
-        setFiltersOpen(!page.classList.contains("doctors-filters-open"));
-        window.setTimeout(function () {
-          if (window.PRIMCARE_DOCTORS_MAP && window.PRIMCARE_DOCTORS_MAP.invalidateSize) {
-            window.PRIMCARE_DOCTORS_MAP.invalidateSize();
-          }
-        }, 180);
+        setFiltersOpen(filters.hidden);
       });
       setFiltersOpen(false);
     }
 
-    function setView(view) {
-      var mode = view === "list" ? "list" : "split";
-      page.classList.toggle("doctors-view-list", mode === "list");
-      page.classList.toggle("doctors-view-split", mode !== "list");
-      viewBtns.forEach(function (btn) {
-        var active = btn.getAttribute("data-doctors-view") === mode;
+    function setSheetSize(size) {
+      var mode = size === "full" || size === "half" ? size : "peek";
+      page.classList.remove("doctors-sheet-peek", "doctors-sheet-half", "doctors-sheet-full");
+      page.classList.add("doctors-sheet-" + mode);
+      sheetBtns.forEach(function (btn) {
+        var active = btn.getAttribute("data-sheet-size") === mode;
         btn.classList.toggle("is-active", active);
         btn.setAttribute("aria-pressed", active ? "true" : "false");
       });
-      window.setTimeout(function () {
-        if (window.PRIMCARE_DOCTORS_MAP && window.PRIMCARE_DOCTORS_MAP.invalidateSize) {
-          window.PRIMCARE_DOCTORS_MAP.invalidateSize();
-        }
-        if (mode === "list") {
-          var results = $("#doctors-results");
-          if (results) results.scrollIntoView({ behavior: "smooth", block: "start" });
-        } else if (mapSection) {
-          mapSection.scrollIntoView({ behavior: "smooth", block: "nearest" });
-        }
-      }, 60);
+      refreshMap();
     }
 
-    viewBtns.forEach(function (btn) {
+    sheetBtns.forEach(function (btn) {
       btn.addEventListener("click", function () {
-        setView(btn.getAttribute("data-doctors-view") || "split");
+        setSheetSize(btn.getAttribute("data-sheet-size") || "peek");
       });
     });
-    setView("split");
 
-    // Keep sticky explorer height in sync for CSS var usage.
-    function syncExplorerOffset() {
-      if (!explorer) return;
+    if (handle) {
+      handle.addEventListener("click", function () {
+        if (page.classList.contains("doctors-sheet-peek")) setSheetSize("half");
+        else if (page.classList.contains("doctors-sheet-half")) setSheetSize("full");
+        else setSheetSize("peek");
+      });
+    }
+
+    // Default: map-forward on small screens, split on larger screens.
+    function applyDefaultSheet() {
+      if (window.matchMedia("(max-width: 900px)").matches) setSheetSize("peek");
+      else setSheetSize("half");
+    }
+
+    function syncStickyTop() {
       var header = $(".site-header");
       var topbar = $(".topbar");
       var offset =
@@ -76,14 +82,13 @@
           ? topbar.getBoundingClientRect().height
           : 0);
       page.style.setProperty("--doctors-sticky-top", offset + "px");
+      refreshMap();
     }
 
-    syncExplorerOffset();
+    applyDefaultSheet();
+    syncStickyTop();
     window.addEventListener("resize", function () {
-      syncExplorerOffset();
-      if (window.PRIMCARE_DOCTORS_MAP && window.PRIMCARE_DOCTORS_MAP.invalidateSize) {
-        window.PRIMCARE_DOCTORS_MAP.invalidateSize();
-      }
+      syncStickyTop();
     });
   }
 

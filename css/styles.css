@@ -4119,3 +4119,557 @@ body.modal-open {
     grid-column: 1 / -1;
   }
 }
+
+/* ——— Doctors map directory (map-first overlay search) ——— */
+html:has(body.doctors-map-directory) {
+  height: 100%;
+  overflow: hidden;
+}
+
+body.doctors-map-directory {
+  --doctors-sticky-top: 4.75rem;
+  --doctors-panel-w: min(26rem, 42vw);
+  --doctors-search-max: 42rem;
+  --doctors-sheet-peek: 7.5rem;
+  --doctors-sheet-half: 48vh;
+  overflow: hidden;
+  height: 100%;
+}
+
+body.doctors-map-directory .topbar {
+  display: none;
+}
+
+body.doctors-map-directory .site-footer {
+  display: none;
+}
+
+body.doctors-map-directory main {
+  position: relative;
+  height: calc(100dvh - var(--doctors-sticky-top));
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+body.doctors-map-directory .doctors-directory {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #e8eef2;
+}
+
+body.doctors-map-directory .doctors-directory__map,
+body.doctors-map-directory #doctors-map.doctors-map {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.doctors-map-directory .doctors-directory__map .leaflet-control-zoom {
+  margin-top: 5.5rem;
+  margin-left: 0.75rem;
+  border: 0;
+  box-shadow: 0 8px 20px rgba(26, 31, 61, 0.12);
+}
+
+body.doctors-map-directory .doctors-directory__map .leaflet-control-attribution {
+  font-size: 0.65rem;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+body.doctors-map-directory .doctors-directory__ui {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  display: grid;
+  grid-template-columns: var(--doctors-panel-w) minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 0.75rem;
+  padding: 0.85rem;
+  align-content: start;
+}
+
+body.doctors-map-directory .doctors-directory__search,
+body.doctors-map-directory .doctors-directory__panel {
+  pointer-events: auto;
+}
+
+body.doctors-map-directory .doctors-directory__search {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  max-width: var(--doctors-search-max);
+  display: grid;
+  gap: 0.55rem;
+}
+
+body.doctors-map-directory .doctors-directory__form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 0.45rem;
+  align-items: stretch;
+  padding: 0.45rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(26, 31, 61, 0.1);
+  border-radius: 0.95rem;
+  box-shadow: 0 14px 36px rgba(26, 31, 61, 0.14);
+  backdrop-filter: blur(10px);
+}
+
+body.doctors-map-directory .doctors-directory__query {
+  display: block;
+  min-width: 0;
+}
+
+body.doctors-map-directory .doctors-directory__query input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 0;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 1rem;
+  color: var(--navy-900, #1a1f3d);
+  padding: 0.7rem 0.75rem;
+}
+
+body.doctors-map-directory .doctors-directory__query input::placeholder {
+  color: rgba(26, 31, 61, 0.45);
+}
+
+body.doctors-map-directory .doctors-filters-toggle,
+body.doctors-map-directory .doctors-directory__submit {
+  align-self: center;
+  white-space: nowrap;
+}
+
+body.doctors-map-directory .doctors-filters-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.6rem;
+  padding: 0 0.9rem;
+  border-radius: 0.7rem;
+  border: 1px solid rgba(26, 31, 61, 0.12);
+  background: #f4f7fa;
+  color: var(--navy-800, #1a1f3d);
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+body.doctors-map-directory .doctors-filters-toggle:hover,
+body.doctors-map-directory.doctors-filters-open .doctors-filters-toggle {
+  background: #e8f3f7;
+  border-color: rgba(15, 118, 140, 0.35);
+  color: #0f768c;
+}
+
+body.doctors-map-directory .doctors-directory__submit {
+  min-height: 2.6rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.7rem;
+}
+
+body.doctors-map-directory .doctors-directory__filters {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(26, 31, 61, 0.1);
+  border-radius: 0.85rem;
+  box-shadow: 0 12px 28px rgba(26, 31, 61, 0.12);
+}
+
+body.doctors-map-directory .doctors-directory__filters[hidden] {
+  display: none !important;
+}
+
+body.doctors-map-directory .doctors-directory__filters .doctors-field {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0;
+}
+
+body.doctors-map-directory .doctors-directory__filters .doctors-field__label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(26, 31, 61, 0.55);
+}
+
+body.doctors-map-directory .doctors-directory__filters select {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid rgba(26, 31, 61, 0.12);
+  border-radius: 0.55rem;
+  background: #fff;
+  padding: 0.55rem 0.65rem;
+  font: inherit;
+  font-size: 0.92rem;
+  color: var(--navy-900, #1a1f3d);
+}
+
+body.doctors-map-directory .doctors-directory__meta-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.85rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(26, 31, 61, 0.08);
+  box-shadow: 0 8px 18px rgba(26, 31, 61, 0.1);
+}
+
+body.doctors-map-directory .doctors-directory__map-count,
+body.doctors-map-directory .doctors-directory__results-count {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--navy-800, #1a1f3d);
+}
+
+body.doctors-map-directory .doctors-directory__results-count:not(:empty)::before {
+  content: "·";
+  margin-right: 0.85rem;
+  color: rgba(26, 31, 61, 0.35);
+}
+
+body.doctors-map-directory .doctors-directory__meta-bar .text-link {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0f768c;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+body.doctors-map-directory .doctors-directory__panel {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: 100%;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(26, 31, 61, 0.1);
+  border-radius: 1rem;
+  box-shadow: 0 18px 42px rgba(26, 31, 61, 0.16);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+body.doctors-map-directory .doctors-directory__panel-head {
+  flex: 0 0 auto;
+  padding: 0.65rem 0.85rem 0.55rem;
+  border-bottom: 1px solid rgba(26, 31, 61, 0.08);
+  background: #fff;
+}
+
+body.doctors-map-directory .doctors-results__handle {
+  display: none;
+}
+
+body.doctors-map-directory .doctors-directory__panel-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+body.doctors-map-directory .doctors-directory__panel-title-row strong {
+  font-size: 0.95rem;
+  color: var(--navy-900, #1a1f3d);
+}
+
+body.doctors-map-directory .doctors-view-toggle {
+  display: inline-flex;
+  gap: 0.2rem;
+  padding: 0.18rem;
+  border-radius: 999px;
+  background: #eef3f6;
+}
+
+body.doctors-map-directory .doctors-view-toggle__btn {
+  border: 0;
+  background: transparent;
+  color: rgba(26, 31, 61, 0.62);
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+body.doctors-map-directory .doctors-view-toggle__btn.is-active {
+  background: #fff;
+  color: #0f768c;
+  box-shadow: 0 2px 8px rgba(26, 31, 61, 0.1);
+}
+
+body.doctors-map-directory .doctors-directory__panel-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  padding: 0.35rem 0.85rem 1rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.doctors-map-directory .doctors-list {
+  display: grid;
+  gap: 0;
+}
+
+body.doctors-map-directory .doctors-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.75rem 0.85rem;
+  padding: 0.85rem 0.15rem;
+  border-bottom: 1px solid rgba(26, 31, 61, 0.08);
+  align-items: start;
+}
+
+body.doctors-map-directory .doctors-card:last-child {
+  border-bottom: 0;
+}
+
+body.doctors-map-directory .doctors-card__photo,
+body.doctors-map-directory .doctors-card__photo img {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.65rem;
+  object-fit: cover;
+}
+
+body.doctors-map-directory .doctors-card__title {
+  margin: 0 0 0.2rem;
+  font-size: 0.98rem;
+  line-height: 1.3;
+}
+
+body.doctors-map-directory .doctors-card__title a:hover {
+  color: #0f768c;
+}
+
+body.doctors-map-directory .doctors-card__line {
+  margin: 0.2rem 0 0;
+  font-size: 0.82rem;
+  color: rgba(26, 31, 61, 0.72);
+}
+
+body.doctors-map-directory .doctors-card__line span {
+  font-weight: 650;
+  color: rgba(26, 31, 61, 0.5);
+}
+
+body.doctors-map-directory .doctors-card__actions {
+  grid-column: 1 / -1;
+}
+
+body.doctors-map-directory .doctors-card__actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+body.doctors-map-directory .doctors-empty {
+  margin: 1rem 0;
+  color: rgba(26, 31, 61, 0.65);
+  font-size: 0.92rem;
+}
+
+body.doctors-map-directory .doctors-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+}
+
+body.doctors-map-directory .doctors-page-btn {
+  border: 1px solid rgba(26, 31, 61, 0.12);
+  background: #fff;
+  color: var(--navy-800, #1a1f3d);
+  border-radius: 0.45rem;
+  padding: 0.35rem 0.55rem;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+body.doctors-map-directory .doctors-page-btn.is-active {
+  background: #0f768c;
+  border-color: #0f768c;
+  color: #fff;
+}
+
+body.doctors-map-directory .doctors-page-btn:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Desktop sheet modes: peek collapses to a slim strip, full widens the list */
+body.doctors-map-directory.doctors-sheet-peek .doctors-directory__ui {
+  grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+}
+
+body.doctors-map-directory.doctors-sheet-peek .doctors-directory__panel-body {
+  display: none;
+}
+
+body.doctors-map-directory.doctors-sheet-full .doctors-directory__ui {
+  grid-template-columns: minmax(22rem, 34rem) minmax(0, 1fr);
+}
+
+body.doctors-map-directory.doctors-sheet-full .doctors-directory__panel {
+  max-width: 34rem;
+}
+
+@media (max-width: 900px) {
+  body.doctors-map-directory {
+    --doctors-sticky-top: 4.25rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__ui {
+    display: block;
+    padding: 0;
+  }
+
+  body.doctors-map-directory .doctors-directory__search {
+    position: absolute;
+    top: 0.65rem;
+    left: 0.65rem;
+    right: 0.65rem;
+    max-width: none;
+    z-index: 6;
+  }
+
+  body.doctors-map-directory .doctors-directory__form {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    border-radius: 0.85rem;
+    padding: 0.35rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__query input {
+    font-size: 16px;
+    padding: 0.62rem 0.6rem;
+  }
+
+  body.doctors-map-directory .doctors-filters-toggle,
+  body.doctors-map-directory .doctors-directory__submit {
+    min-height: 2.45rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__filters {
+    grid-template-columns: 1fr;
+    margin-top: 0.45rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__meta-bar {
+    margin-top: 0.45rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__map .leaflet-control-zoom {
+    margin-top: 4.75rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 7;
+    width: 100%;
+    max-width: none;
+    border-radius: 1.15rem 1.15rem 0 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    box-shadow: 0 -10px 36px rgba(26, 31, 61, 0.18);
+    transition: height 0.22s ease, max-height 0.22s ease;
+  }
+
+  body.doctors-map-directory .doctors-results__handle {
+    display: block;
+    width: 2.75rem;
+    height: 0.28rem;
+    border-radius: 999px;
+    background: rgba(26, 31, 61, 0.18);
+    margin: 0.2rem auto 0.55rem;
+  }
+
+  body.doctors-map-directory.doctors-sheet-peek .doctors-directory__panel {
+    display: flex;
+    height: calc(var(--doctors-sheet-peek) + env(safe-area-inset-bottom));
+    max-height: calc(var(--doctors-sheet-peek) + env(safe-area-inset-bottom));
+  }
+
+  body.doctors-map-directory.doctors-sheet-peek .doctors-directory__panel-body {
+    display: none;
+  }
+
+  body.doctors-map-directory.doctors-sheet-half .doctors-directory__panel {
+    height: var(--doctors-sheet-half);
+    max-height: var(--doctors-sheet-half);
+  }
+
+  body.doctors-map-directory.doctors-sheet-full .doctors-directory__panel {
+    height: calc(100% - 0.5rem);
+    max-height: calc(100% - 0.5rem);
+  }
+
+  body.doctors-map-directory.doctors-sheet-full .doctors-directory__search {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+@media (max-width: 560px) {
+  body.doctors-map-directory .doctors-directory__form {
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.35rem;
+  }
+
+  body.doctors-map-directory .doctors-filters-toggle,
+  body.doctors-map-directory .doctors-directory__submit {
+    min-width: 0;
+    padding-left: 0.65rem;
+    padding-right: 0.65rem;
+  }
+
+  body.doctors-map-directory .doctors-directory__meta-bar {
+    border-radius: 0.75rem;
+  }
+
+  body.doctors-map-directory .doctors-card {
+    grid-template-columns: 56px minmax(0, 1fr);
+  }
+
+  body.doctors-map-directory .doctors-card__photo,
+  body.doctors-map-directory .doctors-card__photo img {
+    width: 56px;
+    height: 56px;
+  }
+}

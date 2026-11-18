@@ -30,7 +30,15 @@
     var full = providersBySlug[provider.slug];
     if (!full) return true;
     if (filters.name) {
-      var hay = String(full.title || "").toLowerCase();
+      var hay = [
+        full.title || "",
+        (full.specialties || []).join(" "),
+        (full.cities || []).join(" "),
+        (full.states || []).join(" "),
+        (full.addresses || []).join(" "),
+      ]
+        .join(" ")
+        .toLowerCase();
       if (hay.indexOf(filters.name) === -1) return false;
     }
     if (filters.specialty && (full.specialties || []).indexOf(filters.specialty) === -1) {
@@ -88,7 +96,8 @@
     }
 
     var map = window.L.map(mapEl, {
-      scrollWheelZoom: false,
+      scrollWheelZoom: true,
+      zoomControl: true,
       attributionControl: true,
     }).setView([31.0, -99.0], 6);
 
