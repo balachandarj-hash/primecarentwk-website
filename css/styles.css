@@ -3587,7 +3587,7 @@ body.modal-open {
   font-size: 0.9rem;
 }
 
-.appt-form input,
+.appt-form input:not([type="checkbox"]),
 .appt-form textarea {
   width: 100%;
   border: 1px solid rgba(26, 31, 61, 0.16);
@@ -3595,6 +3595,15 @@ body.modal-open {
   padding: 0.7rem 0.8rem;
   font: inherit;
   font-weight: 500;
+}
+
+.appt-form .form__sms {
+  margin-top: 0.15rem;
+}
+
+.appt-form .form__sms-label {
+  font-weight: 500;
+  color: var(--ink-muted);
 }
 
 .appt-form__note {
@@ -3654,7 +3663,7 @@ body.modal-open {
     font-size: 0.78rem;
   }
 
-  .appt-form input,
+  .appt-form input:not([type="checkbox"]),
   .appt-form textarea {
     padding: 0.5rem 0.6rem;
     border-radius: 0.4rem;
