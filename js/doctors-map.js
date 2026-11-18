@@ -92,6 +92,8 @@
       attributionControl: true,
     }).setView([31.0, -99.0], 6);
 
+    window.PRIMCARE_DOCTORS_MAP = map;
+
     window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       maxZoom: 18,
       attribution:

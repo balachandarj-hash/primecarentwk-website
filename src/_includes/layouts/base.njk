@@ -41,7 +41,7 @@
       })();
     </script>
   </head>
-  <body>
+  <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
     {% include "partials/topbar.njk" %}
     {% include "partials/header.njk" %}
     <main>
